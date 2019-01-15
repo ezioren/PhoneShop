@@ -19,3 +19,4 @@ git merge <branch>
   
 创建分支,创建一个叫做 1.0.0 的标签：
 git tag 1.0.0 1b2e1d63ff
+
