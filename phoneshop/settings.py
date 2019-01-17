@@ -65,7 +65,8 @@ ROOT_URLCONF = 'urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(PROJECT_PATH,'templates')],
+        'DIRS': [os.path.join(PROJECT_PATH,'templates'),
+                 os.path.join(PROJECT_PATH, 'static').replace('\\', '/')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -136,6 +137,14 @@ USE_TZ = False
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS =[os.path.join(PROJECT_PATH, "static")]
+STATIC_ROOT = os.path.join(PROJECT_PATH, 'static').replace('\\', '/')
+STATICFILES_DIRS =[
+    ('bootstrap', os.path.join(STATIC_ROOT, 'bootstrap').replace('\\', '/')),
+    ('css', os.path.join(STATIC_ROOT, 'css').replace('\\', '/')),
+    ('js', os.path.join(STATIC_ROOT, 'js').replace('\\', '/')),
+    ('images', os.path.join(STATIC_ROOT, 'images').replace('\\', '/')),
+    ('font', os.path.join(STATIC_ROOT, 'font').replace('\\', '/')),
+    ('icon', os.path.join(STATIC_ROOT, 'icon').replace('\\', '/')),
+]
 
 MEDIA_ROOT = os.path.join(PROJECT_PATH, 'static/media/')
