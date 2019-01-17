@@ -24,8 +24,8 @@ img {
 }
 
 a {
-    text-decoration:none;
-    outline: none;
+    text-decoration:none!important;
+    outline: none!important;
     color: #080808;
 }
 

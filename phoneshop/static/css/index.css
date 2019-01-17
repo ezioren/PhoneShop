@@ -1,8 +1,8 @@
 /* 头部导航栏 */
 nav .container{
     height: 40px;
-    margin-left: 58px;
-    margin-right: 58px;
+    margin-left: auto;
+    margin-right: auto;
 
 }
 .navbar{
@@ -56,7 +56,7 @@ nav .top-cart span{
 }
 #top-cart-menu{
     width: 320px;
-    height: 120px;
+    height: 140px;
     background-color: #ffffff;
     position: absolute;
     top: 40px;
@@ -78,3 +78,112 @@ nav .nav-right{
     padding-left: 4px;
     height: 40px;
 }
+
+/* 分类产品导航栏 */
+.site-header{
+    position: relative;
+    height: 80px;
+}
+.site-header a {
+    text-decoration:none ;
+    outline: none;
+    color: #080808;
+}
+.site-header .container{
+    height: 80px;
+    position: relative;
+    margin-right: auto;
+    margin-left: auto;
+}
+.site-header .header-logo{
+    float: left;
+    height: 80px;
+}
+.site-header .header-logo img{
+    width: 60px;
+    height: 60px;
+}
+.site-header .header-nav{
+    float: left;
+    width: 814px;
+}
+.site-header .header-nav-list{
+    position: relative;
+    float: left;
+    height: 80px;
+    width: 820px;
+    list-style-type: none;
+    font-size: 16px;
+    padding-left: 160px;
+    padding-top: 10px;
+}
+.site-header .header-nav-list li{
+    float: left;
+    text-align: center;
+    font-size: 16px;
+}
+.site-header .header-nav-list li a{
+    float: left;
+    padding: 20px 20px 38px;
+}
+.site-header .header-search{
+    float: left;
+    position: relative;
+    height: 80px;
+    width: auto;
+    padding-top: 8px;
+    padding-left: 22px;
+}
+.site-header .header-search .input-group{
+    float: left;
+    height: 60px;
+    width: 230px;
+    border: 1px solid #e0e0e0;
+    border-right-style: none;
+    background-color: #ffffff;
+    font-size: 20px;
+    display: block;
+}
+.site-header .header-search .input-group-submit{
+    height: 60px;
+    width: 60px;
+    border: 1px solid #e0e0e0;
+    background-color: #ffffff;
+    display: block;
+    font-size: 16px;
+}
+.site-header .header-search .header-search-list{
+    width: 231px;
+    height: 120px;
+    border-style:none solid solid;
+    border-width: 1px;
+    position: relative;
+    display: none;
+}
+/*
+    +连接同级下一个元素
+    >连接第一个子元素
+ */
+.site-header .header-search .input-group:hover{
+    border-color: #ff6700;
+}
+.site-header .header-search .input-group:hover +.input-group-submit{
+    border-color: #ff6700;
+}
+.site-header .header-search .input-group-submit:hover{
+    color: #ffffff;
+    background-color: #ff6700;
+}
+.site-header .header-search .header-search-form:hover > .input-group,.input-group-submit{
+    border-color: #ff6700;
+}
+
+
+
+
+
+
+
+
+
+
