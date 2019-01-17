@@ -1,0 +1,80 @@
+/* 头部导航栏 */
+nav .container{
+    height: 40px;
+    margin-left: 58px;
+    margin-right: 58px;
+
+}
+.navbar{
+    min-height: 20px;
+    height: 40px;
+}
+.nav-left{
+    float: left;
+    padding-top: 10px;
+    padding-right: 4px;
+    padding-left: 4px;
+    height: 40px;
+}
+.navbar-brand{
+    float: none;
+    padding-right: 0px;
+    font-size: 16px;
+}
+nav .sep{
+    margin: 0 4px;
+    color: #424242;
+}
+nav .nav-cart{
+    float: right;
+    position: relative;
+    margin-left: 20px;
+    height: 40px;
+    width: 120px;
+}
+nav .nav-cart-active{
+    background-color: #ffffff;
+    color: #ff6700;
+}
+nav .top-cart{
+    position: relative;
+    text-align: center;
+    height: 40px;
+    line-height: 40px;
+    text-decoration: none;
+    font-size: 15px;
+    color: #b0b0b0;
+    background-color: #424242;
+    display: block;
+}
+nav .top-cart-active{
+    background-color: #ffffff;
+    color: #ff6700;
+}
+nav .top-cart span{
+    margin-left: -8px;
+}
+#top-cart-menu{
+    width: 320px;
+    height: 120px;
+    background-color: #ffffff;
+    position: absolute;
+    top: 40px;
+    right: 0;
+    display: none;
+}
+nav .loading{
+    position: absolute;
+    left: 16%;
+    top: 40%;
+    font-size: 16px;
+
+}
+nav .nav-right{
+    width: auto;
+    float: right;
+    padding-top: 10px;
+    padding-right: 4px;
+    padding-left: 4px;
+    height: 40px;
+}
