@@ -12,7 +12,7 @@ $(function () {
                 $(this).find('.top-cart').removeClass('top-cart-active');
 
     });
-    $('#input-group').onfocus(function () {
-        $(this).find('header-search-list').show()
+    $('#input-group').onclick(function () {
+        $('#header-search-list').show()
     })
 })
