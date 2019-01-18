@@ -114,7 +114,7 @@ nav .nav-right{
     width: 820px;
     list-style-type: none;
     font-size: 16px;
-    padding-left: 160px;
+    padding-left: 150px;
     padding-top: 10px;
 }
 .site-header .header-nav-list li{
@@ -125,6 +125,9 @@ nav .nav-right{
 .site-header .header-nav-list li a{
     float: left;
     padding: 20px 20px 38px;
+}
+.site-header .header-nav-list li a:hover{
+    color: #ff6700;
 }
 .site-header .header-search{
     float: left;
@@ -156,8 +159,8 @@ nav .nav-right{
     width: 231px;
     height: 120px;
     border-style:none solid solid;
+    border-color: #ff6700;
     border-width: 1px;
-    position: relative;
     display: none;
 }
 /*
