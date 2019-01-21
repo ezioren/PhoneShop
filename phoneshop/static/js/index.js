@@ -12,7 +12,5 @@ $(function () {
                 $(this).find('.top-cart').removeClass('top-cart-active');
 
     });
-    $('#input-group').onclick(function () {
-        $('#header-search-list').show()
-    })
+
 })

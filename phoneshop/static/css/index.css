@@ -134,12 +134,12 @@ nav .nav-right{
     position: relative;
     height: 80px;
     width: auto;
-    padding-top: 8px;
+    padding-top: 18px;
     padding-left: 22px;
 }
 .site-header .header-search .input-group{
     float: left;
-    height: 60px;
+    height: 40px;
     width: 230px;
     border: 1px solid #e0e0e0;
     border-right-style: none;
@@ -148,20 +148,12 @@ nav .nav-right{
     display: block;
 }
 .site-header .header-search .input-group-submit{
-    height: 60px;
+    height: 40px;
     width: 60px;
     border: 1px solid #e0e0e0;
     background-color: #ffffff;
     display: block;
-    font-size: 16px;
-}
-.site-header .header-search .header-search-list{
-    width: 231px;
-    height: 120px;
-    border-style:none solid solid;
-    border-color: #e0e0e0;
-    border-width: 1px;
-    display: none;
+    font-size: 14px;
 }
 /*
     +连接同级下一个元素
@@ -176,6 +168,7 @@ nav .nav-right{
 .site-header .header-search .input-group-submit:hover{
     color: #ffffff;
     background-color: #ff6700;
+    border-color: #ff6700;
 }
 .site-header .header-search .header-search-form:hover > .input-group,.input-group-submit{
     border-color: #ff6700;
