@@ -173,9 +173,91 @@ nav .nav-right{
 .site-header .header-search .header-search-form:hover > .input-group,.input-group-submit{
     border-color: #ff6700;
 }
+/* 轮播图 */
+#goods-show{
+    width: 1226px;
+    height: 300px;
+    margin: 0 auto;
+}
+#goods-show .container{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+#goods-show .goods-show-box{
+    width: 100%;
+    height: 100%;
+}
+#goods-show .swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      background: #fff;
 
-
-
+      /* Center slide text vertically */
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      -webkit-justify-content: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      -webkit-align-items: center;
+      align-items: center;
+}
+#goods-show .goods-show-pagination{
+    position: absolute;
+    text-align: center;
+    bottom: 10px;
+    left: 0;
+    width: 100%;
+    transition: .3s opacity;
+    transform: translate3d(0,0,0);
+    z-index: 10;
+}
+#goods-show .button-next{
+    right:10px;
+    left:auto;
+    position: absolute;
+    top: 50%;
+    position: absolute;
+    top: 50%;
+    margin-top: -26px;
+    z-index: 10;
+    cursor: pointer;
+    width: 37px;
+    height: 54px;
+    background-image: none;
+}
+#goods-show .button-next:hover{
+    background-color: #74777a;
+    color: #ffffff;
+}
+#goods-show .button-next i{
+    font-size: 40px;
+}
+#goods-show .button-prev{
+    left: 10px;
+    right: auto;
+    position: absolute;
+    top: 50%;
+    margin-top: -26px;
+    z-index: 10;
+    cursor: pointer;
+    width: 37px;
+    height: 54px;
+    background-image: none;
+}
+#goods-show .button-prev:hover{
+    background-color: #74777a;
+    color: #ffffff;
+}
+#goods-show .button-prev i{
+    font-size: 40px;
+}
 
 
 
