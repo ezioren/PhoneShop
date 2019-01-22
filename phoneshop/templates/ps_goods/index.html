@@ -7,8 +7,8 @@
     <META HTTP-EQUIV="expires" CONTENT="0">
     <title>优选手机～选你所想</title>
     <!-- 线上引入ali-icon(需实时更新), bootstrap -->
-    <link href="https://at.alicdn.com/t/font_813467_vc6fxvx2lo.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://at.alicdn.com/t/font_813467_vc6fxvx2lo.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
     <!--如果无法联网，则调用本地资源-->
@@ -98,33 +98,34 @@
             </div>
             <!-- 菜单 -->
             <div class="header-nav">
-                <ul class="header-nav-list clearfix">
+                <!-- 抬头 -->
+                <ul class="header-nav-list clearfix" id="header-nav-list">
                     <li>
-                        <a href="">
+                        <a href="" class="title">
                             新品爆款
                             <i class="iconfont icon-shuma1"></i>
                         </a>
                     </li>
                     <li>
-                        <a href="">
+                        <a href="" class="title">
                             高性价比
                             <i class="iconfont icon-huobi"></i>
                         </a>
                     </li>
                     <li>
-                        <a href="">
+                        <a href="" class="title">
                             经典永恒
                             <i class="iconfont icon-jiushouji"></i>
                         </a>
                     </li>
                     <li>
-                        <a href="">
+                        <a href="" class="title">
                             配件大全
                             <i class="iconfont icon-peijian"></i>
                         </a>
                     </li>
                     <li>
-                        <a href="">
+                        <a href="" class="title">
                             售后服务
                             <i class="iconfont icon-shuma"></i>
                         </a>
@@ -139,17 +140,58 @@
                 </form>
             </div>
         </div>
+        <!-- 下拉产品展示 -->
+        <div class="header-nav-goods-show" id="header-nav-goods-show">
+            <div class="container">
+                <ul id="goods-show-menu">
+                    <li>
+                        <img src="/static/images/goods/xiaomi6/jing/xiaomi6_jing_0.png" alt="小米6-流沙金">
+                        <div class="title">
+                            <a href="">小米6-流沙金</a>
+                        </div>
+                        <p class="price">799元起</p>
+                    </li>
+                    <li>
+                        <img src="/static/images/goods/xiaomi6/pink/xiaomi6_pink_0.png" alt="小米6-樱花粉">
+                        <div class="title">
+                            <a href="">小米6-樱花粉</a>
+                        </div>
+                        <p class="price">799元起</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </div>
     <!-- 产品轮播图 -->
     <div id="goods-show">
         <div class="container">
-                <div class="swiper-wrapper goods-show-box">
-                  <div class="swiper-slide"><a href="">Slide 1</a></div>
-                  <div class="swiper-slide"><a href="">Slide 2</a></div>
+            <!-- 产品展示 -->
+            <div class="swiper-wrapper goods-show-box">
+                <div class="swiper-slide" name="1">
+                    <a class="" href="">
+                        <img src="/static/images/goods/index_xiaomi6.jpg">
+                    </a>
                 </div>
-            <!-- Add Pagination -->
-            <div class="goods-show-pagination"></div>
-            <!-- Add Arrows -->
+                <div class="swiper-slide" name="2">
+                    <a class="" href="">
+                        <img src="/static/images/goods/index_huaweiP20.jpeg">
+                    </a>
+                </div>
+                <div class="swiper-slide" name="3">
+                    <a class="" href="">
+                        <img src="/static/images/goods/index_oppo.jpeg">
+                    </a>
+                </div>
+                <div class="swiper-slide" name="4">
+                    <a class="" href="">
+                        <img src="/static/images/goods/index_vivo.jpg">
+                    </a>
+                </div>
+            </div>
+            <!-- 分页器 -->
+            <div class="swiper-pagination pagination-box">
+            </div>
+            <!-- 左右切换 -->
             <div class="button-next">
                 <i class="iconfont icon-anniu-right"></i>
             </div>
@@ -158,5 +200,6 @@
                 </div>
         </div>
     </div>
+
 </body>
 </html>
