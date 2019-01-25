@@ -1,0 +1,1618 @@
+{% extends 'base.html' %}
+
+{% block header_source %}
+    <link href="/static/css/index.css" rel="stylesheet" type="text/css">
+    <link href="/static/css/swiper.min.css" rel="stylesheet" type="text/css">
+
+    <script src="/static/js/index.js" type="text/javascript"></script>
+    <script src="/static/js/swiper.min.js" type="text/javascript"></script>
+
+{% endblock %}
+
+{% block header-nav-goods-show %}
+        <!-- 下拉产品展示 -->
+        <!-- TODO 增加ul并与菜单栏关联显示不同内容-->
+        <div class="header-nav-goods-show" id="header-nav-goods-show">
+            <div class="container">
+                <ul id="new-goods-show-menu">
+                    <li>
+                        <img src="/static/images/goods/xiaomi/xiaomi6/xiaomi6_jing_0.png" alt="小米6-流沙金">
+                        <div class="title">
+                            <a href="">小米6-流沙金</a>
+                        </div>
+                        <p class="price">799元起</p>
+                    </li>
+                    <li>
+                        <img src="/static/images/goods/xiaomi/xiaomi6/xiaomi6_pink_0.png" alt="小米6-樱花粉">
+                        <div class="title">
+                            <a href="">小米6-樱花粉</a>
+                        </div>
+                        <p class="price">799元起</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    {% endblock %}
+
+{% block body %}
+        <!-- 产品轮播图 -->
+        <div id="goods-lunbo">
+            <div class="container">
+                <!-- 产品展示 -->
+                <div class="swiper-wrapper goods-show-box">
+                    <div class="swiper-slide" name="1">
+                        <a class="" href="">
+                            <img src="/static/images/goods/index_xiaomi6.jpg">
+                        </a>
+                    </div>
+                    <div class="swiper-slide" name="2">
+                        <a class="" href="">
+                            <img src="/static/images/goods/index_huaweiP20.jpeg">
+                        </a>
+                    </div>
+                    <div class="swiper-slide" name="3">
+                        <a class="" href="">
+                            <img src="/static/images/goods/index_oppo.jpeg">
+                        </a>
+                    </div>
+                    <div class="swiper-slide" name="4">
+                        <a class="" href="">
+                            <img src="/static/images/goods/index_vivo.jpg">
+                        </a>
+                    </div>
+                </div>
+                <!-- 分页器 -->
+                <div class="swiper-pagination pagination-box">
+                </div>
+                <!-- 左右切换 -->
+                <div class="button button-next">
+                    <i class="iconfont icon-anniu-right"></i>
+                </div>
+                    <div class="button button-prev">
+                        <i class="iconfont icon-anniu-left"></i>
+                    </div>
+            </div>
+            <div class="guanggao">
+                <a href="">
+                    <img src="/static/images/guanggao/xiaomi_heisha.jpg" alt="小米-黑鲨">
+                </a>
+            </div>
+        </div>
+        <!-- 商品展示 TODO 增加商品-->
+        <!-- 新品 -->
+        <div class="home-goods-show" id="new-goods-show">
+            <div class="container">
+                <div class="header">
+                    <div class="title">
+                            新品爆款
+                        <i class="iconfont icon-xinpin"></i>
+                    </div>
+                    <div class="goods-address">
+                        <a href="">
+                            查看全部
+                            <i class="iconfont icon-jiantouarrowheads3"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="body">
+                    <div class="left">
+                        <a href="">
+                            <img src="/static/images/goods/xiaomi/xiaomi_mix3_gugong.jpg" alt="小米MIX3-故宫特别版">
+                        </a>
+                    </div>
+                    <div class="right">
+                        <ul class="clearfix">
+                            <li>
+                                <div class="right-img">
+                                    <a href="">
+                                        <img src="/static/images/goods/xiaomi/xiaomi6/xiaomi6_jing_0.png" alt="小米-流沙金">
+                                    </a>
+                                </div>
+                                <h3>
+                                    <a href="">
+                                        小米6 流沙金 4GB+64GB
+                                    </a>
+                                </h3>
+                                <p class="content">小屏高性能的双摄手机,后置1200万,AI双摄,12nm八核处理器,AI,人脸解锁</p>
+                                <p>
+                                    <span class="num">798</span>
+                                    元
+                                    <del><span class="num">998</span>
+                                        元</del>
+                                </p>
+                            </li>
+                            <li>
+                                <div class="right-img">
+                                    <a href="">
+                                        <img src="/static/images/goods/xiaomi/xiaomi6/xiaomi6_jing_0.png" alt="小米-流沙金">
+                                    </a>
+                                </div>
+                                <h3>
+                                    <a href="">
+                                        小米6 流沙金 4GB+64GB
+                                    </a>
+                                </h3>
+                                <p class="content">小屏高性能的双摄手机,后置1200万,AI双摄,12nm八核处理器,AI,人脸解锁</p>
+                                <p>
+                                    <span class="num">798</span>
+                                    元
+                                    <del><span class="num">998</span>
+                                        元</del>
+                                </p>
+                            </li>
+                            <li>
+                                <div class="right-img">
+                                    <a href="">
+                                        <img src="/static/images/goods/xiaomi/xiaomi6/xiaomi6_jing_0.png" alt="小米-流沙金">
+                                    </a>
+                                </div>
+                                <h3>
+                                    <a href="">
+                                        小米6 流沙金 4GB+64GB
+                                    </a>
+                                </h3>
+                                <p class="content">小屏高性能的双摄手机,后置1200万,AI双摄,12nm八核处理器,AI,人脸解锁</p>
+                                <p>
+                                    <span class="num">798</span>
+                                    元
+                                    <del><span class="num">998</span>
+                                        元</del>
+                                </p>
+                            </li>
+                            <li>
+                                <div class="right-img">
+                                    <a href="">
+                                        <img src="/static/images/goods/xiaomi/xiaomi6/xiaomi6_jing_0.png" alt="小米-流沙金">
+                                    </a>
+                                </div>
+                                <h3>
+                                    <a href="">
+                                        小米6 流沙金 4GB+64GB
+                                    </a>
+                                </h3>
+                                <p class="content">小屏高性能的双摄手机,后置1200万,AI双摄,12nm八核处理器,AI,人脸解锁</p>
+                                <p>
+                                    <span class="num">798</span>
+                                    元
+                                    <del><span class="num">998</span>
+                                        元</del>
+                                </p>
+                            </li>
+                            <li>
+                                <div class="right-img">
+                                    <a href="">
+                                        <img src="/static/images/goods/xiaomi/xiaomi6/xiaomi6_jing_0.png" alt="小米-流沙金">
+                                    </a>
+                                </div>
+                                <h3>
+                                    <a href="">
+                                        小米6 流沙金 4GB+64GB
+                                    </a>
+                                </h3>
+                                <p class="content">小屏高性能的双摄手机,后置1200万,AI双摄,12nm八核处理器,AI,人脸解锁</p>
+                                <p>
+                                    <span class="num">798</span>
+                                    元
+                                    <del><span class="num">998</span>
+                                        元</del>
+                                </p>
+                            </li>
+                            <li>
+                                <div class="right-img">
+                                    <a href="">
+                                        <img src="/static/images/goods/xiaomi/xiaomi6/xiaomi6_jing_0.png" alt="小米-流沙金">
+                                    </a>
+                                </div>
+                                <h3>
+                                    <a href="">
+                                        小米6 流沙金 4GB+64GB
+                                    </a>
+                                </h3>
+                                <p class="content">小屏高性能的双摄手机,后置1200万,AI双摄,12nm八核处理器,AI,人脸解锁</p>
+                                <p>
+                                    <span class="num">798</span>
+                                    元
+                                    <del><span class="num">998</span>
+                                        元</del>
+                                </p>
+                            </li>
+                            <li>
+                                <div class="right-img">
+                                    <a href="">
+                                        <img src="/static/images/goods/xiaomi/xiaomi6/xiaomi6_jing_0.png" alt="小米-流沙金">
+                                    </a>
+                                </div>
+                                <h3>
+                                    <a href="">
+                                        小米6 流沙金 4GB+64GB
+                                    </a>
+                                </h3>
+                                <p class="content">小屏高性能的双摄手机,后置1200万,AI双摄,12nm八核处理器,AI,人脸解锁</p>
+                                <p>
+                                    <span class="num">798</span>
+                                    元
+                                    <del><span class="num">998</span>
+                                        元</del>
+                                </p>
+                            </li>
+                            <li>
+                                <div class="right-img">
+                                    <a href="">
+                                        <img src="/static/images/goods/xiaomi/xiaomi6/xiaomi6_jing_0.png" alt="小米-流沙金">
+                                    </a>
+                                </div>
+                                <h3>
+                                    <a href="">
+                                        小米6 流沙金 4GB+64GB
+                                    </a>
+                                </h3>
+                                <p class="content">小屏高性能的双摄手机,后置1200万,AI双摄,12nm八核处理器,AI,人脸解锁</p>
+                                <p>
+                                    <span class="num">798</span>
+                                    元
+                                    <del><span class="num">998</span>
+                                        元</del>
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="guanggao">
+                <a href="">
+                    <img src="/static/images/guanggao/xiaomi_heisha.jpg" alt="小米-黑鲨">
+                </a>
+            </div>
+        <!-- 性价比 -->
+        <div class="home-goods-show" id="xjb-goods-show">
+            <div class="container">
+                <div class="header">
+                    <div class="title">
+                            高性价比
+                        <i class="iconfont icon-gaoxingjiabi"></i>
+                    </div>
+                    <div class="goods-address">
+                        <a href="">
+                            查看全部
+                            <i class="iconfont icon-jiantouarrowheads3"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="body">
+                    <div class="left">
+                        <a href="">
+                            <img src="/static/images/goods/xiaomi/xiaomi_mix3_gugong.jpg" alt="小米MIX3-故宫特别版">
+                        </a>
+                    </div>
+                    <div class="right">
+                        <ul class="clearfix">
+                            <li>
+                                <div class="right-img">
+                                    <a href="">
+                                        <img src="/static/images/goods/xiaomi/xiaomi6/xiaomi6_jing_0.png" alt="小米-流沙金">
+                                    </a>
+                                </div>
+                                <h3>
+                                    <a href="">
+                                        小米6 流沙金 4GB+64GB
+                                    </a>
+                                </h3>
+                                <p class="content">小屏高性能的双摄手机,后置1200万,AI双摄,12nm八核处理器,AI,人脸解锁</p>
+                                <p>
+                                    <span class="num">798</span>
+                                    元
+                                    <del><span class="num">998</span>
+                                        元</del>
+                                </p>
+                            </li>
+                            <li>
+                                <div class="right-img">
+                                    <a href="">
+                                        <img src="/static/images/goods/xiaomi/xiaomi6/xiaomi6_jing_0.png" alt="小米-流沙金">
+                                    </a>
+                                </div>
+                                <h3>
+                                    <a href="">
+                                        小米6 流沙金 4GB+64GB
+                                    </a>
+                                </h3>
+                                <p class="content">小屏高性能的双摄手机,后置1200万,AI双摄,12nm八核处理器,AI,人脸解锁</p>
+                                <p>
+                                    <span class="num">798</span>
+                                    元
+                                    <del><span class="num">998</span>
+                                        元</del>
+                                </p>
+                            </li>
+                            <li>
+                                <div class="right-img">
+                                    <a href="">
+                                        <img src="/static/images/goods/xiaomi/xiaomi6/xiaomi6_jing_0.png" alt="小米-流沙金">
+                                    </a>
+                                </div>
+                                <h3>
+                                    <a href="">
+                                        小米6 流沙金 4GB+64GB
+                                    </a>
+                                </h3>
+                                <p class="content">小屏高性能的双摄手机,后置1200万,AI双摄,12nm八核处理器,AI,人脸解锁</p>
+                                <p>
+                                    <span class="num">798</span>
+                                    元
+                                    <del><span class="num">998</span>
+                                        元</del>
+                                </p>
+                            </li>
+                            <li>
+                                <div class="right-img">
+                                    <a href="">
+                                        <img src="/static/images/goods/xiaomi/xiaomi6/xiaomi6_jing_0.png" alt="小米-流沙金">
+                                    </a>
+                                </div>
+                                <h3>
+                                    <a href="">
+                                        小米6 流沙金 4GB+64GB
+                                    </a>
+                                </h3>
+                                <p class="content">小屏高性能的双摄手机,后置1200万,AI双摄,12nm八核处理器,AI,人脸解锁</p>
+                                <p>
+                                    <span class="num">798</span>
+                                    元
+                                    <del><span class="num">998</span>
+                                        元</del>
+                                </p>
+                            </li>
+                            <li>
+                                <div class="right-img">
+                                    <a href="">
+                                        <img src="/static/images/goods/xiaomi/xiaomi6/xiaomi6_jing_0.png" alt="小米-流沙金">
+                                    </a>
+                                </div>
+                                <h3>
+                                    <a href="">
+                                        小米6 流沙金 4GB+64GB
+                                    </a>
+                                </h3>
+                                <p class="content">小屏高性能的双摄手机,后置1200万,AI双摄,12nm八核处理器,AI,人脸解锁</p>
+                                <p>
+                                    <span class="num">798</span>
+                                    元
+                                    <del><span class="num">998</span>
+                                        元</del>
+                                </p>
+                            </li>
+                            <li>
+                                <div class="right-img">
+                                    <a href="">
+                                        <img src="/static/images/goods/xiaomi/xiaomi6/xiaomi6_jing_0.png" alt="小米-流沙金">
+                                    </a>
+                                </div>
+                                <h3>
+                                    <a href="">
+                                        小米6 流沙金 4GB+64GB
+                                    </a>
+                                </h3>
+                                <p class="content">小屏高性能的双摄手机,后置1200万,AI双摄,12nm八核处理器,AI,人脸解锁</p>
+                                <p>
+                                    <span class="num">798</span>
+                                    元
+                                    <del><span class="num">998</span>
+                                        元</del>
+                                </p>
+                            </li>
+                            <li>
+                                <div class="right-img">
+                                    <a href="">
+                                        <img src="/static/images/goods/xiaomi/xiaomi6/xiaomi6_jing_0.png" alt="小米-流沙金">
+                                    </a>
+                                </div>
+                                <h3>
+                                    <a href="">
+                                        小米6 流沙金 4GB+64GB
+                                    </a>
+                                </h3>
+                                <p class="content">小屏高性能的双摄手机,后置1200万,AI双摄,12nm八核处理器,AI,人脸解锁</p>
+                                <p>
+                                    <span class="num">798</span>
+                                    元
+                                    <del><span class="num">998</span>
+                                        元</del>
+                                </p>
+                            </li>
+                            <li>
+                                <div class="right-img">
+                                    <a href="">
+                                        <img src="/static/images/goods/xiaomi/xiaomi6/xiaomi6_jing_0.png" alt="小米-流沙金">
+                                    </a>
+                                </div>
+                                <h3>
+                                    <a href="">
+                                        小米6 流沙金 4GB+64GB
+                                    </a>
+                                </h3>
+                                <p class="content">小屏高性能的双摄手机,后置1200万,AI双摄,12nm八核处理器,AI,人脸解锁</p>
+                                <p>
+                                    <span class="num">798</span>
+                                    元
+                                    <del><span class="num">998</span>
+                                        元</del>
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="guanggao">
+                <a href="">
+                    <img src="/static/images/guanggao/xiaomi_heisha.jpg" alt="小米-黑鲨">
+                </a>
+            </div>
+        <!-- 经典 -->
+        <div class="home-goods-show" id="old-goods-show">
+            <div class="container">
+                <div class="header">
+                    <div class="title">
+                            经典永恒
+                        <i class="iconfont icon-jiushouji"></i>
+                    </div>
+                    <div class="goods-address">
+                        <a href="">
+                            查看全部
+                            <i class="iconfont icon-jiantouarrowheads3"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="body">
+                    <div class="left">
+                        <a href="">
+                            <img src="/static/images/goods/xiaomi/xiaomi_mix3_gugong.jpg" alt="小米MIX3-故宫特别版">
+                        </a>
+                    </div>
+                    <div class="right">
+                        <ul class="clearfix">
+                            <li>
+                                <div class="right-img">
+                                    <a href="">
+                                        <img src="/static/images/goods/xiaomi/xiaomi6/xiaomi6_jing_0.png" alt="小米-流沙金">
+                                    </a>
+                                </div>
+                                <h3>
+                                    <a href="">
+                                        小米6 流沙金 4GB+64GB
+                                    </a>
+                                </h3>
+                                <p class="content">小屏高性能的双摄手机,后置1200万,AI双摄,12nm八核处理器,AI,人脸解锁</p>
+                                <p>
+                                    <span class="num">798</span>
+                                    元
+                                    <del><span class="num">998</span>
+                                        元</del>
+                                </p>
+                            </li>
+                            <li>
+                                <div class="right-img">
+                                    <a href="">
+                                        <img src="/static/images/goods/xiaomi/xiaomi6/xiaomi6_jing_0.png" alt="小米-流沙金">
+                                    </a>
+                                </div>
+                                <h3>
+                                    <a href="">
+                                        小米6 流沙金 4GB+64GB
+                                    </a>
+                                </h3>
+                                <p class="content">小屏高性能的双摄手机,后置1200万,AI双摄,12nm八核处理器,AI,人脸解锁</p>
+                                <p>
+                                    <span class="num">798</span>
+                                    元
+                                    <del><span class="num">998</span>
+                                        元</del>
+                                </p>
+                            </li>
+                            <li>
+                                <div class="right-img">
+                                    <a href="">
+                                        <img src="/static/images/goods/xiaomi/xiaomi6/xiaomi6_jing_0.png" alt="小米-流沙金">
+                                    </a>
+                                </div>
+                                <h3>
+                                    <a href="">
+                                        小米6 流沙金 4GB+64GB
+                                    </a>
+                                </h3>
+                                <p class="content">小屏高性能的双摄手机,后置1200万,AI双摄,12nm八核处理器,AI,人脸解锁</p>
+                                <p>
+                                    <span class="num">798</span>
+                                    元
+                                    <del><span class="num">998</span>
+                                        元</del>
+                                </p>
+                            </li>
+                            <li>
+                                <div class="right-img">
+                                    <a href="">
+                                        <img src="/static/images/goods/xiaomi/xiaomi6/xiaomi6_jing_0.png" alt="小米-流沙金">
+                                    </a>
+                                </div>
+                                <h3>
+                                    <a href="">
+                                        小米6 流沙金 4GB+64GB
+                                    </a>
+                                </h3>
+                                <p class="content">小屏高性能的双摄手机,后置1200万,AI双摄,12nm八核处理器,AI,人脸解锁</p>
+                                <p>
+                                    <span class="num">798</span>
+                                    元
+                                    <del><span class="num">998</span>
+                                        元</del>
+                                </p>
+                            </li>
+                            <li>
+                                <div class="right-img">
+                                    <a href="">
+                                        <img src="/static/images/goods/xiaomi/xiaomi6/xiaomi6_jing_0.png" alt="小米-流沙金">
+                                    </a>
+                                </div>
+                                <h3>
+                                    <a href="">
+                                        小米6 流沙金 4GB+64GB
+                                    </a>
+                                </h3>
+                                <p class="content">小屏高性能的双摄手机,后置1200万,AI双摄,12nm八核处理器,AI,人脸解锁</p>
+                                <p>
+                                    <span class="num">798</span>
+                                    元
+                                    <del><span class="num">998</span>
+                                        元</del>
+                                </p>
+                            </li>
+                            <li>
+                                <div class="right-img">
+                                    <a href="">
+                                        <img src="/static/images/goods/xiaomi/xiaomi6/xiaomi6_jing_0.png" alt="小米-流沙金">
+                                    </a>
+                                </div>
+                                <h3>
+                                    <a href="">
+                                        小米6 流沙金 4GB+64GB
+                                    </a>
+                                </h3>
+                                <p class="content">小屏高性能的双摄手机,后置1200万,AI双摄,12nm八核处理器,AI,人脸解锁</p>
+                                <p>
+                                    <span class="num">798</span>
+                                    元
+                                    <del><span class="num">998</span>
+                                        元</del>
+                                </p>
+                            </li>
+                            <li>
+                                <div class="right-img">
+                                    <a href="">
+                                        <img src="/static/images/goods/xiaomi/xiaomi6/xiaomi6_jing_0.png" alt="小米-流沙金">
+                                    </a>
+                                </div>
+                                <h3>
+                                    <a href="">
+                                        小米6 流沙金 4GB+64GB
+                                    </a>
+                                </h3>
+                                <p class="content">小屏高性能的双摄手机,后置1200万,AI双摄,12nm八核处理器,AI,人脸解锁</p>
+                                <p>
+                                    <span class="num">798</span>
+                                    元
+                                    <del><span class="num">998</span>
+                                        元</del>
+                                </p>
+                            </li>
+                            <li>
+                                <div class="right-img">
+                                    <a href="">
+                                        <img src="/static/images/goods/xiaomi/xiaomi6/xiaomi6_jing_0.png" alt="小米-流沙金">
+                                    </a>
+                                </div>
+                                <h3>
+                                    <a href="">
+                                        小米6 流沙金 4GB+64GB
+                                    </a>
+                                </h3>
+                                <p class="content">小屏高性能的双摄手机,后置1200万,AI双摄,12nm八核处理器,AI,人脸解锁</p>
+                                <p>
+                                    <span class="num">798</span>
+                                    元
+                                    <del><span class="num">998</span>
+                                        元</del>
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="guanggao">
+                <a href="">
+                    <img src="/static/images/guanggao/xiaomi_heisha.jpg" alt="小米-黑鲨">
+                </a>
+            </div>
+        <!-- 配件 -->
+        <div class="home-goods-show" id="pj-goods-show">
+            <div class="container">
+                <div class="header">
+                    <div class="title">
+                            配件大全
+                        <i class="iconfont icon-peijian"></i>
+                    </div>
+                    <ul class="pj-goods-address">
+                        <li class="type-active clearfix">
+                            <label class="">
+                                耳机
+                            </label>
+                        </li>
+                        <li>
+                            <label class="">
+                                充电器
+                            </label>
+                        </li>
+                        <li>
+                            <label class="">
+                                保护套
+                            </label>
+                        </li>
+                        <li>
+                            <label class="">
+                                其他
+                            </label>
+                        </li>
+                    </ul>
+                </div>
+                <div class="body">
+                    <div class="left">
+                        <a href="">
+                            <img src="/static/images/goods/xiaomi/xiaomi_mix3_gugong.jpg" alt="小米MIX3-故宫特别版">
+                        </a>
+                    </div>
+                    <div class="right">
+                        <ul class="clearfix" id="pj-erji">
+                            <li>
+                                <div class="right-img">
+                                    <a href="">
+                                        <img src="/static/images/goods/peijian/erji/xiaomi_erji.jpg" alt="小米-耳机">
+                                    </a>
+                                </div>
+                                <h3>
+                                    <a href="">
+                                        小米运动蓝牙耳机-青春版
+                                    </a>
+                                </h3>
+                                <p>
+                                    <span class="num">59</span>
+                                    元
+                                    <del><span class="num">69</span>
+                                        元</del>
+                                </p>
+                            </li>
+                            <li>
+                                <div class="right-img">
+                                    <a href="">
+                                        <img src="/static/images/goods/peijian/erji/xiaomi_erji.jpg" alt="小米-耳机">
+                                    </a>
+                                </div>
+                                <h3>
+                                    <a href="">
+                                        小米运动蓝牙耳机-青春版
+                                    </a>
+                                </h3>
+                                <p>
+                                    <span class="num">59</span>
+                                    元
+                                    <del><span class="num">69</span>
+                                        元</del>
+                                </p>
+                            </li>
+                            <li>
+                                <div class="right-img">
+                                    <a href="">
+                                        <img src="/static/images/goods/peijian/erji/xiaomi_erji.jpg" alt="小米-耳机">
+                                    </a>
+                                </div>
+                                <h3>
+                                    <a href="">
+                                        小米运动蓝牙耳机-青春版
+                                    </a>
+                                </h3>
+                                <p>
+                                    <span class="num">59</span>
+                                    元
+                                    <del><span class="num">69</span>
+                                        元</del>
+                                </p>
+                            </li>
+                            <li>
+                                <div class="right-img">
+                                    <a href="">
+                                        <img src="/static/images/goods/peijian/erji/xiaomi_erji.jpg" alt="小米-耳机">
+                                    </a>
+                                </div>
+                                <h3>
+                                    <a href="">
+                                        小米运动蓝牙耳机-青春版
+                                    </a>
+                                </h3>
+                                <p>
+                                    <span class="num">59</span>
+                                    元
+                                    <del><span class="num">69</span>
+                                        元</del>
+                                </p>
+                            </li>
+                            <li>
+                                <div class="right-img">
+                                    <a href="">
+                                        <img src="/static/images/goods/peijian/erji/xiaomi_erji.jpg" alt="小米-耳机">
+                                    </a>
+                                </div>
+                                <h3>
+                                    <a href="">
+                                        小米运动蓝牙耳机-青春版
+                                    </a>
+                                </h3>
+                                <p>
+                                    <span class="num">59</span>
+                                    元
+                                    <del><span class="num">69</span>
+                                        元</del>
+                                </p>
+                            </li>
+                            <li>
+                                <div class="right-img">
+                                    <a href="">
+                                        <img src="/static/images/goods/peijian/erji/xiaomi_erji.jpg" alt="小米-耳机">
+                                    </a>
+                                </div>
+                                <h3>
+                                    <a href="">
+                                        小米运动蓝牙耳机-青春版
+                                    </a>
+                                </h3>
+                                <p>
+                                    <span class="num">59</span>
+                                    元
+                                    <del><span class="num">69</span>
+                                        元</del>
+                                </p>
+                            </li>
+                            <li>
+                                <div class="right-img">
+                                    <a href="">
+                                        <img src="/static/images/goods/peijian/erji/xiaomi_erji.jpg" alt="小米-耳机">
+                                    </a>
+                                </div>
+                                <h3>
+                                    <a href="">
+                                        小米运动蓝牙耳机-青春版
+                                    </a>
+                                </h3>
+                                <p>
+                                    <span class="num">59</span>
+                                    元
+                                    <del><span class="num">69</span>
+                                        元</del>
+                                </p>
+                            </li>
+                            <li>
+                                <div class="right-img">
+                                    <a href="">
+                                        <img src="/static/images/goods/peijian/erji/xiaomi_erji.jpg" alt="小米-耳机">
+                                    </a>
+                                </div>
+                                <h3>
+                                    <a href="">
+                                        小米运动蓝牙耳机-青春版
+                                    </a>
+                                </h3>
+                                <p>
+                                    <span class="num">59</span>
+                                    元
+                                    <del><span class="num">69</span>
+                                        元</del>
+                                </p>
+                            </li>
+                        </ul>
+                        <ul class="clearfix" id="pj-cdq" style="display: none">
+                            <li>
+                                <div class="right-img">
+                                    <a href="">
+                                        <img src="/static/images/goods/peijian/cdq/xiaomi_cdq.jpg" alt="小米-耳机">
+                                    </a>
+                                </div>
+                                <h3>
+                                    <a href="">
+                                        小米运动蓝牙耳机-青春版
+                                    </a>
+                                </h3>
+                                <p>
+                                    <span class="num">59</span>
+                                    元
+                                    <del><span class="num">69</span>
+                                        元</del>
+                                </p>
+                            </li>
+                            <li>
+                                <div class="right-img">
+                                    <a href="">
+                                        <img src="/static/images/goods/peijian/cdq/xiaomi_cdq.jpg" alt="小米-耳机">
+                                    </a>
+                                </div>
+                                <h3>
+                                    <a href="">
+                                        小米运动蓝牙耳机-青春版
+                                    </a>
+                                </h3>
+                                <p>
+                                    <span class="num">59</span>
+                                    元
+                                    <del><span class="num">69</span>
+                                        元</del>
+                                </p>
+                            </li>
+                            <li>
+                                <div class="right-img">
+                                    <a href="">
+                                        <img src="/static/images/goods/peijian/cdq/xiaomi_cdq.jpg" alt="小米-耳机">
+                                    </a>
+                                </div>
+                                <h3>
+                                    <a href="">
+                                        小米运动蓝牙耳机-青春版
+                                    </a>
+                                </h3>
+                                <p>
+                                    <span class="num">59</span>
+                                    元
+                                    <del><span class="num">69</span>
+                                        元</del>
+                                </p>
+                            </li>
+                            <li>
+                                <div class="right-img">
+                                    <a href="">
+                                        <img src="/static/images/goods/peijian/cdq/xiaomi_cdq.jpg" alt="小米-耳机">
+                                    </a>
+                                </div>
+                                <h3>
+                                    <a href="">
+                                        小米运动蓝牙耳机-青春版
+                                    </a>
+                                </h3>
+                                <p>
+                                    <span class="num">59</span>
+                                    元
+                                    <del><span class="num">69</span>
+                                        元</del>
+                                </p>
+                            </li>
+                            <li>
+                                <div class="right-img">
+                                    <a href="">
+                                        <img src="/static/images/goods/peijian/cdq/xiaomi_cdq.jpg" alt="小米-耳机">
+                                    </a>
+                                </div>
+                                <h3>
+                                    <a href="">
+                                        小米运动蓝牙耳机-青春版
+                                    </a>
+                                </h3>
+                                <p>
+                                    <span class="num">59</span>
+                                    元
+                                    <del><span class="num">69</span>
+                                        元</del>
+                                </p>
+                            </li>
+                            <li>
+                                <div class="right-img">
+                                    <a href="">
+                                        <img src="/static/images/goods/peijian/cdq/xiaomi_cdq.jpg" alt="小米-耳机">
+                                    </a>
+                                </div>
+                                <h3>
+                                    <a href="">
+                                        小米运动蓝牙耳机-青春版
+                                    </a>
+                                </h3>
+                                <p>
+                                    <span class="num">59</span>
+                                    元
+                                    <del><span class="num">69</span>
+                                        元</del>
+                                </p>
+                            </li>
+                            <li>
+                                <div class="right-img">
+                                    <a href="">
+                                        <img src="/static/images/goods/peijian/cdq/xiaomi_cdq.jpg" alt="小米-耳机">
+                                    </a>
+                                </div>
+                                <h3>
+                                    <a href="">
+                                        小米运动蓝牙耳机-青春版
+                                    </a>
+                                </h3>
+                                <p>
+                                    <span class="num">59</span>
+                                    元
+                                    <del><span class="num">69</span>
+                                        元</del>
+                                </p>
+                            </li>
+                            <li>
+                                <div class="right-img">
+                                    <a href="">
+                                        <img src="/static/images/goods/peijian/cdq/xiaomi_cdq.jpg" alt="小米-耳机">
+                                    </a>
+                                </div>
+                                <h3>
+                                    <a href="">
+                                        小米运动蓝牙耳机-青春版
+                                    </a>
+                                </h3>
+                                <p>
+                                    <span class="num">59</span>
+                                    元
+                                    <del><span class="num">69</span>
+                                        元</del>
+                                </p>
+                            </li>
+                        </ul>
+                        <ul class="clearfix" id="pj-bft" style="display: none">
+                            <li>
+                                <div class="right-img">
+                                    <a href="">
+                                        <img src="/static/images/goods/peijian/bft/xiaomi_bft_1.jpg" alt="小米-耳机">
+                                    </a>
+                                </div>
+                                <h3>
+                                    <a href="">
+                                        小米运动蓝牙耳机-青春版
+                                    </a>
+                                </h3>
+                                <p>
+                                    <span class="num">59</span>
+                                    元
+                                    <del><span class="num">69</span>
+                                        元</del>
+                                </p>
+                            </li>
+                            <li>
+                                <div class="right-img">
+                                    <a href="">
+                                        <img src="/static/images/goods/peijian/bft/xiaomi_bft_1.jpg" alt="小米-耳机">
+                                    </a>
+                                </div>
+                                <h3>
+                                    <a href="">
+                                        小米运动蓝牙耳机-青春版
+                                    </a>
+                                </h3>
+                                <p>
+                                    <span class="num">59</span>
+                                    元
+                                    <del><span class="num">69</span>
+                                        元</del>
+                                </p>
+                            </li>
+                            <li>
+                                <div class="right-img">
+                                    <a href="">
+                                        <img src="/static/images/goods/peijian/bft/xiaomi_bft_1.jpg" alt="小米-耳机">
+                                    </a>
+                                </div>
+                                <h3>
+                                    <a href="">
+                                        小米运动蓝牙耳机-青春版
+                                    </a>
+                                </h3>
+                                <p>
+                                    <span class="num">59</span>
+                                    元
+                                    <del><span class="num">69</span>
+                                        元</del>
+                                </p>
+                            </li>
+                            <li>
+                                <div class="right-img">
+                                    <a href="">
+                                        <img src="/static/images/goods/peijian/bft/xiaomi_bft_1.jpg" alt="小米-耳机">
+                                    </a>
+                                </div>
+                                <h3>
+                                    <a href="">
+                                        小米运动蓝牙耳机-青春版
+                                    </a>
+                                </h3>
+                                <p>
+                                    <span class="num">59</span>
+                                    元
+                                    <del><span class="num">69</span>
+                                        元</del>
+                                </p>
+                            </li>
+                            <li>
+                                <div class="right-img">
+                                    <a href="">
+                                        <img src="/static/images/goods/peijian/bft/xiaomi_bft_1.jpg" alt="小米-耳机">
+                                    </a>
+                                </div>
+                                <h3>
+                                    <a href="">
+                                        小米运动蓝牙耳机-青春版
+                                    </a>
+                                </h3>
+                                <p>
+                                    <span class="num">59</span>
+                                    元
+                                    <del><span class="num">69</span>
+                                        元</del>
+                                </p>
+                            </li>
+                            <li>
+                                <div class="right-img">
+                                    <a href="">
+                                        <img src="/static/images/goods/peijian/bft/xiaomi_bft_1.jpg" alt="小米-耳机">
+                                    </a>
+                                </div>
+                                <h3>
+                                    <a href="">
+                                        小米运动蓝牙耳机-青春版
+                                    </a>
+                                </h3>
+                                <p>
+                                    <span class="num">59</span>
+                                    元
+                                    <del><span class="num">69</span>
+                                        元</del>
+                                </p>
+                            </li>
+                            <li>
+                                <div class="right-img">
+                                    <a href="">
+                                        <img src="/static/images/goods/peijian/bft/xiaomi_bft_1.jpg" alt="小米-耳机">
+                                    </a>
+                                </div>
+                                <h3>
+                                    <a href="">
+                                        小米运动蓝牙耳机-青春版
+                                    </a>
+                                </h3>
+                                <p>
+                                    <span class="num">59</span>
+                                    元
+                                    <del><span class="num">69</span>
+                                        元</del>
+                                </p>
+                            </li>
+                            <li>
+                                <div class="right-img">
+                                    <a href="">
+                                        <img src="/static/images/goods/peijian/bft/xiaomi_bft_1.jpg" alt="小米-耳机">
+                                    </a>
+                                </div>
+                                <h3>
+                                    <a href="">
+                                        小米运动蓝牙耳机-青春版
+                                    </a>
+                                </h3>
+                                <p>
+                                    <span class="num">59</span>
+                                    元
+                                    <del><span class="num">69</span>
+                                        元</del>
+                                </p>
+                            </li>
+                        </ul>
+                        <ul class="clearfix" id="pj-qita" style="display: none">
+                            <li>
+                                <div class="right-img">
+                                    <a href="">
+                                        <img src="/static/images/goods/peijian/cdb/xiaomi_cdb_1.jpg" alt="小米-耳机">
+                                    </a>
+                                </div>
+                                <h3>
+                                    <a href="">
+                                        小米运动蓝牙耳机-青春版
+                                    </a>
+                                </h3>
+                                <p>
+                                    <span class="num">59</span>
+                                    元
+                                    <del><span class="num">69</span>
+                                        元</del>
+                                </p>
+                            </li>
+                            <li>
+                                <div class="right-img">
+                                    <a href="">
+                                        <img src=/static/images/goods/peijian/cdb/xiaomi_cdb_1.jpg" alt="小米-耳机">
+                                    </a>
+                                </div>
+                                <h3>
+                                    <a href="">
+                                        小米运动蓝牙耳机-青春版
+                                    </a>
+                                </h3>
+                                <p>
+                                    <span class="num">59</span>
+                                    元
+                                    <del><span class="num">69</span>
+                                        元</del>
+                                </p>
+                            </li>
+                            <li>
+                                <div class="right-img">
+                                    <a href="">
+                                        <img src="/static/images/goods/peijian/cdb/xiaomi_cdb_1.jpg" alt="小米-耳机">
+                                    </a>
+                                </div>
+                                <h3>
+                                    <a href="">
+                                        小米运动蓝牙耳机-青春版
+                                    </a>
+                                </h3>
+                                <p>
+                                    <span class="num">59</span>
+                                    元
+                                    <del><span class="num">69</span>
+                                        元</del>
+                                </p>
+                            </li>
+                            <li>
+                                <div class="right-img">
+                                    <a href="">
+                                        <img src="/static/images/goods/peijian/cdb/xiaomi_cdb_1.jpg" alt="小米-耳机">
+                                    </a>
+                                </div>
+                                <h3>
+                                    <a href="">
+                                        小米运动蓝牙耳机-青春版
+                                    </a>
+                                </h3>
+                                <p>
+                                    <span class="num">59</span>
+                                    元
+                                    <del><span class="num">69</span>
+                                        元</del>
+                                </p>
+                            </li>
+                            <li>
+                                <div class="right-img">
+                                    <a href="">
+                                        <img src="/static/images/goods/peijian/cdb/xiaomi_cdb_1.jpg" alt="小米-耳机">
+                                    </a>
+                                </div>
+                                <h3>
+                                    <a href="">
+                                        小米运动蓝牙耳机-青春版
+                                    </a>
+                                </h3>
+                                <p>
+                                    <span class="num">59</span>
+                                    元
+                                    <del><span class="num">69</span>
+                                        元</del>
+                                </p>
+                            </li>
+                            <li>
+                                <div class="right-img">
+                                    <a href="">
+                                        <img src="/static/images/goods/peijian/cdb/xiaomi_cdb_1.jpg" alt="小米-耳机">
+                                    </a>
+                                </div>
+                                <h3>
+                                    <a href="">
+                                        小米运动蓝牙耳机-青春版
+                                    </a>
+                                </h3>
+                                <p>
+                                    <span class="num">59</span>
+                                    元
+                                    <del><span class="num">69</span>
+                                        元</del>
+                                </p>
+                            </li>
+                            <li>
+                                <div class="right-img">
+                                    <a href="">
+                                        <img src="/static/images/goods/peijian/cdb/xiaomi_cdb_1.jpg" alt="小米-耳机">
+                                    </a>
+                                </div>
+                                <h3>
+                                    <a href="">
+                                        小米运动蓝牙耳机-青春版
+                                    </a>
+                                </h3>
+                                <p>
+                                    <span class="num">59</span>
+                                    元
+                                    <del><span class="num">69</span>
+                                        元</del>
+                                </p>
+                            </li>
+                            <li>
+                                <div class="right-img">
+                                    <a href="">
+                                        <img src="/static/images/goods/peijian/cdb/xiaomi_cdb_1.jpg" alt="小米-耳机">
+                                    </a>
+                                </div>
+                                <h3>
+                                    <a href="">
+                                        小米运动蓝牙耳机-青春版
+                                    </a>
+                                </h3>
+                                <p>
+                                    <span class="num">59</span>
+                                    元
+                                    <del><span class="num">69</span>
+                                        元</del>
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="guanggao">
+            <a href="">
+                <img src="/static/images/guanggao/xiaomi_gugongerji.jpg" alt="小米-黑鲨">
+            </a>
+        </div>
+        <!-- 为你推荐 -->
+        <div class="recommend" id="recommend">
+            <div class="container">
+                <div class="header">
+                    <div class="title">
+                        <h3>
+                            为你推荐
+                            <i class="iconfont icon-qita"></i>
+                        </h3>
+                    </div>
+                    <div class="button-box">
+                        <a class="button button-prev button-active" id="button-box-prev">
+                            <i class="iconfont icon-zuoshuang"></i>
+                        </a>
+                        <a class="button button-next" id="button-box-next">
+                            <i class="iconfont icon-youshuang"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="body">
+                        <ul id="wntj-goods-box">
+                            <li>
+                                <div class="body-img">
+                                    <a href="">
+                                        <img src="/static/images/goods/peijian/erji/xiaomi_erji.jpg" alt="小米-耳机">
+                                    </a>
+                                </div>
+                                <h3>
+                                    <a href="">小米运动蓝牙耳机-青春版</a>
+                                </h3>
+                                <p><span class="num">59</span>元</p>
+                            </li>
+                            <li>
+                                <div class="body-img">
+                                    <a href="">
+                                        <img src="/static/images/goods/peijian/erji/xiaomi_erji.jpg" alt="小米-耳机">
+                                    </a>
+                                </div>
+                                <h3>
+                                    <a href="">小米运动蓝牙耳机-青春版</a>
+                                </h3>
+                                <p><span class="num">59</span>元</p>
+                            </li>
+                            <li>
+                                <div class="body-img">
+                                    <a href="">
+                                        <img src="/static/images/goods/peijian/erji/xiaomi_erji.jpg" alt="小米-耳机">
+                                    </a>
+                                </div>
+                                <h3>
+                                    <a href="">小米运动蓝牙耳机-青春版</a>
+                                </h3>
+                                <p><span class="num">59</span>元</p>
+                            </li>
+                            <li>
+                                <div class="body-img">
+                                    <a href="">
+                                        <img src="/static/images/goods/peijian/erji/xiaomi_erji.jpg" alt="小米-耳机">
+                                    </a>
+                                </div>
+                                <h3>
+                                    <a href="">小米运动蓝牙耳机-青春版</a>
+                                </h3>
+                                <p><span class="num">59</span>元</p>
+                            </li>
+                            <li>
+                                <div class="body-img">
+                                    <a href="">
+                                        <img src="/static/images/goods/peijian/erji/xiaomi_erji.jpg" alt="小米-耳机">
+                                    </a>
+                                </div>
+                                <h3>
+                                    <a href="">小米运动蓝牙耳机-青春版</a>
+                                </h3>
+                                <p><span class="num">59</span>元</p>
+                            </li>
+                            <li>
+                                <div class="body-img">
+                                    <a href="">
+                                        <img src="/static/images/goods/peijian/cdq/xiaomi_cdq.jpg" alt="小米-耳机">
+                                    </a>
+                                </div>
+                                <h3>
+                                    <a href="">
+                                        小米运动蓝牙耳机-青春版
+                                    </a>
+                                </h3>
+                                <p>
+                                    <span class="num">59</span>
+                                    元
+                                    <del><span class="num">69</span>
+                                        元</del>
+                                </p>
+                            </li>
+                            <li>
+                                <div class="body-img">
+                                    <a href="">
+                                        <img src="/static/images/goods/peijian/cdq/xiaomi_cdq.jpg" alt="小米-耳机">
+                                    </a>
+                                </div>
+                                <h3>
+                                    <a href="">
+                                        小米运动蓝牙耳机-青春版
+                                    </a>
+                                </h3>
+                                <p>
+                                    <span class="num">59</span>
+                                    元
+                                    <del><span class="num">69</span>
+                                        元</del>
+                                </p>
+                            </li>
+                            <li>
+                                <div class="body-img">
+                                    <a href="">
+                                        <img src="/static/images/goods/peijian/cdq/xiaomi_cdq.jpg" alt="小米-耳机">
+                                    </a>
+                                </div>
+                                <h3>
+                                    <a href="">
+                                        小米运动蓝牙耳机-青春版
+                                    </a>
+                                </h3>
+                                <p>
+                                    <span class="num">59</span>
+                                    元
+                                    <del><span class="num">69</span>
+                                        元</del>
+                                </p>
+                            </li>
+                            <li>
+                                <div class="body-img">
+                                    <a href="">
+                                        <img src="/static/images/goods/peijian/cdq/xiaomi_cdq.jpg" alt="小米-耳机">
+                                    </a>
+                                </div>
+                                <h3>
+                                    <a href="">
+                                        小米运动蓝牙耳机-青春版
+                                    </a>
+                                </h3>
+                                <p>
+                                    <span class="num">59</span>
+                                    元
+                                    <del><span class="num">69</span>
+                                        元</del>
+                                </p>
+                            </li>
+                            <li>
+                                <div class="body-img">
+                                    <a href="">
+                                        <img src="/static/images/goods/peijian/cdq/xiaomi_cdq.jpg" alt="小米-耳机">
+                                    </a>
+                                </div>
+                                <h3>
+                                    <a href="">
+                                        小米运动蓝牙耳机-青春版
+                                    </a>
+                                </h3>
+                                <p>
+                                    <span class="num">59</span>
+                                    元
+                                    <del><span class="num">69</span>
+                                        元</del>
+                                </p>
+                            </li>
+                            <li>
+                                <div class="body-img">
+                                    <a href="">
+                                        <img src="/static/images/goods/peijian/bft/xiaomi_bft_1.jpg" alt="小米-耳机">
+                                    </a>
+                                </div>
+                                <h3>
+                                    <a href="">
+                                        小米运动蓝牙耳机-青春版
+                                    </a>
+                                </h3>
+                                <p>
+                                    <span class="num">59</span>
+                                    元
+                                    <del><span class="num">69</span>
+                                        元</del>
+                                </p>
+                            </li>
+                            <li>
+                                <div class="body-img">
+                                    <a href="">
+                                        <img src="/static/images/goods/peijian/bft/xiaomi_bft_1.jpg" alt="小米-耳机">
+                                    </a>
+                                </div>
+                                <h3>
+                                    <a href="">
+                                        小米运动蓝牙耳机-青春版
+                                    </a>
+                                </h3>
+                                <p>
+                                    <span class="num">59</span>
+                                    元
+                                    <del><span class="num">69</span>
+                                        元</del>
+                                </p>
+                            </li>
+                            <li>
+                                <div class="body-img">
+                                    <a href="">
+                                        <img src="/static/images/goods/peijian/bft/xiaomi_bft_1.jpg" alt="小米-耳机">
+                                    </a>
+                                </div>
+                                <h3>
+                                    <a href="">
+                                        小米运动蓝牙耳机-青春版
+                                    </a>
+                                </h3>
+                                <p>
+                                    <span class="num">59</span>
+                                    元
+                                    <del><span class="num">69</span>
+                                        元</del>
+                                </p>
+                            </li>
+                            <li>
+                                <div class="body-img">
+                                    <a href="">
+                                        <img src="/static/images/goods/peijian/bft/xiaomi_bft_1.jpg" alt="小米-耳机">
+                                    </a>
+                                </div>
+                                <h3>
+                                    <a href="">
+                                        小米运动蓝牙耳机-青春版
+                                    </a>
+                                </h3>
+                                <p>
+                                    <span class="num">59</span>
+                                    元
+                                    <del><span class="num">69</span>
+                                        元</del>
+                                </p>
+                            </li>
+                            <li>
+                                <div class="body-img">
+                                    <a href="">
+                                        <img src="/static/images/goods/peijian/bft/xiaomi_bft_1.jpg" alt="小米-耳机">
+                                    </a>
+                                </div>
+                                <h3>
+                                    <a href="">
+                                        小米运动蓝牙耳机-青春版
+                                    </a>
+                                </h3>
+                                <p>
+                                    <span class="num">59</span>
+                                    元
+                                    <del><span class="num">69</span>
+                                        元</del>
+                                </p>
+                            </li>
+                            <li>
+                                <div class="body-img">
+                                    <a href="">
+                                        <img src="/static/images/goods/peijian/cdb/xiaomi_cdb_1.jpg" alt="小米-耳机">
+                                    </a>
+                                </div>
+                                <h3>
+                                    <a href="">
+                                        小米运动蓝牙耳机-青春版
+                                    </a>
+                                </h3>
+                                <p>
+                                    <span class="num">59</span>
+                                    元
+                                    <del><span class="num">69</span>
+                                        元</del>
+                                </p>
+                            </li>
+                            <li>
+                                <div class="body-img">
+                                    <a href="">
+                                        <img src="/static/images/goods/peijian/cdb/xiaomi_cdb_1.jpg" alt="小米-耳机">
+                                    </a>
+                                </div>
+                                <h3>
+                                    <a href="">
+                                        小米运动蓝牙耳机-青春版
+                                    </a>
+                                </h3>
+                                <p>
+                                    <span class="num">59</span>
+                                    元
+                                    <del><span class="num">69</span>
+                                        元</del>
+                                </p>
+                            </li>
+                            <li>
+                                <div class="body-img">
+                                    <a href="">
+                                        <img src="/static/images/goods/peijian/cdb/xiaomi_cdb_1.jpg" alt="小米-耳机">
+                                    </a>
+                                </div>
+                                <h3>
+                                    <a href="">
+                                        小米运动蓝牙耳机-青春版
+                                    </a>
+                                </h3>
+                                <p>
+                                    <span class="num">59</span>
+                                    元
+                                    <del><span class="num">69</span>
+                                        元</del>
+                                </p>
+                            </li>
+                            <li>
+                                <div class="body-img">
+                                    <a href="">
+                                        <img src="/static/images/goods/peijian/cdb/xiaomi_cdb_1.jpg" alt="小米-耳机">
+                                    </a>
+                                </div>
+                                <h3>
+                                    <a href="">
+                                        小米运动蓝牙耳机-青春版
+                                    </a>
+                                </h3>
+                                <p>
+                                    <span class="num">59</span>
+                                    元
+                                    <del><span class="num">69</span>
+                                        元</del>
+                                </p>
+                            </li>
+                            <li>
+                                <div class="body-img">
+                                    <a href="">
+                                        <img src="/static/images/goods/peijian/cdb/xiaomi_cdb_1.jpg" alt="小米-耳机">
+                                    </a>
+                                </div>
+                                <h3>
+                                    <a href="">
+                                        小米运动蓝牙耳机-青春版
+                                    </a>
+                                </h3>
+                                <p>
+                                    <span class="num">59</span>
+                                    元
+                                    <del><span class="num">69</span>
+                                        元</del>
+                                </p>
+                            </li>
+                        </ul>
+                </div>
+            </div>
+        </div>
+{% endblock %}
