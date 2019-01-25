@@ -41,14 +41,4 @@ class Migration(migrations.Migration):
                 ('g_cp', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='app.CompanyInfo')),
             ],
         ),
-        migrations.CreateModel(
-            name='UserInfo',
-            fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('u_name', models.CharField(max_length=20)),
-                ('u_sex', models.BooleanField(default=0)),
-                ('u_phone', models.IntegerField(max_length=20)),
-                ('u_age', models.IntegerField(max_length=5)),
-            ],
-        ),
     ]
