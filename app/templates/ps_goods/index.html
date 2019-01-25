@@ -1,6 +1,15 @@
 {% extends 'base.html' %}
 
-    {% block header-nav-goods-show %}
+{% block header_source %}
+    <link href="/static/css/index.css" rel="stylesheet" type="text/css">
+    <link href="/static/css/swiper.min.css" rel="stylesheet" type="text/css">
+
+    <script src="/static/js/index.js" type="text/javascript"></script>
+    <script src="/static/js/swiper.min.js" type="text/javascript"></script>
+
+{% endblock %}
+
+{% block header-nav-goods-show %}
         <!-- 下拉产品展示 -->
         <!-- TODO 增加ul并与菜单栏关联显示不同内容-->
         <div class="header-nav-goods-show" id="header-nav-goods-show">
@@ -25,7 +34,7 @@
         </div>
     {% endblock %}
 
-    {% block body %}
+{% block body %}
         <!-- 产品轮播图 -->
         <div id="goods-lunbo">
             <div class="container">
@@ -1123,7 +1132,7 @@
                             <li>
                                 <div class="right-img">
                                     <a href="">
-                                        <img src="/static/images/goods/peijian/cdb/xiaomi_cdb_1.jpg" alt="小米-耳机">
+                                        <img src=/static/images/goods/peijian/cdb/xiaomi_cdb_1.jpg" alt="小米-耳机">
                                     </a>
                                 </div>
                                 <h3>
@@ -1606,4 +1615,4 @@
                 </div>
             </div>
         </div>
-    {% endblock %}
+{% endblock %}
