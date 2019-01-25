@@ -1,7 +1,6 @@
 #-*- coding:utf-8 -*-
 # author:reyn
 # datetime:19-1-25 上午10:27
-# software: PyCharm
 
 from django.db import models
 
