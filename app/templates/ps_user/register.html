@@ -1,9 +1,10 @@
 {% extends 'base.html' %}
-{#{% load staticfiles %}#}
-{#{% static 'register.css' %}#}
+{% load staticfiles %}
+{% block header_source %}
+    <link href="{% static 'css/register.min.css' %}" rel="stylesheet" type="text/css">
+    <script src="{% static 'js/register.min.js' %}" type="text/javascript"></script>
+{% endblock %}
 
-{#{% block head %}#}
-{#    <div>#}
-{##}
-{#    </div>#}
-{#{% endblock %}#}
+{% block head %}
+
+{% endblock %}

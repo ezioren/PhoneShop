@@ -2,93 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5751f6a2-10ee-4d4e-8efb-7d81573525a5" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/manage.py" beforeDir="false" afterPath="$PROJECT_DIR$/manage.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/phoneshop/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/phoneshop/app/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/phoneshop/app/admin.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/phoneshop/app/apps.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/phoneshop/app/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/phoneshop/app/migrations/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/phoneshop/app/models/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/phoneshop/app/models/goods.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/phoneshop/app/models/users.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/phoneshop/app/serializers/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/phoneshop/app/serializers/goods.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/phoneshop/app/tests/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/phoneshop/app/tests/tests.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/phoneshop/app/urls.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/phoneshop/app/views/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/phoneshop/app/views/index.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/phoneshop/app/views/login.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/phoneshop/app/views/register.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/phoneshop/app/viewset/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/phoneshop/app/viewset/goods_show.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/phoneshop/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/phoneshop/static/bootstrap/css/bootstrap-theme.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/bootstrap/css/bootstrap-theme.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/phoneshop/static/bootstrap/css/bootstrap-theme.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/bootstrap/css/bootstrap-theme.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/phoneshop/static/bootstrap/css/bootstrap-theme.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/bootstrap/css/bootstrap-theme.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/phoneshop/static/bootstrap/css/bootstrap-theme.min.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/bootstrap/css/bootstrap-theme.min.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/phoneshop/static/bootstrap/css/bootstrap.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/bootstrap/css/bootstrap.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/phoneshop/static/bootstrap/css/bootstrap.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/bootstrap/css/bootstrap.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/phoneshop/static/bootstrap/css/bootstrap.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/bootstrap/css/bootstrap.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/phoneshop/static/bootstrap/css/bootstrap.min.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/bootstrap/css/bootstrap.min.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/phoneshop/static/bootstrap/fonts/glyphicons-halflings-regular.eot" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/bootstrap/fonts/glyphicons-halflings-regular.eot" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/phoneshop/static/bootstrap/fonts/glyphicons-halflings-regular.svg" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/bootstrap/fonts/glyphicons-halflings-regular.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/phoneshop/static/bootstrap/fonts/glyphicons-halflings-regular.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/bootstrap/fonts/glyphicons-halflings-regular.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/phoneshop/static/bootstrap/fonts/glyphicons-halflings-regular.woff" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/bootstrap/fonts/glyphicons-halflings-regular.woff" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/phoneshop/static/bootstrap/fonts/glyphicons-halflings-regular.woff2" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/bootstrap/fonts/glyphicons-halflings-regular.woff2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/phoneshop/static/bootstrap/js/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/bootstrap/js/bootstrap.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/phoneshop/static/bootstrap/js/bootstrap.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/bootstrap/js/bootstrap.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/phoneshop/static/bootstrap/js/npm.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/bootstrap/js/npm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/phoneshop/static/bootstrap/js/popper.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/bootstrap/js/popper.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/phoneshop/static/css/base.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/css/base.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/phoneshop/static/css/bootstrap.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/css/bootstrap.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/phoneshop/static/css/bootstrap.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/css/bootstrap.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/phoneshop/static/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/css/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/phoneshop/static/css/register.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/css/register.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/phoneshop/static/css/swiper.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/css/swiper.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/phoneshop/static/icon/icon.md" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/icon/icon.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/phoneshop/static/icon/iconfont.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/icon/iconfont.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/phoneshop/static/icon/iconfont.eot" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/icon/iconfont.eot" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/phoneshop/static/icon/iconfont.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/icon/iconfont.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/phoneshop/static/icon/iconfont.svg" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/icon/iconfont.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/phoneshop/static/icon/iconfont.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/icon/iconfont.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/phoneshop/static/icon/iconfont.woff" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/icon/iconfont.woff" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/phoneshop/static/icon/iconfont.woff2" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/icon/iconfont.woff2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/phoneshop/static/images/PhoneShopLogo.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/images/PhoneShopLogo.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/phoneshop/static/images/goods/index_huaweiP20.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/images/goods/index_huaweiP20.jpeg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/phoneshop/static/images/goods/index_oppo.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/images/goods/index_oppo.jpeg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/phoneshop/static/images/goods/index_vivo.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/images/goods/index_vivo.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/phoneshop/static/images/goods/index_xiaomi6.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/images/goods/index_xiaomi6.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/phoneshop/static/images/goods/peijian/bft/xiaomi_bft_1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/images/goods/peijian/bft/xiaomi_bft_1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/phoneshop/static/images/goods/peijian/cdb/xiaomi_cdb_1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/images/goods/peijian/cdb/xiaomi_cdb_1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/phoneshop/static/images/goods/peijian/cdq/xiaomi_cdq.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/images/goods/peijian/cdq/xiaomi_cdq.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/phoneshop/static/images/goods/peijian/erji/xiaomi_erji.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/images/goods/peijian/erji/xiaomi_erji.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/phoneshop/static/images/goods/peijian/erji/xiapmi_erji_1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/images/goods/peijian/erji/xiapmi_erji_1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/phoneshop/static/images/goods/xiaomi/xiaomi6/xiaomi6_jing_0.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/images/goods/xiaomi/xiaomi6/xiaomi6_jing_0.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/phoneshop/static/images/goods/xiaomi/xiaomi6/xiaomi6_jing_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/images/goods/xiaomi/xiaomi6/xiaomi6_jing_1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/phoneshop/static/images/goods/xiaomi/xiaomi6/xiaomi6_jing_2.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/images/goods/xiaomi/xiaomi6/xiaomi6_jing_2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/phoneshop/static/images/goods/xiaomi/xiaomi6/xiaomi6_jing_3.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/images/goods/xiaomi/xiaomi6/xiaomi6_jing_3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/phoneshop/static/images/goods/xiaomi/xiaomi6/xiaomi6_pink_0.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/images/goods/xiaomi/xiaomi6/xiaomi6_pink_0.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/phoneshop/static/images/goods/xiaomi/xiaomi6/xiaomi6_pink_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/images/goods/xiaomi/xiaomi6/xiaomi6_pink_1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/phoneshop/static/images/goods/xiaomi/xiaomi6/xiaomi6_pink_2.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/images/goods/xiaomi/xiaomi6/xiaomi6_pink_2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/phoneshop/static/images/goods/xiaomi/xiaomi6/xiaomi6_pink_3.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/images/goods/xiaomi/xiaomi6/xiaomi6_pink_3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/phoneshop/static/images/goods/xiaomi/xiaomi_mix3_gugong.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/images/goods/xiaomi/xiaomi_mix3_gugong.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/phoneshop/static/images/guanggao/xiaomi_gugongerji.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/images/guanggao/xiaomi_gugongerji.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/phoneshop/static/images/guanggao/xiaomi_heisha.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/images/guanggao/xiaomi_heisha.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/phoneshop/static/js/base.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/js/base.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/phoneshop/static/js/bootstrap.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/js/bootstrap.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/phoneshop/static/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/js/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/phoneshop/static/js/jquery-1.12.4.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/js/jquery-1.12.4.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/phoneshop/static/js/register.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/js/register.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/phoneshop/static/js/swiper.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/js/swiper.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/phoneshop/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/phoneshop/templates/ps_goods/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/ps_goods/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/phoneshop/templates/ps_user/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/ps_user/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/phoneshop/templates/ps_user/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/ps_user/register.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/phoneshop/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/phoneshop/wsgi.py" beforeDir="false" afterPath="$PROJECT_DIR$/wsgi.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/css/base.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/css/base.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/js/index.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/js/index.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/ps_goods/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/ps_goods/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/ps_user/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/ps_user/register.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -102,31 +21,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/templates/ps_user/register.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="18" selection-start-line="8" selection-start-column="18" selection-end-line="8" selection-end-column="18" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/templates/base.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="263">
-              <caret line="17" column="95" lean-forward="true" selection-start-line="17" selection-start-column="95" selection-end-line="17" selection-end-column="95" />
-              <folding>
-                <element signature="n#body#0;n#html#0;n#!!top" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/templates/ps_goods/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+            <state relative-caret-position="119">
+              <caret line="7" selection-start-line="7" selection-end-line="8" />
               <folding>
                 <element signature="n#div#0;n#!!top" />
                 <element signature="n#div#1;n#!!top" />
@@ -145,8 +43,62 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/static/css/register.css">
+        <entry file="file://$PROJECT_DIR$/app/templates/base.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="229">
+              <caret line="24" column="29" selection-start-line="24" selection-start-column="29" selection-end-line="24" selection-end-column="29" />
+              <folding>
+                <element signature="n#nav#0;n#body#0;n#html#0;n#!!top" />
+                <element signature="n#div#0;n#body#0;n#html#0;n#!!top" />
+                <element signature="n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
+                <element signature="n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
+                <element signature="n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
+                <element signature="n#form#0;n#div#2;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
+                <element signature="n#div#1;n#body#0;n#html#0;n#!!top" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/templates/ps_user/register.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="5" column="14" lean-forward="true" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="14" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/static/css/base.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="127">
+              <caret line="100" column="10" lean-forward="true" selection-start-line="100" selection-start-column="10" selection-end-line="100" selection-end-column="10" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/static/css/index.min.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="4292" selection-start-column="4292" selection-end-column="4292" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/static/js/base.min.js">
           <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/static/js/index.min.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="1513" lean-forward="true" selection-start-column="1513" selection-end-column="1513" />
+            </state>
+          </provider>
         </entry>
       </file>
     </leaf>
@@ -163,6 +115,7 @@
       <find>phoneshop</find>
       <find>/app</find>
       <find>module</find>
+      <find>/static/images/goods/peijian/cdb/</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -193,25 +146,30 @@
         <option value="$PROJECT_DIR$/app/serializers/goods.py" />
         <option value="$PROJECT_DIR$/app/serializers/users.py" />
         <option value="$PROJECT_DIR$/app/migrations/0001_initial.py" />
-        <option value="$PROJECT_DIR$/settings.py" />
         <option value="$PROJECT_DIR$/app/models/users.py" />
         <option value="$PROJECT_DIR$/wsgi.py" />
         <option value="$PROJECT_DIR$/urls.py" />
         <option value="$PROJECT_DIR$/manage.py" />
         <option value="$PROJECT_DIR$/app/views/register.py" />
-        <option value="$PROJECT_DIR$/app/templates/ps_user/register.html" />
         <option value="$PROJECT_DIR$/app/models/guanggao.py" />
         <option value="$PROJECT_DIR$/app/models/goods/guanggao.py" />
         <option value="$PROJECT_DIR$/app/models/__init__.py" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/settings.py" />
+        <option value="$PROJECT_DIR$/app/static/css/index.css" />
+        <option value="$PROJECT_DIR$/app/static/css/index.min.css" />
+        <option value="$PROJECT_DIR$/app/static/css/base.min.css" />
+        <option value="$PROJECT_DIR$/app/static/js/index.min.js" />
+        <option value="$PROJECT_DIR$/app/templates/ps_user/register.html" />
         <option value="$PROJECT_DIR$/app/templates/ps_goods/index.html" />
         <option value="$PROJECT_DIR$/app/templates/base.html" />
+        <option value="$PROJECT_DIR$/app/static/css/base.css" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="432" />
-    <option name="y" value="126" />
+    <option name="x" value="210" />
+    <option name="y" value="80" />
     <option name="width" value="1488" />
     <option name="height" value="916" />
   </component>
@@ -220,7 +178,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -251,32 +208,27 @@
               <item name="PhoneShop" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="icon" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
+              <item name="base.css" type="620a8d5e:NestingTreeNode" />
+            </path>
+            <path>
+              <item name="PhoneShop" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PhoneShop" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="PhoneShop" type="b2602c69:ProjectViewProjectNode" />
               <item name="PhoneShop" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PhoneShop" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PhoneShop" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="ps_goods" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PhoneShop" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PhoneShop" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="ps_user" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -287,18 +239,19 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.templateLanguages.PyTemplateLanguageModulesConfigurable" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/static/js" />
+      <recent name="$PROJECT_DIR$/app/static/css" />
+      <recent name="$PROJECT_DIR$/app/models" />
+      <recent name="$PROJECT_DIR$/app/serializers" />
+      <recent name="$PROJECT_DIR$" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/static/js" />
       <recent name="$PROJECT_DIR$/app/models/user" />
       <recent name="$PROJECT_DIR$/app/models/goods" />
       <recent name="$PROJECT_DIR$/app" />
       <recent name="$PROJECT_DIR$" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/app/models" />
-      <recent name="$PROJECT_DIR$/app/serializers" />
-      <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/phoneshop/app/models" />
-      <recent name="$PROJECT_DIR$/phoneshop/app/migrations" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -350,7 +303,8 @@
       <option name="presentableId" value="Default" />
       <updated>1548397900685</updated>
       <workItem from="1548397901854" duration="200000" />
-      <workItem from="1548398111824" duration="10572000" />
+      <workItem from="1548398111824" duration="11011000" />
+      <workItem from="1548723686025" duration="8342000" />
     </task>
     <task id="LOCAL-00001" summary="good">
       <created>1548399017760</created>
@@ -359,13 +313,27 @@
       <option name="project" value="LOCAL" />
       <updated>1548399017760</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="good">
+      <created>1548409757793</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1548409757793</updated>
+    </task>
+    <task id="LOCAL-00003" summary="改进结构">
+      <created>1548410023128</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1548410023128</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10772000" />
+    <option name="totallyTimeSpent" value="19553000" />
   </component>
-  <component name="TodoView">
+  <component name="TodoView" selected-index="4">
     <todo-panel id="selected-file">
       <is-autoscroll-to-source value="true" />
     </todo-panel>
@@ -375,10 +343,9 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="432" y="126" width="1488" height="916" extended-state="0" />
-    <editor active="true" />
+    <frame x="255" y="92" width="1488" height="916" extended-state="0" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25416666" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25833333" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -391,7 +358,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32951653" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50069445" side_tool="true" weight="0.32824427" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50069445" side_tool="true" weight="0.31424937" />
       <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49930555" visible="true" weight="0.31424937" />
       <window_info anchor="bottom" id="Python Console" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -406,116 +373,17 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="good" />
-    <option name="LAST_COMMIT_MESSAGE" value="good" />
+    <MESSAGE value="改进结构" />
+    <option name="LAST_COMMIT_MESSAGE" value="改进结构" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/templates/ps_user/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="25" lean-forward="true" selection-start-column="25" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/phoneshop/app/serializers/__init__.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/phoneshop/app/migrations/__init__.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/phoneshop/app/viewset/goods_show.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/phoneshop/app/viewset/__init__.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/phoneshop/app/views/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="29" selection-start-line="4" selection-start-column="29" selection-end-line="4" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/phoneshop/app/views/login.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/phoneshop/app/views/register.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="19" lean-forward="true" selection-start-line="3" selection-start-column="19" selection-end-line="3" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/phoneshop/app/admin.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/phoneshop/app/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/phoneshop/app/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="1" lean-forward="true" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
-          <folding>
-            <element signature="e#25#57#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/phoneshop/app/migrations/0002_initial.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="59">
-          <caret line="16" column="8" lean-forward="true" selection-start-line="16" selection-start-column="8" selection-end-line="33" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/phoneshop/app/models/users.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="67" lean-forward="true" selection-start-line="17" selection-start-column="12" selection-end-line="17" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/phoneshop/app/models/goods.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="373">
-          <caret line="33" selection-start-line="33" selection-end-line="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/phoneshop/app/models/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="44" lean-forward="true" selection-start-line="4" selection-start-column="44" selection-end-line="4" selection-end-column="44" />
-          <folding>
-            <element signature="e#84#125#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/phoneshop/app/apps.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/phoneshop/app/migrations/0001_initial.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="60" column="10" selection-start-line="60" selection-start-column="10" selection-end-line="60" selection-end-column="10" />
-          <folding>
-            <element signature="e#73#112#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/viewset/goods_show.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/phoneshop/app/urls.py" />
+    <entry file="file://$PROJECT_DIR$/phoneshop/app/migrations/0002_initial.py" />
+    <entry file="file://$PROJECT_DIR$/phoneshop/app/models/users.py" />
+    <entry file="file://$PROJECT_DIR$/phoneshop/app/models/goods.py" />
+    <entry file="file://$PROJECT_DIR$/phoneshop/app/models/__init__.py" />
+    <entry file="file://$PROJECT_DIR$/phoneshop/app/apps.py" />
+    <entry file="file://$PROJECT_DIR$/phoneshop/app/migrations/0001_initial.py" />
     <entry file="file://$PROJECT_DIR$/app/views/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -641,23 +509,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="93">
-          <caret line="131" column="6" selection-start-line="131" selection-start-column="6" selection-end-line="131" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/register.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="10" selection-start-line="9" selection-start-column="10" selection-end-line="9" selection-end-column="10" />
-          <folding>
-            <element signature="e#82#117#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/index.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -678,13 +529,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/guanggao.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" selection-start-line="4" selection-end-line="4" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/guanggao.py" />
     <entry file="file://$PROJECT_DIR$/app/models/goods/goods.py">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -709,13 +554,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/ps_user/register.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="18" selection-start-line="8" selection-start-column="18" selection-end-line="8" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -726,13 +564,99 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/static/css/register.css">
+    <entry file="file://$PROJECT_DIR$/app/viewset/goods_show.py">
       <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/register.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="10" selection-start-line="9" selection-start-column="10" selection-end-line="9" selection-end-column="10" />
+          <folding>
+            <element signature="e#82#117#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="217">
+          <caret line="135" column="60" lean-forward="true" selection-start-line="135" selection-start-column="60" selection-end-line="135" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/static/css/bootstrap.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/static/css/bootstrap.min.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/static/css/base.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="1165" selection-start-column="1165" selection-end-column="1165" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/static/css/index.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" column="22" lean-forward="true" selection-start-line="21" selection-start-column="22" selection-end-line="21" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/static/js/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="43" lean-forward="true" selection-start-line="9" selection-start-column="43" selection-end-line="9" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/static/css/register.min.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/static/js/register.min.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/static/css/register.min.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/static/js/base.min.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/static/js/index.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="1513" lean-forward="true" selection-start-column="1513" selection-end-column="1513" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/templates/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="229">
+          <caret line="24" column="29" selection-start-line="24" selection-start-column="29" selection-end-line="24" selection-end-column="29" />
+          <folding>
+            <element signature="n#nav#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#form#0;n#div#2;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#1;n#body#0;n#html#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/templates/ps_user/register.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="14" lean-forward="true" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="14" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/templates/ps_goods/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+        <state relative-caret-position="119">
+          <caret line="7" selection-start-line="7" selection-end-line="8" />
           <folding>
             <element signature="n#div#0;n#!!top" />
             <element signature="n#div#1;n#!!top" />
@@ -749,13 +673,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/base.html">
+    <entry file="file://$PROJECT_DIR$/app/static/css/base.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="263">
-          <caret line="17" column="95" lean-forward="true" selection-start-line="17" selection-start-column="95" selection-end-line="17" selection-end-column="95" />
-          <folding>
-            <element signature="n#body#0;n#html#0;n#!!top" />
-          </folding>
+        <state relative-caret-position="127">
+          <caret line="100" column="10" lean-forward="true" selection-start-line="100" selection-start-column="10" selection-end-line="100" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/static/css/index.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="4292" selection-start-column="4292" selection-end-column="4292" />
         </state>
       </provider>
     </entry>
