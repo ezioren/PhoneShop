@@ -3,6 +3,8 @@
 # datetime:19-1-25 上午9:38
 # software: PyCharm
 from django.shortcuts import render
+
+from rest_framework.response import Response
 from rest_framework.views import APIView
 
 from app.models.user import *
@@ -10,3 +12,9 @@ from app.models.user import *
 class RegisterView(APIView):
     def get(self, request):
         return render(request, 'ps_user/register.html', context={'title':'注册'})
+
+class RegisterHandleView(APIView):
+    def post(self, request):
+        data = request.data
+        print(data)
+        return Response('OK')

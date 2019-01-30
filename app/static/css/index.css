@@ -54,6 +54,15 @@
 .site-header .header-nav-list li:hover > .title{
     color: #ff6700;
 }
+/*调整placeholder大小*/
+#header-search-group{
+    font-size: 15px;
+    padding-left: 10px;
+}
+#header-search-group::-webkit-input-placeholder{
+    font-size: 14px;
+    line-height: 50px;
+}
 #header-nav-goods-show{
     position: relative;
     width: 100%;

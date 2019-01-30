@@ -8,24 +8,27 @@
 {% block body %}
     <div class="register-form" id="register-form">
         <div class="container">
-            <form action="" class="form-horizontal">
+            <form action="{% url 'app:registerhandle' %}" class="form-horizontal">
                 <div class="form-group form-list">
                     <label for="username" class="col-md-2 control-label">用户名：</label>
                     <div class="col-md-4">
-                        <input type="email" class="form-control" id="username" placeholder="请输入用户名">
+                        <input type="username" class="form-control" id="username" placeholder="请输入用户名">
                     </div>
+                    <span class="mustbe">*</span>
                 </div>
                 <div class="form-group form-list">
                     <label for="phonenum" class="col-md-2 control-label">手机号：</label>
                     <div class="col-md-4">
-                      <input type="email" class="form-control" id="phonenum" placeholder="请输入手机号">
+                      <input type="phonenum" class="form-control" id="phonenum" placeholder="请输入手机号">
                     </div>
+                    <span class="mustbe">*</span>
                 </div>
                 <div class="form-group form-list">
                     <label for="chiocesex" class="col-md-2 control-label">性别：</label>
                     <div class="checkbox" id="chiocesex">
-                          <input type="checkbox" value="女"><span>女</span>
-                          <input type="checkbox" value="男"><span>男</span>
+                        <input type="checkbox" value="女"><span>女</span>
+                        <input type="checkbox" value="男"><span>男</span>
+                        <span class="mustbe">*</span>
                     </div>
                 </div>
                 <div class="form-group form-list">
@@ -33,13 +36,27 @@
                     <div class="col-md-4">
                       <input type="email" class="form-control" id="password" placeholder="请输入密码">
                     </div>
+                    <span class="mustbe">*</span>
                 </div>
                 <div class="form-group form-list">
                     <label for="surePassword" class="col-md-2 control-label">确认密码：</label>
                     <div class="col-md-4">
                       <input type="email" class="form-control" id="surePassword" placeholder="请再次输入密码">
                     </div>
+                    <span class="mustbe">*</span>
                 </div>
+
+                <div class="form-group form-list">
+                    <div class="checkbox" id="finishAgreement">
+                        <span>
+                            我已阅读
+                            <a href="">《用户协议》</a>
+                        </span>
+                        <input type="checkbox" value="协议">
+                        <span class="mustbe">*</span>
+                    </div>
+                </div>
+                <input type="submit" id="register-form-submit" value="提交">
             </form>
         </div>
     </div>

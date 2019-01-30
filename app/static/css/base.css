@@ -25,11 +25,15 @@ img {
 }
 
 a {
-    text-decoration:none!important;
-    outline: none!important;
+    text-decoration:none;
+    outline: none;
     color: #080808;
 }
-
+a:hover {
+    text-decoration:none;
+    outline: none;
+    color: #080808;
+}
 table {
     border-collapse: collapse;
     table-layout: fixed;
