@@ -10,5 +10,9 @@
     margin-bottom: 40px;
     text-align: left;
 }
+#chiocesex input{
+    position: static;
+    margin-left: 20px;
+}
 
 

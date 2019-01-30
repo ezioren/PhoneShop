@@ -45,9 +45,4 @@ class Migration(migrations.Migration):
             name='ua_user',
             field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='app.UserInfo'),
         ),
-        migrations.AddField(
-            model_name='UserInfo',
-            name='u_id',
-            field=models.CharField(max_length=1000),
-        ),
     ]
