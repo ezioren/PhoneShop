@@ -8,18 +8,19 @@
 {% block body %}
     <div class="register-form" id="register-form">
         <div class="container">
-            <form action="{% url 'app:registerhandle' %}" class="form-horizontal">
+            <form action="{% url 'registerhandle' %}" class="form-horizontal" method="post">
+                {% csrf_token %}
                 <div class="form-group form-list">
                     <label for="username" class="col-md-2 control-label">用户名：</label>
                     <div class="col-md-4">
-                        <input type="username" class="form-control" id="username" placeholder="请输入用户名">
+                        <input type="text" class="form-control" id="username" placeholder="请输入用户名">
                     </div>
                     <span class="mustbe">*</span>
                 </div>
                 <div class="form-group form-list">
                     <label for="phonenum" class="col-md-2 control-label">手机号：</label>
                     <div class="col-md-4">
-                      <input type="phonenum" class="form-control" id="phonenum" placeholder="请输入手机号">
+                      <input type="text" class="form-control" id="phonenum" placeholder="请输入手机号">
                     </div>
                     <span class="mustbe">*</span>
                 </div>
@@ -34,14 +35,14 @@
                 <div class="form-group form-list">
                     <label for="password" class="col-md-2 control-label">密码：</label>
                     <div class="col-md-4">
-                      <input type="email" class="form-control" id="password" placeholder="请输入密码">
+                      <input type="password" class="form-control" id="password" placeholder="请输入密码">
                     </div>
                     <span class="mustbe">*</span>
                 </div>
                 <div class="form-group form-list">
                     <label for="surePassword" class="col-md-2 control-label">确认密码：</label>
                     <div class="col-md-4">
-                      <input type="email" class="form-control" id="surePassword" placeholder="请再次输入密码">
+                      <input type="password" class="form-control" id="surePassword" placeholder="请再次输入密码">
                     </div>
                     <span class="mustbe">*</span>
                 </div>

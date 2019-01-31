@@ -14,7 +14,6 @@ class RegisterView(APIView):
         return render(request, 'ps_user/register.html', context={'title':'注册'})
 
 class RegisterHandleView(APIView):
-    def post(self, request):
+    def get(self, request):
         data = request.data
-        print(data)
-        return Response('OK')
+        return Response(data)
