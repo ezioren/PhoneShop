@@ -1,17 +1,4 @@
 $(function () {
-    //顶部购物车
-    $('nav .nav-cart').mouseenter(function () {
-        $(this).find('.top-cart').addClass('top-cart-active');
-        $('#top-cart-menu').animate({
-            height:'toggle'},'slow');
-    }).mouseleave(function (){
-                $('#top-cart-menu').animate({
-                        height:'toggle'
-                    },'slow', function () {
-                });
-                $(this).find('.top-cart').removeClass('top-cart-active');
-
-    });
     //$("#div").stop();//停止当前动画，继续下一个动画
     //抬头下拉菜单
     var handel = function () {
@@ -21,6 +8,7 @@ $(function () {
         $('#header-nav-goods-show').stop().slideUp(500)
     };
     $('#header-nav-list li:first-child').siblings().mouseenter(handel).mouseleave(handel2)
+
     //轮播图
     var swiper = new Swiper('#goods-lunbo .container', {
         loop: true,
