@@ -6,38 +6,50 @@
 {% endblock %}
 
 {% block body %}
-    <div class="register-form" id="register-form">
+    <div class="register-form">
         <div class="container">
-            <form action="{% url 'registerhandle' %}" class="form-horizontal" method="post">
-                {% csrf_token %}
+            <form class="form-horizontal" name="register-form" id="register-form">
                 <div class="form-group form-list">
                     <label for="username" class="col-md-2 control-label">用户名：</label>
                     <div class="col-md-4">
                         <input type="text" class="form-control" id="username" placeholder="请输入用户名">
                     </div>
                     <span class="mustbe">*</span>
+                    <span class="mustbe error-msg">用户名不能为空</span>
+                </div>
+                <div class="form-group form-list">
+                    <label for="email" class="col-md-2 control-label">邮箱：</label>
+                    <div class="col-md-4">
+                        <input type="text" class="form-control" id="email" placeholder="请输入邮箱">
+                    </div>
+                    <span class="mustbe">*</span>
+                    <span class="mustbe error-msg">邮箱不能为空</span>
                 </div>
                 <div class="form-group form-list">
                     <label for="phonenum" class="col-md-2 control-label">手机号：</label>
                     <div class="col-md-4">
-                      <input type="text" class="form-control" id="phonenum" placeholder="请输入手机号">
+                      <input type="text" class="form-control" id="phonenum" placeholder="请输入手机号" maxlength="11">
                     </div>
                     <span class="mustbe">*</span>
+                    <span class="mustbe error-msg">手机号不能为空</span>
                 </div>
                 <div class="form-group form-list">
                     <label for="chiocesex" class="col-md-2 control-label">性别：</label>
                     <div class="checkbox" id="chiocesex">
-                        <input type="checkbox" value="女"><span>女</span>
-                        <input type="checkbox" value="男"><span>男</span>
-                        <span class="mustbe">*</span>
+                        <input type="checkbox" value="男" id="checkbox-man"><span>男</span>
+                        <input type="checkbox" value="女" id="checkbox-woman"><span>女</span>
+                        <span class="mustbe">
+                            *
+                        </span>
                     </div>
                 </div>
                 <div class="form-group form-list">
                     <label for="password" class="col-md-2 control-label">密码：</label>
                     <div class="col-md-4">
-                      <input type="password" class="form-control" id="password" placeholder="请输入密码">
+                      <input type="password" class="form-control" id="password" placeholder="请输入密码" maxlength="30">
                     </div>
                     <span class="mustbe">*</span>
+                    <span class="mustbe error-msg">密码不能为空</span>
                 </div>
                 <div class="form-group form-list">
                     <label for="surePassword" class="col-md-2 control-label">确认密码：</label>
@@ -45,6 +57,7 @@
                       <input type="password" class="form-control" id="surePassword" placeholder="请再次输入密码">
                     </div>
                     <span class="mustbe">*</span>
+                    <span class="mustbe error-msg">密码不一致</span>
                 </div>
 
                 <div class="form-group form-list">
@@ -57,7 +70,7 @@
                         <span class="mustbe">*</span>
                     </div>
                 </div>
-                <input type="submit" id="register-form-submit" value="提交">
+                <input type="submit" id="register-submit" value="提交">
             </form>
         </div>
     </div>

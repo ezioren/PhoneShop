@@ -270,3 +270,6 @@ nav .nav-right{
     width: 100px;
     height: 100px;
 }
+.error-msg{
+    display: none;
+}

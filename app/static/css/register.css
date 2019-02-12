@@ -1,10 +1,10 @@
 
-#register-form{
+.register-form{
     margin-top: 80px;
     margin-bottom: 100px;
     overflow: hidden;
 }
-#register-form .form-list{
+.register-form .form-list{
     position: relative;
     left: 16%;
     margin-top: 20px;
@@ -32,7 +32,7 @@
 #finishAgreement a:hover{
     color: #ff6700;
 }
-#register-form-submit{
+#register-submit{
     width: 110px;
     height: 30px;
     color: #3B3636;
@@ -45,7 +45,7 @@
     border-radius: 8%;
     background-color: #f7f7f7;
 }
-#register-form-submit:hover{
+#register-submit:hover{
     border-color: #ff6700;
     background-color: #ff6700;
     color: #ffffff;
