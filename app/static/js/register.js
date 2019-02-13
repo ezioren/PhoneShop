@@ -15,8 +15,29 @@ $(function () {
 
     // 邮箱 TODO 邮箱补全
     $('#email').autocomplete({
+        autoFocus:true,
+        delay:0,
+        source:function(request,response){
+            var hosts=['qq.com','163.com','gmail.com'];
+            var term=request.term;  //获取用户输入内容
+            var name=term;  //邮箱的用户名
+            var host="";  //邮箱的域名
+            var ix=term.indexOf('@');  //@的位置
+            var result=[];  //最终呈现的邮箱列表
+                  
+            //当有@的时候，重新分别用户名
+            if(ix>-1){
+                name=term.slice(0,ix);
+                host=term.slice(ix+1);
+            }
+                  
+             if(name){
 
-    }).blur(function () {
+                  }
+                  response(result);
+        },
+    })
+    $('#email').blur(function () {
         isEmpty($(this))
     })
 
