@@ -53,3 +53,17 @@
 .mustbe{
     color: #ff6700;
 }
+#password-box{
+    height: 28px;
+    position: absolute;
+    top: 38px;
+    left: 224px;
+    background-color: #ffffff;
+    border: 2px solid #dfdfdf;
+}
+#password-box .password-box{
+    !important;height: 20px;
+    text-align: center;
+    margin-left: -14px;
+    margin-top: 2px;
+}

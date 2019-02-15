@@ -13,31 +13,49 @@ $(function () {
         isEmpty($(this))
     })
 
-    // 邮箱 TODO 邮箱补全
+    // 邮箱补全及检测空值
     $('#email').autocomplete({
         autoFocus:true,
         delay:0,
         source:function(request,response){
-            var hosts=['qq.com','163.com','gmail.com'];
-            var term=request.term;  //获取用户输入内容
-            var name=term;  //邮箱的用户名
-            var host="";  //邮箱的域名
-            var ix=term.indexOf('@');  //@的位置
-            var result=[];  //最终呈现的邮箱列表
-                  
-            //当有@的时候，重新分别用户名
+            var hosts=['qq.com', '163.com', 'gmail.com'],
+            term=request.term, //获取用户输入内容
+            name=term, //邮箱的用户名
+            host="",  //邮箱的域名
+            ix=term.indexOf('@'),  //@的位置
+            result=[];  //最终呈现的邮箱列表
+
+            result.push(term);
+
+            //当有@的时候，重新分配用户名和域名
             if(ix>-1){
-                name=term.slice(0,ix);
-                host=term.slice(ix+1);
+                name=term.slice(0,ix); // @前面的name
+                host=term.slice(ix+1); // @后面的域名
             }
                   
              if(name){
+                var findedHosts;
+                if(host){
+                    // 用户已经输入@和后面的域名
+                    // 找到相关的域名信息
+                    findedHosts=$.grep(hosts,function(value,index){
+						return value.indexOf(host)>-1;
+					});
+				}else{
+                    //用户没有输入@
+				    //提示所有的域名
+					findedHosts=hosts;
+				}
+				//如果findedHosts为空，return也是空
+				var findedResult=$.map(findedHosts,function(value,index){
+					return name+'@'+value;
+				});
 
-                  }
-                  response(result);
+				result=result.concat(findedResult);
+             }
+             response(result);
         },
-    })
-    $('#email').blur(function () {
+    }).blur(function () {
         isEmpty($(this))
     })
 
@@ -52,6 +70,22 @@ $(function () {
     })
 
     //密码 TODO 密码复杂度设定
+    $('#password').keyup(function () {
+        var inputlen = $(this).val().length
+        var textmax = $(this).attr('maxlength')
+        var boxlen = $('#password-box').css('width')
+
+        var boxbgwidth = (inputlen/parseInt(textmax))*parseInt(boxlen)-7
+        $('#password-box').find('.password-box').css('width', boxbgwidth)
+        if (boxbgwidth>210){
+            $('#password-box').find('.password-box').css("background-color","#6F3");
+        }else if (boxbgwidth>105){
+            $('#password-box').find('.password-box').css("background-color","#F90");
+        }else {
+            $('#password-box').find('.password-box').css("background-color","#F00");
+        }
+    })
+
     $('#password').blur(function () {
         isEmpty($(this))
     })
