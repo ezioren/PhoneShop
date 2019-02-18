@@ -62,8 +62,10 @@
     border: 2px solid #dfdfdf;
 }
 #password-box .password-box{
-    !important;height: 20px;
     text-align: center;
     margin-left: -14px;
     margin-top: 2px;
+    z-index: 50;
+    font-size: 16px;
+    color: #000000;
 }

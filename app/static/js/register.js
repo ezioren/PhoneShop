@@ -6,6 +6,7 @@ $(function () {
         }else {
             target.parent().parent().find('.error-msg').hide()
         }
+        return true
     }
 
     //用户
@@ -69,26 +70,83 @@ $(function () {
         $(this).val($(this).val().replace( /[^0-9]/g,''));
     })
 
-    //密码 TODO 密码复杂度设定
-    $('#password').keyup(function () {
-        var inputlen = $(this).val().length
-        var textmax = $(this).attr('maxlength')
-        var boxlen = $('#password-box').css('width')
+    // 检查密码复杂度
+    function checkpwdfuza(source, target){
+        var grade = 0
+        // 密码为八位及以上并且字母数字特殊字符三项都包括，强
+        var strongRegex = new RegExp("^(?=.{8,})(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*\\W).*$", "g");
+        //密码为七位及以上并且字母、数字、特殊字符三项中有两项，强度是中等
+        var mediumRegex = new RegExp("^(?=.{8,})(((?=.*[A-Z])(?=.*[a-z]))|((?=.*[A-Z])(?=.*[0-9]))|((?=.*[a-z])(?=.*[0-9]))).*$", "g");
+        var enoughRegex = new RegExp("(?=.{8,}).*", "g");
+
+        if (strongRegex.test(source.val())) {
+            target.text('强!');
+            grade = 3;
+        } else if (mediumRegex.test(source.val())) {
+            target.text('中等!');
+            grade = 2;
+        } else if (true == enoughRegex.test(source.val())) {
+            target.text('弱!');
+            grade = 1;
+        } else if (false == enoughRegex.test(source.val())) {
+            target.text('')
+            grade = 0
+        }
+        return grade
+    }
+
+    function checkpwdlength(source, target, show, grade){
+        // 验证长度
+        var inputlen = source.val().length
+        var textmax = source.attr('maxlength')
+        var boxlen = target.css('width')
 
         var boxbgwidth = (inputlen/parseInt(textmax))*parseInt(boxlen)-7
-        $('#password-box').find('.password-box').css('width', boxbgwidth)
-        if (boxbgwidth>210){
-            $('#password-box').find('.password-box').css("background-color","#6F3");
-        }else if (boxbgwidth>105){
-            $('#password-box').find('.password-box').css("background-color","#F90");
-        }else {
-            $('#password-box').find('.password-box').css("background-color","#F00");
+
+        show.css("background-color","#F00");
+        if (grade == 3){
+            if (boxbgwidth>210) {
+                show.css("background-color","#6F3");
+            }
+            if (boxbgwidth>105) {
+                show.css("background-color","#F90");
+            }
+            show.css('width', boxbgwidth)
+        }else if (grade == 2){
+            if (boxbgwidth>210) {
+                boxbgwidth = 210
+            }
+            if (boxbgwidth>105) {
+                show.css("background-color","#F90");
+            }
+            show.css('width', boxbgwidth)
+        }else if(grade == 1){
+            if (boxbgwidth>105) {
+                boxbgwidth = 105
+            }
+            show.css('width', boxbgwidth)
+            source.parent().parent().find('.error-msg').hide()
+        }else if (grade == 0) {
+            boxbgwidth = 0
+            show.css('width', boxbgwidth)
+            if (inputlen > 8 || inputlen == 0){
+                source.parent().parent().find('.error-msg').html('密码不能为空').show()
+            } else {
+                source.parent().parent().find('.error-msg').html('密码不能少于8位')
+                source.parent().parent().find('.error-msg').show()
+            }
         }
+    }
+
+    //密码 TODO 密码复杂度设定
+    $('#password').keyup(function () {
+        var garde = checkpwdfuza($(this), $('#password-box-html'))
+        checkpwdlength($(this), $('#password-box'), $('#password-box-html'), garde)
+    }).blur(function () {
+        var garde = checkpwdfuza($(this), $('#password-box-html'))
+        checkpwdlength($(this), $('#password-box'), $('#password-box-html'), garde)
     })
 
-    $('#password').blur(function () {
-        isEmpty($(this))
-    })
     // 验证密码前后一致
     $('#surePassword').blur(function () {
         if($(this).val()!=$('#password').val()){
@@ -126,7 +184,7 @@ $(function () {
 
    $('form').submit(function () {
        var alertShow = ""
-       var checkList = [$('#username'), $('#email'), $('#phonenum'), $('#password')]
+       var checkList = [$('#username'), $('#email'), $('#phonenum')]
        var checkSex = $('input[type="checkbox"]')
        $.each(checkList, function (i) {
            var duixiang = checkIsEmpty(checkList[i])
@@ -134,6 +192,9 @@ $(function () {
                alertShow += duixiang + " !\r\n"
            }
        })
+       if ($("#password").val()=="" || $("#password").val()==null) {
+           alertShow += $("#password").parent().parent().find('.error-msg').html() + " !\r\n"
+       }
        if (checkSex[0].checked==checkSex[1].checked){
            alertShow = alertShow + "未选择性别 !\r\n"
        }
@@ -150,7 +211,7 @@ $(function () {
                    "username": checkList[0].val(),
                    "email": checkList[1].val(),
                    "phonenum": checkList[2].val(),
-                   "password": checkList[3].val(),
+                   "password": $("#password").val(),
                    "sex": function () {
                        if (checkSex[0].checked) {
                            return checkSex[0].value
