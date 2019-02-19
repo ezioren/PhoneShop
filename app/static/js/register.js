@@ -10,7 +10,17 @@ $(function () {
     }
 
     //用户
-    $('#username').blur(function () {
+    $('#username').keyup(function () {
+        $.get('registerhandle', {'username':$(this).val()}, function (data) {
+            if (data == 'exited'){
+                $(this).parent().parent().find('.error-msg').html('该用户名已存在')
+                $(this).parent().parent().find('.error-msg').show()
+            }else if (data == 'not') {
+                $(this).parent().parent().find('.error-msg').html('用户名不能为空')
+                $(this).parent().parent().find('.error-msg').hide()
+            }
+        })
+    }).blur(function () {
         isEmpty($(this))
     })
 
@@ -138,7 +148,7 @@ $(function () {
         }
     }
 
-    //密码 TODO 密码复杂度设定
+    //密码
     $('#password').keyup(function () {
         var garde = checkpwdfuza($(this), $('#password-box-html'))
         checkpwdlength($(this), $('#password-box'), $('#password-box-html'), garde)
@@ -192,7 +202,7 @@ $(function () {
                alertShow += duixiang + " !\r\n"
            }
        })
-       if ($("#password").val()=="" || $("#password").val()==null) {
+       if ($("#password").val()=="" || $("#password").val()==null || $("#password").val().length < 8) {
            alertShow += $("#password").parent().parent().find('.error-msg').html() + " !\r\n"
        }
        if (checkSex[0].checked==checkSex[1].checked){
