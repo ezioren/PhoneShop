@@ -6,22 +6,25 @@ $(function () {
         }else {
             target.parent().parent().find('.error-msg').hide()
         }
-        return true
     }
 
     //用户
     $('#username').keyup(function () {
-        $.get('registerhandle', {'username':$(this).val()}, function (data) {
-            if (data == 'exited'){
-                $(this).parent().parent().find('.error-msg').html('该用户名已存在')
-                $(this).parent().parent().find('.error-msg').show()
-            }else if (data == 'not') {
-                $(this).parent().parent().find('.error-msg').html('用户名不能为空')
-                $(this).parent().parent().find('.error-msg').hide()
-            }
-        })
+        // $.get('registerhandle', {'source':$(this).val()}, function (data) {
+        //     if (data == 'exited'){
+        //         $('#username').parent().parent().find('.error-msg').html('该用户名已注册');
+        //         $('#username').parent().parent().find('.error-msg').show();
+        //     }else if (data == 'not' && $('#username').val().length > 0) {
+        //         $('#username').parent().parent().find('.error-msg').html('用户名不能为空');
+        //         $('#username').parent().parent().find('.error-msg').hide();
+        //     }else {
+        //         isEmpty($('#username'))
+        //     }
+        // })
     }).blur(function () {
-        isEmpty($(this))
+        if ($(this).val().length == 0){
+            isEmpty($(this))
+        }
     })
 
     // 邮箱补全及检测空值
@@ -70,12 +73,27 @@ $(function () {
         isEmpty($(this))
     })
 
+
     // 手机
     // 只能输入数字，非数字自动删除
     $('#phonenum').blur(function () {
-        isEmpty($(this))
+        if ($(this).val().length == 0){
+            isEmpty($(this))
+        }
     }).keyup(function(){
         $(this).val($(this).val().replace( /[^0-9]/g,''));
+        // $.get('registerhandle', {'source':$(this).val()}, function (data) {
+        //     if (data == 'exited'){
+        //         $('#phonenum').parent().parent().find('.error-msg').html('该手机号已注册');
+        //         $('#phonenum').parent().parent().find('.error-msg').show();
+        //     }else if (data == 'not' && $('#phonenum').val().length > 0) {
+        //         $('#phonenum').parent().parent().find('.error-msg').html('手机号不能为空');
+        //         $('#phonenum').parent().parent().find('.error-msg').hide();
+        //     }else {
+        //         isEmpty($('#phonenum'))
+        //     }
+        // })
+
     }).bind("paste",function(){
         $(this).val($(this).val().replace( /[^0-9]/g,''));
     })
@@ -98,9 +116,8 @@ $(function () {
         } else if (true == enoughRegex.test(source.val())) {
             target.text('弱!');
             grade = 1;
-        } else if (false == enoughRegex.test(source.val())) {
-            target.text('')
-            grade = 0
+        } else {
+            target.text('');
         }
         return grade
     }
@@ -135,16 +152,18 @@ $(function () {
                 boxbgwidth = 105
             }
             show.css('width', boxbgwidth)
-            source.parent().parent().find('.error-msg').hide()
-        }else if (grade == 0) {
+        }else {
             boxbgwidth = 0
             show.css('width', boxbgwidth)
-            if (inputlen > 8 || inputlen == 0){
-                source.parent().parent().find('.error-msg').html('密码不能为空').show()
-            } else {
-                source.parent().parent().find('.error-msg').html('密码不能少于8位')
-                source.parent().parent().find('.error-msg').show()
-            }
+        }
+        if (inputlen == 0){
+            source.parent().parent().find('.error-msg').html('密码不能为空')
+            source.parent().parent().find('.error-msg').show()
+        } else if (inputlen < 8) {
+            source.parent().parent().find('.error-msg').html('密码不能少于8位')
+            source.parent().parent().find('.error-msg').show()
+        }else {
+            source.parent().parent().find('.error-msg').hide()
         }
     }
 
@@ -186,7 +205,7 @@ $(function () {
     // 提交前检查是否有空
     function checkIsEmpty(target){
         var duixiang = target.parent().parent().find('.error-msg')
-        if (target.val()=="" || target.val()==null){
+        if (target.val()=="" || target.val()==null || duixiang.html() == "该用户名已注册" || duixiang.html() == "该手机号已注册"){
             // event.preventDefault() // 拦截form,不执行跳转
             return duixiang.html()
         }
@@ -194,6 +213,7 @@ $(function () {
 
    $('form').submit(function () {
        var alertShow = ""
+       var sex = ""
        var checkList = [$('#username'), $('#email'), $('#phonenum')]
        var checkSex = $('input[type="checkbox"]')
        $.each(checkList, function (i) {
@@ -207,6 +227,11 @@ $(function () {
        }
        if (checkSex[0].checked==checkSex[1].checked){
            alertShow = alertShow + "未选择性别 !\r\n"
+       }
+       if (checkSex[0].checked) {
+           sex = checkSex[0].value
+       }else {
+           sex = checkSex[1].value
        }
        if (!checkSex[2].checked){
            alertShow = alertShow + "未阅读协议 ！\r\n"
@@ -222,19 +247,26 @@ $(function () {
                    "email": checkList[1].val(),
                    "phonenum": checkList[2].val(),
                    "password": $("#password").val(),
-                   "sex": function () {
-                       if (checkSex[0].checked) {
-                           return checkSex[0].value
-                       }else {
-                           return checkSex[1].value
-                       }
-                   }
+                   "sex": sex,
+                   "createtime": moment().format('YYYY-MM-DD-HH-mm-ss')
                }
            $.post("registerhandle", sendmsg, function (data) {
+               console.log('fffffffffffffff');
+               window.alert(data)
+               // window.location.href = "user/register"
            })
+           // $.ajax({
+           //     url:"registerhandle",
+           //     type:"POST",
+           //     dataType:"text",
+           //     data:sendmsg,
+           //     success:function (data) {
+           //          alert(data)
+           //     },
+           //     complete:function () {
+           //          alert("complete")
+           //     }
+           // });
        }
-
    })
-
-
 })

@@ -179,3 +179,17 @@ STATICFILES_DIRS =[
 ]
 
 MEDIA_ROOT = os.path.join(PROJECT_PATH, 'static/media/')
+
+
+CFG = {
+    'usermsg':{
+        'u_name': 'u_name',
+        'u_password': 'u_password',
+        'u_phone': 'u_phone',
+        'u_sex': 'u_sex',
+        'u_uuid': 'u_uuid',
+        'u_createtime': 'u_createtime',
+        'ua_email':'ua_email',
+    }
+}
+
