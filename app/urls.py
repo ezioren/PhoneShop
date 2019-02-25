@@ -5,10 +5,9 @@ from .views.user.login import LoginView
 from .views.user.register import RegisterView, RegisterHandleView
 
 view_urls = [
-    url(r'^$', IndexView.as_view(), name='index'),
-    url(r'^user/login$', LoginView.as_view(), name='login'),
-
+    url(r'^index$', IndexView.as_view(), name='index'),
     # 用户相关
     url(r'^user/register$', RegisterView.as_view(), name='register'),
     url(r'^user/registerhandle$', RegisterHandleView.as_view(), name='registerhandle'),
+    url(r'^user/login$', LoginView.as_view(), name='login'),
 ]

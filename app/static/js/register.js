@@ -10,17 +10,17 @@ $(function () {
 
     //用户
     $('#username').keyup(function () {
-        // $.get('registerhandle', {'source':$(this).val()}, function (data) {
-        //     if (data == 'exited'){
-        //         $('#username').parent().parent().find('.error-msg').html('该用户名已注册');
-        //         $('#username').parent().parent().find('.error-msg').show();
-        //     }else if (data == 'not' && $('#username').val().length > 0) {
-        //         $('#username').parent().parent().find('.error-msg').html('用户名不能为空');
-        //         $('#username').parent().parent().find('.error-msg').hide();
-        //     }else {
-        //         isEmpty($('#username'))
-        //     }
-        // })
+        $.get('registerhandle', {'source':$(this).val(), 'name': 'username'}, function (data) {
+            if (data == 'exited'){
+                $('#username').parent().parent().find('.error-msg').html('该用户名已注册');
+                $('#username').parent().parent().find('.error-msg').show();
+            }else if (data == 'not' && $('#username').val().length > 0) {
+                $('#username').parent().parent().find('.error-msg').html('用户名不能为空');
+                $('#username').parent().parent().find('.error-msg').hide();
+            }else {
+                isEmpty($('#username'))
+            }
+        })
     }).blur(function () {
         if ($(this).val().length == 0){
             isEmpty($(this))
@@ -82,17 +82,17 @@ $(function () {
         }
     }).keyup(function(){
         $(this).val($(this).val().replace( /[^0-9]/g,''));
-        // $.get('registerhandle', {'source':$(this).val()}, function (data) {
-        //     if (data == 'exited'){
-        //         $('#phonenum').parent().parent().find('.error-msg').html('该手机号已注册');
-        //         $('#phonenum').parent().parent().find('.error-msg').show();
-        //     }else if (data == 'not' && $('#phonenum').val().length > 0) {
-        //         $('#phonenum').parent().parent().find('.error-msg').html('手机号不能为空');
-        //         $('#phonenum').parent().parent().find('.error-msg').hide();
-        //     }else {
-        //         isEmpty($('#phonenum'))
-        //     }
-        // })
+        $.get('registerhandle', {'source':$(this).val(), 'name': 'phone'}, function (data) {
+            if (data == 'exited'){
+                $('#phonenum').parent().parent().find('.error-msg').html('该手机号已注册');
+                $('#phonenum').parent().parent().find('.error-msg').show();
+            }else if (data == 'not' && $('#phonenum').val().length > 0) {
+                $('#phonenum').parent().parent().find('.error-msg').html('手机号不能为空');
+                $('#phonenum').parent().parent().find('.error-msg').hide();
+            }else {
+                isEmpty($('#phonenum'))
+            }
+        })
 
     }).bind("paste",function(){
         $(this).val($(this).val().replace( /[^0-9]/g,''));
@@ -253,8 +253,8 @@ $(function () {
            $.post("registerhandle", sendmsg, function (data) {
                console.log('fffffffffffffff');
                window.alert(data)
-               // window.location.href = "user/register"
-           })
+               window.location.href = "login"
+           }, "text")
            // $.ajax({
            //     url:"registerhandle",
            //     type:"POST",

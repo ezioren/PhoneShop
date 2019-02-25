@@ -44,28 +44,27 @@ class RegisterHandleView(APIView):
         return True
 
     # 验证是否已存在
-    def check_exitence(self, source):
-        # True即已存在
-        result1=UserInfo.objects.filter(u_name=source).count()
-        result2=UserInfo.objects.filter(u_phone=source).count()
-        if (result1 > 0):
-            return 1
-        elif (result2 > 0):
-            return 2
+    def check_exitence(self, source, target):
+        if (target == "username"):
+            result=UserInfo.objects.filter(u_name=source).count()
+        if (target == "phone"):
+            result=UserInfo.objects.filter(u_phone=source).count()
+        if (result > 0):
+            return 1    # 用户名已存在
         else:
             return 0
 
     def post(self, request, *args, **kwargs):
         datasource = request.data
         self.save_user(datasource)
-        return Response([{"msg": "注册完成"}])
+        return Response("注册完成")
 
 
     def get(self, request, *args, **kwargs):
-        # source = request.GET
-        # exit = self.check_exitence(source['source'])
-        # if (exit > 0):
-        #     return Response('exited')
-        # else:
+        source = request.GET
+        exit = self.check_exitence(source['source'], source['name'])
+        if (exit > 0):
+            return Response('exited')
+        else:
             return Response('not')
 
