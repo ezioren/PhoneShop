@@ -18,6 +18,7 @@ $(function () {
                 $('#username').parent().parent().find('.error-msg').html('用户名不能为空');
                 $('#username').parent().parent().find('.error-msg').hide();
             }else {
+                $('#username').parent().parent().find('.error-msg').html('用户名不能为空');
                 isEmpty($('#username'))
             }
         })
@@ -86,10 +87,11 @@ $(function () {
             if (data == 'exited'){
                 $('#phonenum').parent().parent().find('.error-msg').html('该手机号已注册');
                 $('#phonenum').parent().parent().find('.error-msg').show();
-            }else if (data == 'not' && $('#phonenum').val().length > 0) {
+            }else if (data == 'not' && $('#username').val().length > 0) {
                 $('#phonenum').parent().parent().find('.error-msg').html('手机号不能为空');
                 $('#phonenum').parent().parent().find('.error-msg').hide();
             }else {
+                $('#phonenum').parent().parent().find('.error-msg').html('手机号不能为空');
                 isEmpty($('#phonenum'))
             }
         })

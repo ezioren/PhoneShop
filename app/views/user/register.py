@@ -5,6 +5,7 @@
 import datetime
 import uuid
 import hashlib
+import json
 
 from django.shortcuts import render
 
@@ -20,45 +21,64 @@ class RegisterView(APIView):
 class RegisterHandleView(APIView):
 
     def save_user(self, data):
-        # 密码加密
-        _sha256 = hashlib.sha256()
-        _sha256.update(data['password'].encode('utf-8'))
-        _sha256_pwd = _sha256.hexdigest()
+        try:
+            # 密码加密
+            _sha256 = hashlib.sha256()
+            _sha256.update(data['password'].encode('utf-8'))
+            _sha256_pwd = _sha256.hexdigest()
 
-        # 保存用户信息
-        userinfo = UserInfo()
-        userinfo.u_name = data['username']
-        userinfo.u_password = _sha256_pwd
-        userinfo.u_phone = data['phonenum']
-        userinfo.u_sex = data['sex']
-        userinfo.u_uuid = uuid.uuid4()
-        userinfo.u_createtime = data['createtime']
-        userinfo.save()
+            # 保存用户信息
+            userinfo = UserInfo()
+            userinfo.u_name = data['username']
+            userinfo.u_password = _sha256_pwd
+            userinfo.u_phone = data['phonenum']
+            userinfo.u_sex = data['sex']
+            userinfo.u_uuid = uuid.uuid4()
+            userinfo.u_createtime = data['createtime']
+            userinfo.save()
 
-        # 保存用户地址信息
-        useradsinfo = UserAddressInfo()
-        useradsinfo.ua_email = data['email']
-        useradsinfo.ua_u_name = UserInfo.objects.get(u_name=data['username'])
-        useradsinfo.save()
+            # 保存用户地址信息
+            useradsinfo = UserAddressInfo()
+            useradsinfo.ua_email = data['email']
+            useradsinfo.ua_u_name = UserInfo.objects.get(u_name=data['username'])
+            useradsinfo.save()
 
-        return True
+            return True
+        except:
+            return False
 
     # 验证是否已存在
-    def check_exitence(self, source, target):
-        if (target == "username"):
-            result=UserInfo.objects.filter(u_name=source).count()
-        if (target == "phone"):
-            result=UserInfo.objects.filter(u_phone=source).count()
-        if (result > 0):
-            return 1    # 用户名已存在
+    def check_exitence(self, source, label):
+        if (label == "username" and source !=""):
+            results=UserInfo.objects.filter(u_name=source)
+            if (results):
+                result = results[0]
+            else:
+                return 0
+            if (source == str(result.u_name)):
+                return 1
+            else:
+                return 0
+        elif (label == "phone" and source !=""):
+            results=UserInfo.objects.filter(u_phone=source)
+            if (results):
+                result = results[0]
+            else:
+                return 0
+            if (source == str(result.u_phone)):
+                return 1
+            else:
+                return 0
         else:
             return 0
 
     def post(self, request, *args, **kwargs):
         datasource = request.data
-        self.save_user(datasource)
-        return Response("注册完成")
-
+        result = self.save_user(datasource)
+        if (result):
+            return Response("注册完成")
+        else:
+            return Response("注册失败")
 
     def get(self, request, *args, **kwargs):
         source = request.GET
