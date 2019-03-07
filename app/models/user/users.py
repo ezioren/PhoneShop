@@ -6,7 +6,7 @@ from django.db import models
 
 class UserInfo(models.Model):
     u_uuid=models.UUIDField(default=uuid.uuid4, editable=False, auto_created=True)
-    u_name=models.CharField(max_length=20, unique=True)
+    u_name=models.CharField(max_length=60,default='')
     u_password=models.CharField(max_length=255)
     u_sex=models.CharField(max_length=10, default='女', choices=(('lady', '女'),('man', '男')))
     u_phone=models.CharField(max_length=20)
@@ -18,7 +18,7 @@ class UserInfo(models.Model):
 class UserAddressInfo(models.Model):
     ua_getaddress=models.CharField(max_length=100, default='')
     ua_email=models.CharField(max_length=100)
-    ua_u_name=models.ForeignKey(UserInfo, on_delete=models.CASCADE, to_field="u_name")
+    user=models.ForeignKey(UserInfo, on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.ua_u_name
+        return self.ua_email

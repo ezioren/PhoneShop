@@ -10,21 +10,32 @@ $(function () {
 
     //用户
     $('#username').keyup(function () {
-        $.get('registerhandle', {'source':$(this).val(), 'name': 'username'}, function (data) {
-            if (data == 'exited'){
-                $('#username').parent().parent().find('.error-msg').html('该用户名已注册');
-                $('#username').parent().parent().find('.error-msg').show();
-            }else if (data == 'not' && $('#username').val().length > 0) {
-                $('#username').parent().parent().find('.error-msg').html('用户名不能为空');
-                $('#username').parent().parent().find('.error-msg').hide();
-            }else {
-                $('#username').parent().parent().find('.error-msg').html('用户名不能为空');
-                isEmpty($('#username'))
-            }
-        })
+        if ($(this).val().length > 50){
+            var lenText=$(this).val().substring(0,50)
+            $(this).val(lenText)
+            $('#username').parent().parent().find('.error-msg').html('用户名过长');
+            $('#username').parent().parent().find('.error-msg').show();
+        } else {
+            $('#username').parent().parent().find('.error-msg').html('用户名不能为空');
+            $('#username').parent().parent().find('.error-msg').hide();
+        }
     }).blur(function () {
         if ($(this).val().length == 0){
             isEmpty($(this))
+        }
+        else {
+            $.get('registerhandle', {'source':$(this).val(), 'name': 'username'}, function (data) {
+                if (data == 'exited'){
+                    $('#username').parent().parent().find('.error-msg').html('该用户名已注册');
+                    $('#username').parent().parent().find('.error-msg').show();
+                }else if (data == 'not' && $('#username').val().length > 0) {
+                    $('#username').parent().parent().find('.error-msg').html('用户名不能为空');
+                    $('#username').parent().parent().find('.error-msg').hide();
+                }else {
+                    $('#username').parent().parent().find('.error-msg').html('用户名不能为空');
+                    isEmpty($('#username'))
+                }
+            })
         }
     })
 
@@ -71,7 +82,23 @@ $(function () {
              response(result);
         },
     }).blur(function () {
-        isEmpty($(this))
+        if ($(this).val().length > 0){
+            $.get('registerhandle', {'source':$(this).val(), 'name': 'email'}, function (data) {
+                if (data == 'exited'){
+                    $('#email').parent().parent().find('.error-msg').html('该邮箱已注册');
+                    $('#email').parent().parent().find('.error-msg').show();
+                }else if (data == 'not') {
+                    $('#email').parent().parent().find('.error-msg').html('邮箱不能为空');
+                    $('#email').parent().parent().find('.error-msg').hide();
+                }else {
+                    $('#email').parent().parent().find('.error-msg').html('邮箱不能为空');
+                    isEmpty($('#email'))
+                }
+            })
+        }
+        else {
+            isEmpty($('#email'))
+        }
     })
 
 
@@ -81,21 +108,19 @@ $(function () {
         if ($(this).val().length == 0){
             isEmpty($(this))
         }
-    }).keyup(function(){
-        $(this).val($(this).val().replace( /[^0-9]/g,''));
         $.get('registerhandle', {'source':$(this).val(), 'name': 'phone'}, function (data) {
             if (data == 'exited'){
                 $('#phonenum').parent().parent().find('.error-msg').html('该手机号已注册');
                 $('#phonenum').parent().parent().find('.error-msg').show();
-            }else if (data == 'not' && $('#username').val().length > 0) {
+            }else if (data == 'not' && $('#phonenum').val().length > 0) {
                 $('#phonenum').parent().parent().find('.error-msg').html('手机号不能为空');
                 $('#phonenum').parent().parent().find('.error-msg').hide();
             }else {
                 $('#phonenum').parent().parent().find('.error-msg').html('手机号不能为空');
-                isEmpty($('#phonenum'))
             }
         })
-
+    }).keyup(function(){
+        $(this).val($(this).val().replace( /[^0-9]/g,''));
     }).bind("paste",function(){
         $(this).val($(this).val().replace( /[^0-9]/g,''));
     })
@@ -253,22 +278,9 @@ $(function () {
                    "createtime": moment().format('YYYY-MM-DD-HH-mm-ss')
                }
            $.post("registerhandle", sendmsg, function (data) {
-               console.log('fffffffffffffff');
                window.alert(data)
                window.location.href = "login"
            }, "text")
-           // $.ajax({
-           //     url:"registerhandle",
-           //     type:"POST",
-           //     dataType:"text",
-           //     data:sendmsg,
-           //     success:function (data) {
-           //          alert(data)
-           //     },
-           //     complete:function () {
-           //          alert("complete")
-           //     }
-           // });
        }
    })
 })

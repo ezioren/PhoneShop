@@ -5,7 +5,6 @@
 import datetime
 import uuid
 import hashlib
-import json
 
 from django.shortcuts import render
 
@@ -23,6 +22,7 @@ class RegisterHandleView(APIView):
     def save_user(self, data):
         try:
             # 密码加密
+            print(11111)
             _sha256 = hashlib.sha256()
             _sha256.update(data['password'].encode('utf-8'))
             _sha256_pwd = _sha256.hexdigest()
@@ -36,18 +36,21 @@ class RegisterHandleView(APIView):
             userinfo.u_uuid = uuid.uuid4()
             userinfo.u_createtime = data['createtime']
             userinfo.save()
+            print(11111)
 
             # 保存用户地址信息
             useradsinfo = UserAddressInfo()
             useradsinfo.ua_email = data['email']
-            useradsinfo.ua_u_name = UserInfo.objects.get(u_name=data['username'])
+            useradsinfo.user_id = UserInfo.objects.get(u_name=data['username']).id
             useradsinfo.save()
+            print(11111)
 
             return True
         except:
             return False
 
     # 验证是否已存在
+    # TODO 手机验证码
     def check_exitence(self, source, label):
         if (label == "username" and source !=""):
             results=UserInfo.objects.filter(u_name=source)
@@ -56,6 +59,16 @@ class RegisterHandleView(APIView):
             else:
                 return 0
             if (source == str(result.u_name)):
+                return 1
+            else:
+                return 0
+        elif (label == "email" and source !=""):
+            results=UserAddressInfo.objects.filter(ua_email=source)
+            if (results):
+                result = results[0]
+            else:
+                return 0
+            if (source == str(result.ua_email)):
                 return 1
             else:
                 return 0
@@ -76,9 +89,9 @@ class RegisterHandleView(APIView):
         datasource = request.data
         result = self.save_user(datasource)
         if (result):
-            return Response("注册完成")
+            return Response('注册完成')
         else:
-            return Response("注册失败")
+            return Response('注册失败')
 
     def get(self, request, *args, **kwargs):
         source = request.GET
