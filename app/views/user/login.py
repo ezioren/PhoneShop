@@ -16,16 +16,24 @@ class LoginView(APIView):
 class LoginhandleView(APIView):
     def post(self, request, format=None, *args, **kwargs):
         data = request.data
-        target = data('target')
-        password = data('password')
-        if target and target != None:
-            results = UserInfo.objects.filter(u_phone=target)
-            print(results[0])
-        elif target and target != None:
-            results = UserInfo.objects.filter(u_name=target)
-            print(results[0])
-        elif target and target != None:
-            results = UserAddressInfo.objects.filter(ua_email=target)
-            print(results[0])
+        target = data['target']
+        password = data['password']
+
+        result1 = UserInfo.objects.filter(u_phone=target).first()
+
+        result2 = UserInfo.objects.filter(u_name=target).first()
+
+        result3 = UserAddressInfo.objects.filter(ua_email=target).first()
+        result4 = UserInfo.objects.filter(id=result3.user_id).first()
+
+        if result1 and result1 != None:
+            print(result1)
+            return Response('phone success login')
+        elif result2 and result2 != None:
+            print(result2)
+            return Response('Email success login')
+        elif result4 and result4 != None:
+            print(result4)
+            return Response('success')
         else:
             return Response('fail')

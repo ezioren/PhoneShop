@@ -29,3 +29,9 @@ git config core.filrMode = false
 从数据库查找数据后要进行拼接的话最好提前在setiings或者另外设置一个配置文件专门存储一些常用字段，方便修改和维护
 
 ##### TODO 考虑要将css，js文件压缩，网页加载压缩后的文件
+
+Windows本地化策略： 在Windows下，需要提前安装GNU gettext工具
+本地化模板：要导入{% load i18n %}
+trans： {% trans "This is the title." %}
+
+blocktrans：{% blocktrans %}This string will have {{ value }} inside.{% endblocktrans %}

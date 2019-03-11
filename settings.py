@@ -58,7 +58,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'django.middleware.locale.LocaleMiddleware', # 语言设置
+    'django.middleware.locale.LocaleMiddleware',  # 语言设置
 ]
 
 # CORS
@@ -105,6 +105,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.i18n',
             ],
         },
     },
@@ -150,19 +151,32 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
-# Internationalization
-# https://docs.djangoproject.com/en/1.11/topics/i18n/
+TIME_ZONE = 'UTC'
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGES = (
+    ('en', (u'English')),
+    ('zh-cn', (u'中文简体')),
+)
+# LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'zh-cn'
 
+# TIME_ZONE = 'America/Los_Angeles'
 TIME_ZONE = 'Asia/Shanghai'
 
+# Internationalization
+# https://docs.djangoproject.com/en/1.11/topics/i18n/
 USE_I18N = True
 
 USE_L10N = True
 
 # 在models.py中调用models.DateTimeField(auto_now_add=True)方法时关闭该设置可获得正常时间
 USE_TZ = False
+
+
+# 翻译文件所在目录，需要手工创建
+LOCALE_PATHS = (
+    os.path.join(PROJECT_PATH, 'app/locales/'),
+)
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
@@ -182,7 +196,7 @@ MEDIA_ROOT = os.path.join(PROJECT_PATH, 'static/media/')
 
 
 CFG = {
-    'usermsg':{
+    'USERINFO':{
         'u_name': 'u_name',
         'u_password': 'u_password',
         'u_phone': 'u_phone',
