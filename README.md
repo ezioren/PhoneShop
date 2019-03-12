@@ -30,8 +30,17 @@ git config core.filrMode = false
 
 ##### TODO 考虑要将css，js文件压缩，网页加载压缩后的文件
 
-Windows本地化策略： 在Windows下，需要提前安装GNU gettext工具
+Windows国际化策略： 在Windows下，需要提前安装GNU gettext工具
 本地化模板：要导入{% load i18n %}
 trans： {% trans "This is the title." %}
 
 blocktrans：{% blocktrans %}This string will have {{ value }} inside.{% endblocktrans %}
+翻译文本：
+./mkmsgs.sh #需要在.po文件写上翻译
+./manage.py compilemessages
+
+str.upper()       # 把所有字符中的小写字母转换成大写字母
+str.lower()        # 把所有字符中的大写字母转换成小写字母
+str.capitalize()    # 把第一个字母转化为大写字母，其余小写
+str.title()          # 把每个单词的第一个字母转化为大写，其余小写 
+

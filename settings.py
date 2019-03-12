@@ -10,7 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.11/ref/settings/
 """
 
-import os
+import os, django
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -152,13 +152,14 @@ AUTH_PASSWORD_VALIDATORS = [
 
 
 TIME_ZONE = 'UTC'
-
 LANGUAGES = (
-    ('en', (u'English')),
-    ('zh-cn', (u'中文简体')),
+    ('en', ('English')),
+    ('zh-CN', ('中文简体')),
+    ('zh-hant', ('中文繁體')),
 )
-# LANGUAGE_CODE = 'en-us'
-LANGUAGE_CODE = 'zh-cn'
+
+# LANGUAGE_CODE = 'en'
+LANGUAGE_CODE = 'zh-CN'
 
 # TIME_ZONE = 'America/Los_Angeles'
 TIME_ZONE = 'Asia/Shanghai'
@@ -175,7 +176,7 @@ USE_TZ = False
 
 # 翻译文件所在目录，需要手工创建
 LOCALE_PATHS = (
-    os.path.join(PROJECT_PATH, 'app/locales/'),
+    os.path.join(PROJECT_PATH, 'locale'),
 )
 
 # Static files (CSS, JavaScript, Images)

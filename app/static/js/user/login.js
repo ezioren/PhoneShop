@@ -3,8 +3,10 @@ $(function () {
     function isEmpty(target){
         if (target.val()=="" || target.val()==null){
             target.parent().parent().find('.error-msg').show()
+            return true
         }else {
             target.parent().parent().find('.error-msg').hide()
+            return false
         }
     }
 
@@ -19,9 +21,11 @@ $(function () {
     })
 
     $('form').submit(function () {
-        var target = $('#username').val()
         var pwd = $('#password').val()
-        $.post('loginhandle', {'target':target, 'password':pwd}, function (data) {
+        var target = $('#username').val()
+        var settime = $('input[type="checkbox"]').prop('checked')
+
+        $.post('loginhandle', {'target':target, 'password':pwd, 'settime': settime}, function (data) {
             alert(data)
         }, 'text')
     })

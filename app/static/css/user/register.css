@@ -5,23 +5,6 @@ input{
     position: static;
     margin-left: 20px;
 }
-#finishAgreement{
-    position: relative;
-    left: 10%;
-    width: 260px;
-    height: auto;
-    font-size: 16px;
-    font-weight: bold;
-    text-align: center;
-    color: #3B3636;
-}
-#finishAgreement input{
-    position: static;
-    margin-left: 20px;
-}
-#finishAgreement a:hover{
-    color: #ff6700;
-}
 #password-box{
     height: 28px;
     position: absolute;

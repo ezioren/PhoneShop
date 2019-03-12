@@ -28,6 +28,53 @@
     background-color: #ff6700;
     color: #ffffff;
 }
+.login-form{
+    margin-top: 80px;
+    margin-bottom: 100px;
+    overflow: hidden;
+}
+.login-form .form-list{
+    position: relative;
+    left: 16%;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    text-align: left;
+}
+#login-submit{
+    width: 110px;
+    height: 30px;
+    color: #3B3636;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    position: relative;
+    left: 56%;
+    border: 1px solid #cbcbcb;
+    border-radius: 8%;
+    background-color: #f7f7f7;
+}
+#login-submit:hover{
+    border-color: #ff6700;
+    background-color: #ff6700;
+    color: #ffffff;
+}
 .mustbe{
+    color: #ff6700;
+}
+#finishAgreement{
+    position: relative;
+    left: 10%;
+    width: 260px;
+    height: auto;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    color: #3B3636;
+}
+#finishAgreement input{
+    position: static;
+    margin-left: 20px;
+}
+#finishAgreement a:hover{
     color: #ff6700;
 }

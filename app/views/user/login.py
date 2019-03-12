@@ -2,6 +2,10 @@
 # author:reyn
 # datetime:19-1-25 上午9:38
 # software: PyCharm
+import hashlib
+
+from app.conts import *
+
 from app.models.user.users import UserInfo, UserAddressInfo
 
 from django.shortcuts import render
@@ -18,22 +22,39 @@ class LoginhandleView(APIView):
         data = request.data
         target = data['target']
         password = data['password']
+        settime = data['settime']
 
+        # 密码加密
+        _sha256 = hashlib.sha256()
+        _sha256.update(password.encode('utf-8'))
+        _sha256_pwd = _sha256.hexdigest()
+
+        # phone
         result1 = UserInfo.objects.filter(u_phone=target).first()
-
-        result2 = UserInfo.objects.filter(u_name=target).first()
-
-        result3 = UserAddressInfo.objects.filter(ua_email=target).first()
-        result4 = UserInfo.objects.filter(id=result3.user_id).first()
-
         if result1 and result1 != None:
-            print(result1)
-            return Response('phone success login')
-        elif result2 and result2 != None:
-            print(result2)
-            return Response('Email success login')
-        elif result4 and result4 != None:
-            print(result4)
-            return Response('success')
-        else:
-            return Response('fail')
+            if _sha256_pwd == result1.u_password :
+                return Response(MOBILEPHONE_SUCCESS_LOGIN)
+            else:
+                return Response(PASSWORD_ERROR)
+
+        # username
+        result2 = UserInfo.objects.get(u_name=target)
+        print(result2, '2')
+        if result2 and result2 != None:
+            if _sha256_pwd == result2.u_password :
+                return Response(USERNAME_SUCCESS_LOGIN)
+            else:
+                return Response(PASSWORD_ERROR)
+
+        # email
+        result3 = UserAddressInfo.objects.get(ua_email=target)
+        print(result3, '3')
+        if result3 and result3 != None:
+            result4 = UserInfo.objects.get(id=result3.user)
+            if result4 and result4 != None:
+                if _sha256_pwd == result4.u_password :
+                    return Response(EMAIL_SUCCESS_LOGIN)
+                else:
+                    return Response(PASSWORD_ERROR)
+
+        return Response(LOGON_FAILURE)

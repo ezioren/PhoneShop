@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-03-11 17:55+0800\n"
+"POT-Creation-Date: 2019-03-12 13:42+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,3 +16,35 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+
+#: app/conts.py:10
+msgid "Mobilephone success login"
+msgstr ""
+
+#: app/conts.py:11
+msgid "Mobilephone fail login"
+msgstr ""
+
+#: app/conts.py:12
+msgid "Email success login"
+msgstr ""
+
+#: app/conts.py:13
+msgid "Email fail login"
+msgstr ""
+
+#: app/conts.py:14
+msgid "Username success login"
+msgstr ""
+
+#: app/conts.py:15
+msgid "Username fail login"
+msgstr ""
+
+#: app/conts.py:16
+msgid "Password error"
+msgstr ""
+
+#: app/conts.py:17
+msgid "Logon failure"
+msgstr ""

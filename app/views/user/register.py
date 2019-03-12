@@ -22,7 +22,6 @@ class RegisterHandleView(APIView):
     def save_user(self, data):
         try:
             # 密码加密
-            print(11111)
             _sha256 = hashlib.sha256()
             _sha256.update(data['password'].encode('utf-8'))
             _sha256_pwd = _sha256.hexdigest()
@@ -36,14 +35,12 @@ class RegisterHandleView(APIView):
             userinfo.u_uuid = uuid.uuid4()
             userinfo.u_createtime = data['createtime']
             userinfo.save()
-            print(11111)
 
             # 保存用户地址信息
             useradsinfo = UserAddressInfo()
             useradsinfo.ua_email = data['email']
             useradsinfo.user_id = UserInfo.objects.get(u_name=data['username']).id
             useradsinfo.save()
-            print(11111)
 
             return True
         except:

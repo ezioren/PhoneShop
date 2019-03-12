@@ -10,9 +10,9 @@
 {% block body %}
     <div class="register-form">
         <div class="container">
-            <form class="form-horizontal" name="register-form" id="register-form">
+            <form class="form-horizontal" name="login-form" id="login-form">
                 <div class="form-group form-list">
-                    <label for="username" class="col-md-2 control-label">登录名：{% trans "title" %}</label>
+                    <label for="username" class="col-md-2 control-label">登录名：</label>
                     <div class="col-md-4">
                         <input type="text" name="username" class="form-control" id="username" placeholder="请输入用户名/邮箱/手机">
                     </div>
@@ -25,7 +25,15 @@
                     </div>
                     <span class="mustbe error-msg">密码不能为空</span>
                 </div>
-                <input type="submit" id="register-submit" value="提交">
+                <div class="form-group form-list">
+                    <div class="checkbox" id="finishAgreement">
+                        <span>
+                            保持登录状态
+                        </span>
+                        <input type="checkbox" value="保持登录" id="settime">
+                    </div>
+                </div>
+                <input type="submit" id="login-submit" value="提交">
             </form>
         </div>
     </div>
