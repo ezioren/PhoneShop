@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-03-12 13:42+0800\n"
+"POT-Creation-Date: 2019-03-13 10:07+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -29,7 +29,6 @@ msgid "Email success login"
 msgstr "邮箱登录成功"
 
 #: app/conts.py:13
-#| msgid "Email success login"
 msgid "Email fail login"
 msgstr "邮箱登录失败"
 
@@ -38,7 +37,6 @@ msgid "Username success login"
 msgstr "用户登录成功"
 
 #: app/conts.py:15
-#| msgid "Username success login"
 msgid "Username fail login"
 msgstr "用户登录失败"
 
@@ -47,6 +45,10 @@ msgid "Password error"
 msgstr "密码错误"
 
 #: app/conts.py:17
+#| msgid "Logon failure"
+msgid "Logon success"
+msgstr "登录成功"
+
+#: app/conts.py:18
 msgid "Logon failure"
 msgstr "登录失败"
-

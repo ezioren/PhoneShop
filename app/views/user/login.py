@@ -22,7 +22,7 @@ class LoginhandleView(APIView):
         data = request.data
         target = data['target']
         password = data['password']
-        settime = data['settime']
+        remember = data['settime']
 
         # 密码加密
         _sha256 = hashlib.sha256()
@@ -32,29 +32,31 @@ class LoginhandleView(APIView):
         # phone
         result1 = UserInfo.objects.filter(u_phone=target).first()
         if result1 and result1 != None:
-            if _sha256_pwd == result1.u_password :
-                return Response(MOBILEPHONE_SUCCESS_LOGIN)
-            else:
-                return Response(PASSWORD_ERROR)
+            code = self.compare_save(result1, request, password, remember)
+            return Response(code)
 
         # username
         result2 = UserInfo.objects.get(u_name=target)
         print(result2, '2')
         if result2 and result2 != None:
-            if _sha256_pwd == result2.u_password :
-                return Response(USERNAME_SUCCESS_LOGIN)
-            else:
-                return Response(PASSWORD_ERROR)
+            code = self.compare_save(result2, request, password, remember)
+            return Response(code)
+
 
         # email
         result3 = UserAddressInfo.objects.get(ua_email=target)
-        print(result3, '3')
         if result3 and result3 != None:
             result4 = UserInfo.objects.get(id=result3.user)
             if result4 and result4 != None:
-                if _sha256_pwd == result4.u_password :
-                    return Response(EMAIL_SUCCESS_LOGIN)
-                else:
-                    return Response(PASSWORD_ERROR)
+                code = self.compare_save(result4, request, password, remember)
+                return Response(code)
 
         return Response(LOGON_FAILURE)
+
+    def compare_save(self, request, result, pwd, remember):
+            if pwd == result.u_password:
+                if remember :
+                    pass
+                return LOGON_SUCCESS
+            else:
+                return PASSWORD_ERROR

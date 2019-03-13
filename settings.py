@@ -61,6 +61,9 @@ MIDDLEWARE = [
     'django.middleware.locale.LocaleMiddleware',  # 语言设置
 ]
 
+# session
+SESSION_ENGINE='django.contrib.sessions.backends.db'
+
 # CORS
 #跨域增加忽略
 CORS_ALLOW_CREDENTIALS = True

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-03-12 13:42+0800\n"
+"POT-Creation-Date: 2019-03-13 10:07+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -46,5 +46,9 @@ msgid "Password error"
 msgstr ""
 
 #: app/conts.py:17
+msgid "Logon success"
+msgstr ""
+
+#: app/conts.py:18
 msgid "Logon failure"
 msgstr ""

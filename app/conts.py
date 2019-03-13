@@ -14,5 +14,6 @@ EMAIL_FAIL_LOGIN = _('Email fail login')
 USERNAME_SUCCESS_LOGIN = _('Username success login')
 USERNAME_FAIL_LOGIN = _('Username fail login')
 PASSWORD_ERROR = _('Password error')
+LOGON_SUCCESS = _('Logon success')
 LOGON_FAILURE = _('Logon failure')
 
