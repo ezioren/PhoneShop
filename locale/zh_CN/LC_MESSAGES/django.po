@@ -45,7 +45,6 @@ msgid "Password error"
 msgstr "密码错误"
 
 #: app/conts.py:17
-#| msgid "Logon failure"
 msgid "Logon success"
 msgstr "登录成功"
 
