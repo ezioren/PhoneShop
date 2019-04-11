@@ -19,7 +19,7 @@ class RegisterView(APIView):
 
 class RegisterHandleView(APIView):
 
-    def save_user(self, data):
+    def save_user(self, data, request):
         try:
             # 密码加密
             _sha256 = hashlib.sha256()
@@ -42,6 +42,10 @@ class RegisterHandleView(APIView):
             useradsinfo.user_id = UserInfo.objects.get(u_name=data['username']).id
             useradsinfo.save()
 
+            # 自动登录
+            request.session['username'] = data['username']
+            request.session.set_expiry(30 * 86400)
+            request.session.save()
             return True
         except:
             return False
@@ -49,43 +53,31 @@ class RegisterHandleView(APIView):
     # 验证是否已存在
     # TODO 手机验证码
     def check_exitence(self, source, label):
-        if (label == "username" and source !=""):
-            results=UserInfo.objects.filter(u_name=source)
-            if (results):
-                result = results[0]
-            else:
-                return 0
-            if (source == str(result.u_name)):
-                return 1
-            else:
-                return 0
-        elif (label == "email" and source !=""):
-            results=UserAddressInfo.objects.filter(ua_email=source)
-            if (results):
-                result = results[0]
-            else:
-                return 0
-            if (source == str(result.ua_email)):
-                return 1
-            else:
-                return 0
-        elif (label == "phone" and source !=""):
-            results=UserInfo.objects.filter(u_phone=source)
-            if (results):
-                result = results[0]
-            else:
-                return 0
-            if (source == str(result.u_phone)):
-                return 1
-            else:
-                return 0
+
+        if label == 'username':
+            u_name=UserInfo.objects.filter(u_name=source)
+            ua_email = UserAddressInfo.objects.filter(ua_email=source)
+            u_phone = UserInfo.objects.filter(u_phone=source)
+            if u_name or ua_email or u_phone:
+                return True
+
+        elif label == 'email':
+            ua_email = UserAddressInfo.objects.filter(ua_email=source)
+            if ua_email:
+                return True
+
+        elif label == 'phone':
+            u_phone = UserInfo.objects.filter(u_phone=source)
+            if u_phone:
+                return True
         else:
-            return 0
+            return False
 
     def post(self, request, *args, **kwargs):
-        datasource = request.data
-        result = self.save_user(datasource)
-        if (result):
+        source = request.data
+        result = self.save_user(source, request)
+        print(result)
+        if result:
             return Response('注册完成')
         else:
             return Response('注册失败')
@@ -93,7 +85,7 @@ class RegisterHandleView(APIView):
     def get(self, request, *args, **kwargs):
         source = request.GET
         exit = self.check_exitence(source['source'], source['name'])
-        if (exit > 0):
+        if exit:
             return Response('exited')
         else:
             return Response('not')

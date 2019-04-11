@@ -278,9 +278,10 @@ $(function () {
                    "createtime": moment().format('YYYY-MM-DD-HH-mm-ss')
                }
            $.post("registerhandle", sendmsg, function (data) {
-               window.alert(data)
-               window.location.href = "login"
-           }, "text")
+               var code = data
+               window.alert(code)
+               window.location.href = "index"
+           }, 'text')
        }
    })
 })

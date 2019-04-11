@@ -16,4 +16,5 @@ USERNAME_FAIL_LOGIN = _('Username fail login')
 PASSWORD_ERROR = _('Password error')
 LOGON_SUCCESS = _('Logon success')
 LOGON_FAILURE = _('Logon failure')
+ACCOUNT_DOES_NO_EXIST = _('Account does not exist')
 

@@ -46,7 +46,7 @@ REST_FRAMEWORK = {
     'DEFAULT_RENDERER_CLASSES': (  # 默认响应渲染类
         'rest_framework.renderers.JSONRenderer',  # json渲染器
         'rest_framework.renderers.BrowsableAPIRenderer',  # 浏览API渲染器
-    )
+    ),
 }
 
 MIDDLEWARE = [
@@ -61,8 +61,7 @@ MIDDLEWARE = [
     'django.middleware.locale.LocaleMiddleware',  # 语言设置
 ]
 
-# session
-SESSION_ENGINE='django.contrib.sessions.backends.db'
+SESSION_SERIALIZER = "django.contrib.sessions.serializers.PickleSerializer"
 
 # CORS
 #跨域增加忽略

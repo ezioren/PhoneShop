@@ -20,13 +20,34 @@ $(function () {
         isEmpty($(this))
     })
 
+    function formatSearch(se){
+            if (typeof se !== "undefined") {
+                se = se.substr(1);
+                var arr = se.split("&"),
+                    obj = {},
+                    newarr = [];
+                $.each(arr, function(i, v){
+                    newarr = v.split("=");
+                    if(typeof obj[newarr[0]] === "undefined"){
+                        obj[newarr[0]] = newarr[1];
+                    }
+                });
+                return obj;
+            };
+        }
+
     $('form').submit(function () {
         var pwd = $('#password').val()
         var target = $('#username').val()
         var settime = $('input[type="checkbox"]').prop('checked')
+        var obj = formatSearch(location.origin)
+        obj['next']
 
-        $.post('loginhandle', {'target':target, 'password':pwd, 'settime': settime}, function (data) {
+        $.post('login', {'target':target, 'password':pwd, 'settime': settime, 'next': next}, function (data) {
             alert(data)
-        }, 'text')
+            if (next){
+                window.location.href = location.origin + '/' +obj['next']
+            }
+        }, "text")
     })
 })
