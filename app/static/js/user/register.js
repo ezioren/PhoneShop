@@ -268,15 +268,16 @@ $(function () {
            alert(alertShow)
        }
        else{
-           var sendmsg =
-               {
+           var sendmsg = {
                    "username": checkList[0].val(),
                    "email": checkList[1].val(),
                    "phonenum": checkList[2].val(),
                    "password": $("#password").val(),
                    "sex": sex,
                    "createtime": moment().format('YYYY-MM-DD-HH-mm-ss')
-               }
+           }
+           console.log(sendmsg)
+
            $.post("registerhandle", sendmsg, function (data) {
                var code = data
                window.alert(code)

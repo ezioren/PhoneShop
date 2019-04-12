@@ -5,4 +5,11 @@
 
 def check_login(func):
     def wrapper(*args, **kwargs):
-        pass
+        session = args[1].session.get('username', False)
+        if session :
+            kwargs['is_login']=True
+            kwargs['username']=session
+        else:
+            kwargs['is_login']=False
+        return func(*args, **kwargs)
+    return wrapper

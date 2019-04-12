@@ -1,4 +1,6 @@
 # -*- coding: utf-8 -*-
+from app.utils.decorators import check_login
+
 from django.shortcuts import render, redirect
 from rest_framework.views import APIView
 
@@ -10,5 +12,10 @@ class BaseView(APIView):
 class IndexView(APIView):
     # queryset = GoodsInfo.objects.all()
 
-    def get(self, request):
-        return render(request, 'ps_goods/index.html', context={'index':'welcome','title':'优选商城～选你所选'})
+    @check_login
+    def get(self, request, *args, **kwargs):
+        is_login = kwargs['is_login']
+        name = None
+        if 'username' in kwargs.keys():
+            name = kwargs['username']
+        return render(request, 'ps_goods/index.html', context={'index':'welcome','title':'优选商城～选你所选', 'is_login':is_login, 'name':name})

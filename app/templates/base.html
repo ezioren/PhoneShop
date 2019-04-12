@@ -74,6 +74,7 @@
                 </div>
         </div>
         <!-- nav-right-->
+        {% if is_login == False %}
         <div class="nav-right">
             <a href="{% url 'login' %}" class="navbar-brand">
                 <span>登录</span>
@@ -83,6 +84,18 @@
                 <span>注册</span>
             </a>
         </div>
+        {% elif is_login == True %}
+        <!-- 登录后 -->
+        <div class="nav-right">
+            <a href="" class="navbar-brand">
+                <span>{{ name }}</span>
+            </a>
+            <span class="sep">|</span>
+            <a href="{% url 'Logout' %}" class="navbar-brand">
+                <span>登出</span>
+            </a>
+        </div>
+        {% endif %}
     </div>
 </nav>
     {% block head %}

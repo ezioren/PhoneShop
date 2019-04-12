@@ -8,8 +8,9 @@ import re
 
 from app.conts import *
 from app.models.user.users import UserInfo, UserAddressInfo
+from app.utils.decorators import check_login
 
-from django.shortcuts import render
+from django.shortcuts import render, redirect, reverse
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
@@ -37,7 +38,7 @@ class LoginView(APIView):
         target = data['target']
         password = data['password']
         remember = data['settime']
-        next = data.get('next', None)
+
         # 密码加密
         _sha256 = hashlib.sha256()
         _sha256.update(password.encode('utf-8'))
@@ -61,8 +62,7 @@ class LoginView(APIView):
             return Response(ACCOUNT_DOES_NO_EXIST)
 
 class LogoutView(APIView):
-    def post(self, request):
-        origin = request.META['HTTP_ORIGIN']
-        request.session.delete('username')
+    def get(self, request):
+        del request.session['username']
 
-        return Response(origin + '/index')
+        return redirect(reverse('index'))

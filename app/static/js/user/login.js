@@ -34,20 +34,21 @@ $(function () {
                 });
                 return obj;
             };
-        }
+    }
 
     $('form').submit(function () {
         var pwd = $('#password').val()
         var target = $('#username').val()
         var settime = $('input[type="checkbox"]').prop('checked')
-        var obj = formatSearch(location.origin)
-        obj['next']
-
-        $.post('login', {'target':target, 'password':pwd, 'settime': settime, 'next': next}, function (data) {
+        var obj = formatSearch(location.search)
+        $.post('login', {'target':target, 'password':pwd, 'settime': settime}, function (data) {
             alert(data)
-            if (next){
-                window.location.href = location.origin + '/' +obj['next']
+            if (obj['next'] == null){
+            window.location.href = location.origin + '/index'
+            }else {
+            window.location.href = location.origin + '/' +obj['next']
             }
         }, "text")
+
     })
 })
