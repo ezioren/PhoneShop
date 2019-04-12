@@ -10,7 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.11/ref/settings/
 """
 
-import os
+import os, django
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'corsheaders',
     'app',
 ]
 
@@ -45,10 +46,11 @@ REST_FRAMEWORK = {
     'DEFAULT_RENDERER_CLASSES': (  # 默认响应渲染类
         'rest_framework.renderers.JSONRenderer',  # json渲染器
         'rest_framework.renderers.BrowsableAPIRenderer',  # 浏览API渲染器
-    )
+    ),
 }
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware', # drf跨域
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -56,11 +58,42 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'django.middleware.locale.LocaleMiddleware', # 语言设置
+    'django.middleware.locale.LocaleMiddleware',  # 语言设置
 ]
 
+SESSION_SERIALIZER = "django.contrib.sessions.serializers.PickleSerializer"
+
+# CORS
+#跨域增加忽略
+CORS_ALLOW_CREDENTIALS = True
+CORS_ORIGIN_ALLOW_ALL = True
+CORS_ORIGIN_WHITELIST = ('*')
+
+CORS_ALLOW_METHODS = (
+    'DELETE',
+    'GET',
+    'OPTIONS',
+    'PATCH',
+    'POST',
+    'PUT',
+    'VIEW',
+)
+
+CORS_ALLOW_HEADERS = (
+    'XMLHttpRequest',
+    'X_FILENAME',
+    'accept-encoding',
+    'authorization',
+    'content-type',
+    'dnt',
+    'origin',
+    'user-agent',
+    'x-csrftoken',
+    'x-requested-with',
+    'Pragma',
+)
+
 ROOT_URLCONF = 'urls'
-# ROOT_URLCONF = 'urls'
 
 TEMPLATES = [
     {
@@ -74,6 +107,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.i18n',
             ],
         },
     },
@@ -119,19 +153,33 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
-# Internationalization
-# https://docs.djangoproject.com/en/1.11/topics/i18n/
+TIME_ZONE = 'UTC'
+LANGUAGES = (
+    ('en', ('English')),
+    ('zh-CN', ('中文简体')),
+    ('zh-hant', ('中文繁體')),
+)
 
-LANGUAGE_CODE = 'en-us'
+# LANGUAGE_CODE = 'en'
+LANGUAGE_CODE = 'zh-CN'
 
+# TIME_ZONE = 'America/Los_Angeles'
 TIME_ZONE = 'Asia/Shanghai'
 
+# Internationalization
+# https://docs.djangoproject.com/en/1.11/topics/i18n/
 USE_I18N = True
 
 USE_L10N = True
 
 # 在models.py中调用models.DateTimeField(auto_now_add=True)方法时关闭该设置可获得正常时间
 USE_TZ = False
+
+
+# 翻译文件所在目录，需要手工创建
+LOCALE_PATHS = (
+    os.path.join(PROJECT_PATH, 'locale'),
+)
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
@@ -148,3 +196,17 @@ STATICFILES_DIRS =[
 ]
 
 MEDIA_ROOT = os.path.join(PROJECT_PATH, 'static/media/')
+
+
+CFG = {
+    'USERINFO':{
+        'u_name': 'u_name',
+        'u_password': 'u_password',
+        'u_phone': 'u_phone',
+        'u_sex': 'u_sex',
+        'u_uuid': 'u_uuid',
+        'u_createtime': 'u_createtime',
+        'ua_email':'ua_email',
+    }
+}
+

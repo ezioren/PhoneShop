@@ -4,11 +4,13 @@ configparser==3.5.0
 coreapi==2.3.3
 coreschema==0.0.4
 Django==1.11.4
+django-cors-headers==2.4.0
 django-crispy-forms==1.7.2
 django-filter==2.0.0
 django-guardian==1.4.9
 djangorestframework==3.9.0
 djangorestframework-jwt==1.11.0
+djangorestframework-stubs==0.2.0
 httpie==1.0.2
 idna==2.8
 itypes==1.1.0
