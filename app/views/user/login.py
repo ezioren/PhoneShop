@@ -8,7 +8,6 @@ import re
 
 from app.conts import *
 from app.models.user.users import UserInfo, UserAddressInfo
-from app.utils.decorators import check_login
 
 from django.shortcuts import render, redirect, reverse
 from rest_framework.response import Response
@@ -18,16 +17,14 @@ from rest_framework.views import APIView
 
 class LoginView(APIView):
     def _save(self, result, request, pwd, remember):
-        _sha256 = hashlib.sha256()
-        _sha256.update(pwd.encode('utf-8'))
-        _sha256_pwd = _sha256.hexdigest()
-        if _sha256_pwd == result[0].u_password:
-            request.session['username'] = result[0].u_name
-            request.session.set_expiry(30 * 86400 if remember else 0)
-            request.session.save()
-            return LOGON_SUCCESS
+        if pwd == result[0].u_password:
+            if request.session.get('username', None) == None:
+                request.session['username'] = result[0].u_name
+                request.session.set_expiry(30 * 86400 if remember else 0)
+                # request.session.save()
+            return 0
         else:
-            return PASSWORD_ERROR
+            return 1
 
     def get(self, request):
         return render(request, 'ps_user/login.html', context={'title':'登录'})
@@ -53,13 +50,13 @@ class LoginView(APIView):
         # username
         u_name = UserInfo.objects.filter(u_name=target)
         # 验证用户名
-        if u_phone or u_email or u_name:
-            # 登录
-            code = self._save(u_phone or u_email or u_name, request, password, remember)
-            return Response(code)
-        else:
 
-            return Response(ACCOUNT_DOES_NO_EXIST)
+        if u_phone or u_email or u_name:
+            code = self._save(u_phone or u_email or u_name, request, _sha256_pwd, remember)
+            return Response(code)
+
+        else:
+            return Response(2)
 
 class LogoutView(APIView):
     def get(self, request):
