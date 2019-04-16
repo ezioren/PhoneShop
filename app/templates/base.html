@@ -87,11 +87,11 @@
         {% elif is_login == True %}
         <!-- 登录后 -->
         <div class="nav-right">
-            <a href="" class="navbar-brand">
+            <a href="{% url 'account' %}" class="navbar-brand">
                 <span>{{ name }}</span>
             </a>
             <span class="sep">|</span>
-            <a href="{% url 'Logout' %}" class="navbar-brand">
+            <a href="{% url 'logout' %}" class="navbar-brand">
                 <span>登出</span>
             </a>
         </div>

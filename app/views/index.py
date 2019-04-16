@@ -16,6 +16,6 @@ class IndexView(APIView):
     def get(self, request, *args, **kwargs):
         is_login = kwargs['is_login']
         name = None
-        if 'username' in kwargs.keys():
+        if is_login:
             name = kwargs['username']
         return render(request, 'ps_goods/index.html', context={'index':'welcome','title':'优选商城～选你所选', 'is_login':is_login, 'name':name})

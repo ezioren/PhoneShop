@@ -42,16 +42,16 @@ $(function () {
         var settime = $('input[type="checkbox"]').prop('checked')
         var obj = formatSearch(location.search)
         $.post('login', {'target':target, 'password':pwd, 'settime': settime}, function (data) {
-            if (data == 0){
+            if (data === 0){
                 alert('登录成功')
                 if (obj['next'] == null){
                     window.location.href = location.origin + '/index'
                 }else {
                     window.location.href = location.origin + '/' +obj['next']
                 }
-            } else if (data == 1){
+            } else if (data === 1){
                 alert('密码错误')
-            } else if (data == 2) {
+            } else if (data === 2) {
                 alert('用户名不存在')
             }else {
                 alert('登录失败')

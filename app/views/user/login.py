@@ -16,22 +16,22 @@ from rest_framework.views import APIView
 
 
 class LoginView(APIView):
+    def get(self, request, *args, **kwargs):
+        return render(request, 'ps_user/login.html', context={'title':'登录'})
+
     def _save(self, result, request, pwd, remember):
         if pwd == result[0].u_password:
-            if request.session.get('username', None) == None:
+            if not request.session.get('username'):
                 request.session['username'] = result[0].u_name
-                request.session.set_expiry(30 * 86400 if remember else 0)
-                # request.session.save()
+                request.session['is_login'] = True
+                request.session.set_expiry(60 * 60 * 24 * 14 if remember else 0)
+                request.session.save()
             return 0
         else:
             return 1
 
-    def get(self, request):
-        return render(request, 'ps_user/login.html', context={'title':'登录'})
-
     def post(self, request, format=None, *args, **kwargs):
         data = request.data
-        origin = request.META['HTTP_ORIGIN']
         target = data['target']
         password = data['password']
         remember = data['settime']
@@ -61,5 +61,6 @@ class LoginView(APIView):
 class LogoutView(APIView):
     def get(self, request):
         del request.session['username']
+        request.session['is_login'] = False
 
         return redirect(reverse('index'))
