@@ -2,8 +2,8 @@
 {% load staticfiles %}
 
 {% block header_source %}
-<link href="{% static 'css/account/base.css' %}" rel="stylesheet" type="text/css">
-<script href="{% static 'js/account/base.js' %}" type="text/javascript"></script>
+<link href="{% static 'css/account/account.css' %}" rel="stylesheet" type="text/css">
+<script href="{% static 'js/account/account.js' %}" type="text/javascript"></script>
 {% endblock %}
 
 {% block body %}
@@ -19,27 +19,60 @@
                 </ul>
             </div>
         </div>
-        <div class="content" id="right-context">
+<!--        <div class="content" id="right-context">-->
+<!--            <div class="container">-->
+<!--                <div class="context" id="showinfo">-->
+<!--                    <ul class="list">-->
+<!--                        <li>-->
+<!--                            用户名：<span>{{ user.u_name }}</span>-->
+<!--                        </li>-->
+<!--                        <li>-->
+<!--                            手机：<span>{{ user.u_phone }}</span>-->
+<!--                        </li>-->
+<!--                        <li>-->
+<!--                            邮箱：<span>{{ email.ua_email }}</span>-->
+<!--                        </li>-->
+<!--                        <li>-->
+<!--                            性别：<span>{{ user.u_sex }}</span>-->
+<!--                        </li>-->
+<!--                        <li>-->
+<!--                            收货地址： <span>{{ email.ua_getaddress }}</span>-->
+<!--                        </li>-->
+<!--                    </ul>-->
+<!--                    <input id="changeinfo" type="button" value="编辑资料">-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+    </div>
+</div>
+{% endblock %}
+<div class="content" id="right-context">
             <div class="container">
                 <div class="context" id="showinfo">
                     <ul class="list">
                         <li>
-                            用户名：<span>用户名：</span>
+                            用户名：<span>{{ user.u_name }}</span>
                         </li>
                         <li>
-                            手机：<span>手机：</span>
+                            手机：<span>{{ user.u_phone }}</span>
                         </li>
                         <li>
-                            邮箱：<span>邮箱：</span>
+                            邮箱：<span>{{ email.ua_email }}</span>
                         </li>
                         <li>
-                            收货地址：
-<!--                            TODO 表格-->
+                            性别：<span>{{ user.u_sex }}</span>
+                        </li>
+                        <li>
+                            收货地址： <span>{{ email.ua_getaddress }}</span>
                         </li>
                     </ul>
+                    <input id="changeinfo" type="button" value="编辑资料">
                 </div>
             </div>
         </div>
-    </div>
-</div>
-{% endblock %}
+
+
+
+
+{% block rightbody %)
+{% endblock %)

@@ -21,15 +21,14 @@ class LoginView(APIView):
 
     def _save(self, result, request, pwd, remember):
         if pwd == result[0].u_password:
-            if not request.session.get('username'):
+            if request.session.get('username') == None:
                 request.session['username'] = result[0].u_name
                 request.session['is_login'] = True
-                request.session.set_expiry(60 * 60 * 24 * 14 if remember else 0)
-                request.session.save()
+                request.session.set_expiry(30 * 86400 if remember else 0)
             return 0
         else:
             return 1
-
+    # TODO 考虑增加next返回机制
     def post(self, request, format=None, *args, **kwargs):
         data = request.data
         target = data['target']

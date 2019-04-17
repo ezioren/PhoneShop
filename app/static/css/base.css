@@ -18,7 +18,10 @@ h1, h2, h3, h4, h5, h6{font-weight:normal;}
 ul,ol {
     list-style: none;
 }
-
+li{
+    color: rgba(29, 4, 5, 0.64);
+    font-weight: normal;
+}
 img {
     border: none;
     vertical-align: middle;
