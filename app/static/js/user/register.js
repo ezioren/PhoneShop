@@ -236,7 +236,7 @@ $(function () {
         }
     }
 
-    $('form').submit(function () {
+    $('#register-submit').click(function () {
         var alertShow = "";
         var sex = "";
         var checkList = [$('#username'), $('#email'), $('#phonenum')];
@@ -275,22 +275,17 @@ $(function () {
             };
             console.log(sendmsg);
             $.ajax({
+                type: "post",
                 url: "registerhandle",
-                type: "POST",
+                async: false,
+                method: "post",
                 dataType: "text",
                 data: sendmsg,
                 success: function (e) {
-                    alert(55555555555555555);
                     alert(e);
-                    window.location.href = window.location.origin + "/index"
                 },
             })
-            // $.post("registerhandle", sendmsg, function (e) {
-            //     alert(e)
-            //
-            //     // window.location.href = window.location.origin + "/index"
-            // })
-
+            window.location.replace(location.origin + "/index")
         }
     })
 });

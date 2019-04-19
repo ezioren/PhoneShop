@@ -67,9 +67,9 @@ class RegisterHandleView(APIView):
 
         checkuser = authenticate(username=username, password=password)
         if checkuser:
-            return HttpResponse(0)
+            return HttpResponse('注册成功')
         else:
-            return HttpResponse(1)
+            return HttpResponse('注册失败')
 
     def get(self, request, *args, **kwargs):
         source = request.GET
