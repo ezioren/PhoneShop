@@ -3,4 +3,5 @@
 '''
 from app.models.goods.goods import GoodsInfo, CompanyInfo
 from app.models.goods.guanggao import AdvertisementInfo
-from app.models.user.users import UserInfo, UserAddressInfo
+from app.models.user.users import MyUser
+from app.models.user.profile import Profile

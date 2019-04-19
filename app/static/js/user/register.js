@@ -1,17 +1,17 @@
 $(function () {
     // 判断非空
-    function isEmpty(target){
-        if (target.val()=="" || target.val()==null){
+    function isEmpty(target) {
+        if (target.val() == "" || target.val() == null) {
             target.parent().parent().find('.error-msg').show()
-        }else {
+        } else {
             target.parent().parent().find('.error-msg').hide()
         }
     }
 
     //用户
     $('#username').keyup(function () {
-        if ($(this).val().length > 50){
-            var lenText=$(this).val().substring(0,50)
+        if ($(this).val().length > 50) {
+            var lenText = $(this).val().substring(0, 50)
             $(this).val(lenText)
             $('#username').parent().parent().find('.error-msg').html('用户名过长');
             $('#username').parent().parent().find('.error-msg').show();
@@ -20,18 +20,17 @@ $(function () {
             $('#username').parent().parent().find('.error-msg').hide();
         }
     }).blur(function () {
-        if ($(this).val().length == 0){
+        if ($(this).val().length == 0) {
             isEmpty($(this))
-        }
-        else {
-            $.get('registerhandle', {'source':$(this).val(), 'name': 'username'}, function (data) {
-                if (data == 'exited'){
+        } else {
+            $.get('registerhandle', {'source': $(this).val(), 'name': 'username'}, function (data) {
+                if (data == 'exited') {
                     $('#username').parent().parent().find('.error-msg').html('该用户名已注册');
                     $('#username').parent().parent().find('.error-msg').show();
-                }else if (data == 'not' && $('#username').val().length > 0) {
+                } else if (data == 'not' && $('#username').val().length > 0) {
                     $('#username').parent().parent().find('.error-msg').html('用户名不能为空');
                     $('#username').parent().parent().find('.error-msg').hide();
-                }else {
+                } else {
                     $('#username').parent().parent().find('.error-msg').html('用户名不能为空');
                     isEmpty($('#username'))
                 }
@@ -41,62 +40,61 @@ $(function () {
 
     // 邮箱补全及检测空值
     $('#email').autocomplete({
-        autoFocus:true,
-        delay:0,
-        source:function(request,response){
-            var hosts=['qq.com', '163.com', 'gmail.com'],
-            term=request.term, //获取用户输入内容
-            name=term, //邮箱的用户名
-            host="",  //邮箱的域名
-            ix=term.indexOf('@'),  //@的位置
-            result=[];  //最终呈现的邮箱列表
+        autoFocus: true,
+        delay: 0,
+        source: function (request, response) {
+            var hosts = ['qq.com', '163.com', 'gmail.com'],
+                term = request.term, //获取用户输入内容
+                name = term, //邮箱的用户名
+                host = "",  //邮箱的域名
+                ix = term.indexOf('@'),  //@的位置
+                result = [];  //最终呈现的邮箱列表
 
             result.push(term);
 
             //当有@的时候，重新分配用户名和域名
-            if(ix>-1){
-                name=term.slice(0,ix); // @前面的name
-                host=term.slice(ix+1); // @后面的域名
-            }
-                  
-             if(name){
+            if (ix > -1) {
+                name = term.slice(0, ix); // @前面的name
+                host = term.slice(ix + 1); // @后面的域名
+            }
+
+            if (name) {
                 var findedHosts;
-                if(host){
+                if (host) {
                     // 用户已经输入@和后面的域名
                     // 找到相关的域名信息
-                    findedHosts=$.grep(hosts,function(value,index){
-						return value.indexOf(host)>-1;
-					});
-				}else{
+                    findedHosts = $.grep(hosts, function (value, index) {
+                        return value.indexOf(host) > -1;
+                    });
+                } else {
                     //用户没有输入@
-				    //提示所有的域名
-					findedHosts=hosts;
-				}
-				//如果findedHosts为空，return也是空
-				var findedResult=$.map(findedHosts,function(value,index){
-					return name+'@'+value;
-				});
+                    //提示所有的域名
+                    findedHosts = hosts;
+                }
+                //如果findedHosts为空，return也是空
+                var findedResult = $.map(findedHosts, function (value, index) {
+                    return name + '@' + value;
+                });
 
-				result=result.concat(findedResult);
-             }
-             response(result);
-        },
+                result = result.concat(findedResult);
+            }
+            response(result);
+        },
     }).blur(function () {
-        if ($(this).val().length > 0){
-            $.get('registerhandle', {'source':$(this).val(), 'name': 'email'}, function (data) {
-                if (data == 'exited'){
+        if ($(this).val().length > 0) {
+            $.get('registerhandle', {'source': $(this).val(), 'name': 'email'}, function (data) {
+                if (data == 'exited') {
                     $('#email').parent().parent().find('.error-msg').html('该邮箱已注册');
                     $('#email').parent().parent().find('.error-msg').show();
-                }else if (data == 'not') {
+                } else if (data == 'not') {
                     $('#email').parent().parent().find('.error-msg').html('邮箱不能为空');
                     $('#email').parent().parent().find('.error-msg').hide();
-                }else {
+                } else {
                     $('#email').parent().parent().find('.error-msg').html('邮箱不能为空');
                     isEmpty($('#email'))
                 }
             })
-        }
-        else {
+        } else {
             isEmpty($('#email'))
         }
     })
@@ -105,28 +103,28 @@ $(function () {
     // 手机
     // 只能输入数字，非数字自动删除
     $('#phonenum').blur(function () {
-        if ($(this).val().length == 0){
+        if ($(this).val().length == 0) {
             isEmpty($(this))
         }
-        $.get('registerhandle', {'source':$(this).val(), 'name': 'phone'}, function (data) {
-            if (data == 'exited'){
+        $.get('registerhandle', {'source': $(this).val(), 'name': 'phone'}, function (data) {
+            if (data == 'exited') {
                 $('#phonenum').parent().parent().find('.error-msg').html('该手机号已注册');
                 $('#phonenum').parent().parent().find('.error-msg').show();
-            }else if (data == 'not' && $('#phonenum').val().length > 0) {
+            } else if (data == 'not' && $('#phonenum').val().length > 0) {
                 $('#phonenum').parent().parent().find('.error-msg').html('手机号不能为空');
                 $('#phonenum').parent().parent().find('.error-msg').hide();
-            }else {
+            } else {
                 $('#phonenum').parent().parent().find('.error-msg').html('手机号不能为空');
             }
         })
-    }).keyup(function(){
-        $(this).val($(this).val().replace( /[^0-9]/g,''));
-    }).bind("paste",function(){
-        $(this).val($(this).val().replace( /[^0-9]/g,''));
+    }).keyup(function () {
+        $(this).val($(this).val().replace(/[^0-9]/g, ''));
+    }).bind("paste", function () {
+        $(this).val($(this).val().replace(/[^0-9]/g, ''));
     })
 
     // 检查密码复杂度
-    function checkpwdfuza(source, target){
+    function checkpwdfuza(source, target) {
         var grade = 0
         // 密码为八位及以上并且字母数字特殊字符三项都包括，强
         var strongRegex = new RegExp("^(?=.{8,})(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*\\W).*$", "g");
@@ -149,47 +147,47 @@ $(function () {
         return grade
     }
 
-    function checkpwdlength(source, target, show, grade){
+    function checkpwdlength(source, target, show, grade) {
         // 验证长度
         var inputlen = source.val().length
         var textmax = source.attr('maxlength')
         var boxlen = target.css('width')
 
-        var boxbgwidth = (inputlen/parseInt(textmax))*parseInt(boxlen)-7
+        var boxbgwidth = (inputlen / parseInt(textmax)) * parseInt(boxlen) - 7
 
-        show.css("background-color","#F00");
-        if (grade == 3){
-            if (boxbgwidth>210) {
-                show.css("background-color","#6F3");
+        show.css("background-color", "#F00");
+        if (grade == 3) {
+            if (boxbgwidth > 210) {
+                show.css("background-color", "#6F3");
             }
-            if (boxbgwidth>105) {
-                show.css("background-color","#F90");
+            if (boxbgwidth > 105) {
+                show.css("background-color", "#F90");
             }
             show.css('width', boxbgwidth)
-        }else if (grade == 2){
-            if (boxbgwidth>210) {
+        } else if (grade == 2) {
+            if (boxbgwidth > 210) {
                 boxbgwidth = 210
             }
-            if (boxbgwidth>105) {
-                show.css("background-color","#F90");
+            if (boxbgwidth > 105) {
+                show.css("background-color", "#F90");
             }
             show.css('width', boxbgwidth)
-        }else if(grade == 1){
-            if (boxbgwidth>105) {
+        } else if (grade == 1) {
+            if (boxbgwidth > 105) {
                 boxbgwidth = 105
             }
             show.css('width', boxbgwidth)
-        }else {
+        } else {
             boxbgwidth = 0
             show.css('width', boxbgwidth)
         }
-        if (inputlen == 0){
+        if (inputlen == 0) {
             source.parent().parent().find('.error-msg').html('密码不能为空')
             source.parent().parent().find('.error-msg').show()
         } else if (inputlen < 8) {
             source.parent().parent().find('.error-msg').html('密码不能少于8位')
             source.parent().parent().find('.error-msg').show()
-        }else {
+        } else {
             source.parent().parent().find('.error-msg').hide()
         }
     }
@@ -205,83 +203,94 @@ $(function () {
 
     // 验证密码前后一致
     $('#surePassword').blur(function () {
-        if($(this).val()!=$('#password').val()){
+        if ($(this).val() != $('#password').val()) {
             $(this).parent().parent().find('.error-msg').show()
-        }else {
+        } else {
             $(this).parent().parent().find('.error-msg').hide()
         }
-    })
+    });
 
     // 限制性别选择
-    function isSex(target){
+    function isSex(target) {
         if (target.prop("checked")) {
-            target.siblings().prop("disabled", "true")
-        }else {
-            target.siblings().prop("disabled", "")
+            target.siblings().prop("disabled", "true");
+        } else {
+            target.siblings().prop("disabled", "");
         }
     }
 
     // 性别
     $('#checkbox-man').click(function () {
         isSex($(this))
-    })
+    });
     $('#checkbox-woman').click(function () {
         isSex($(this))
-    })
+    });
 
     // 提交前检查是否有空
-    function checkIsEmpty(target){
+    function checkIsEmpty(target) {
         var duixiang = target.parent().parent().find('.error-msg')
-        if (target.val()=="" || target.val()==null || duixiang.html() == "该用户名已注册" || duixiang.html() == "该手机号已注册"){
+        if (target.val() == "" || target.val() == null || duixiang.html() == "该用户名已注册" || duixiang.html() == "该手机号已注册") {
             // event.preventDefault() // 拦截form,不执行跳转
             return duixiang.html()
         }
     }
 
-   $('form').submit(function () {
-       var alertShow = ""
-       var sex = ""
-       var checkList = [$('#username'), $('#email'), $('#phonenum')]
-       var checkSex = $('input[type="checkbox"]')
-       $.each(checkList, function (i) {
-           var duixiang = checkIsEmpty(checkList[i])
-           if (duixiang) {
-               alertShow += duixiang + " !\r\n"
-           }
-       })
-       if ($("#password").val()=="" || $("#password").val()==null || $("#password").val().length < 8) {
-           alertShow += $("#password").parent().parent().find('.error-msg').html() + " !\r\n"
-       }
-       if (checkSex[0].checked==checkSex[1].checked){
-           alertShow = alertShow + "未选择性别 !\r\n"
-       }
-       if (checkSex[0].checked) {
-           sex = checkSex[0].value
-       }else {
-           sex = checkSex[1].value
-       }
-       if (!checkSex[2].checked){
-           alertShow = alertShow + "未阅读协议 ！\r\n"
-       }
-       if (alertShow && alertShow.length>0){
-           event.preventDefault() // 拦截form,不执行跳转
-           alert(alertShow)
-       }
-       else{
-           var sendmsg = {
-                   "username": checkList[0].val(),
-                   "email": checkList[1].val(),
-                   "phonenum": checkList[2].val(),
-                   "password": $("#password").val(),
-                   "sex": sex,
-                   "createtime": moment().format('YYYY-MM-DD-HH-mm-ss')
-           }
-           console.log(sendmsg)
+    $('form').submit(function () {
+        var alertShow = "";
+        var sex = "";
+        var checkList = [$('#username'), $('#email'), $('#phonenum')];
+        var checkSex = $('input[type="checkbox"]');
+        $.each(checkList, function (i) {
+            var duixiang = checkIsEmpty(checkList[i]);
+            if (duixiang) {
+                alertShow += duixiang + " !\r\n"
+            }
+        })
+        if ($("#password").val() == "" || $("#password").val() == null || $("#password").val().length < 8) {
+            alertShow += $("#password").parent().parent().find('.error-msg').html() + " !\r\n"
+        }
+        if (checkSex[0].checked == checkSex[1].checked) {
+            alertShow = alertShow + "未选择性别 !\r\n"
+        }
+        if (checkSex[0].checked) {
+            sex = checkSex[0].value
+        } else {
+            sex = checkSex[1].value
+        }
+        if (!checkSex[2].checked) {
+            alertShow = alertShow + "未阅读协议 ！\r\n"
+        }
+        if (alertShow && alertShow.length > 0) {
+            event.preventDefault(); // 拦截form,不执行跳转
+            alert(alertShow)
+        } else {
+            var sendmsg = {
+                "username": checkList[0].val(),
+                "email": checkList[1].val(),
+                "mobile": checkList[2].val(),
+                "password": $("#password").val(),
+                "sex": sex,
+                "createtime": moment().format('YYYY-MM-DD-HH-mm-ss')
+            };
+            console.log(sendmsg);
+            $.ajax({
+                url: "registerhandle",
+                type: "POST",
+                dataType: "text",
+                data: sendmsg,
+                success: function (e) {
+                    alert(55555555555555555);
+                    alert(e);
+                    window.location.href = window.location.origin + "/index"
+                },
+            })
+            // $.post("registerhandle", sendmsg, function (e) {
+            //     alert(e)
+            //
+            //     // window.location.href = window.location.origin + "/index"
+            // })
 
-           $.post("registerhandle", sendmsg, function (e) {
-               alert(e)
-               window.location.href = window.location.origin + "/index"
-           },'text')
-       }
-   })
-})
+        }
+    })
+});

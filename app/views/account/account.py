@@ -4,7 +4,7 @@
 # software: PyCharm
 from app.base import BaseView
 from app.utils.decorators import check_login
-from app.models.user.users import UserInfo, UserAddressInfo
+from app.models.user.users import MyUser
 
 from django.shortcuts import render, redirect, reverse
 from rest_framework.response import Response
@@ -39,15 +39,13 @@ class AccountCartView(BaseView):
         result = self.check_login(kwargs=kwargs)
         if result[0]:
             name = result[1]
-            user = UserInfo.objects.filter(u_name=name)
-            eamil = UserAddressInfo.objects.filter(user=user[0].id)
+            user = MyUser.objects.filter(username=name)
 
             context={
                 'title': '个人中心',
                 'is_login': result[0],
                 'name': name,
                 'user': user[0],
-                'email': eamil[0],
             }
 
             return render(request, 'account/account_msg.html', context=context)

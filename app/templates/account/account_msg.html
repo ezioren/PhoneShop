@@ -7,19 +7,19 @@
         <div class="context" id="showinfo">
             <ul class="list">
                 <li>
-                    用户名：<span>{{ user.u_name }}</span>
+                    用户名：<span>{{ user.username }}</span>
                 </li>
                 <li>
-                    手机：<span>{{ user.u_phone }}</span>
+                    手机：<span>{{ user.profile.mobile }}</span>
                 </li>
                 <li>
-                    邮箱：<span>{{ email.ua_email }}</span>
+                    邮箱：<span>{{ user.email }}</span>
                 </li>
                 <li>
-                    性别：<span>{{ user.u_sex }}</span>
+                    性别：<span>{{ user.profile.mobile }}</span>
                 </li>
                 <li>
-                    收货地址： <span>{{ email.ua_getaddress }}</span>
+                    收货地址： <span>{{ user.profile.sendaddress }}</span>
                 </li>
             </ul>
             <input class="btn btn-primary btn-lg" data-toggle="modal" data-target="#msgconfig" id="changeinfo"
@@ -42,36 +42,36 @@
                     <li>
                         <div class="input-group">
                             <span class="input-group-addon">用户名</span>
-                            <input type="text" class="form-control" placeholder="{{ user.u_name }}" value="{{ user.u_name }}"
-                                   aria-describedby="sizing-addon2">
+                            <input type="text" class="form-control" placeholder="{{ user.username }}"
+                                   value="{{ user.username }}" aria-describedby="sizing-addon2">
                         </div>
                     </li>
                     <li>
                         <div class="input-group">
                             <span class="input-group-addon">手机</span>
-                            <input type="text" class="form-control" placeholder="{{ user.u_phone }}" value="{{ user.u_phone }}"
-                                   aria-describedby="sizing-addon2">
+                            <input type="text" class="form-control" placeholder="{{ user.profile.mobile }}"
+                                   value="{{ user.profile.mobile }}" aria-describedby="sizing-addon2">
                         </div>
                     </li>
                     <li>
                         <div class="input-group">
                             <span class="input-group-addon">邮箱</span>
-                            <input type="text" class="form-control" placeholder="{{ email.ua_email }}" value="{{ email.ua_email }}"
-                                   aria-describedby="sizing-addon2">
+                            <input type="text" class="form-control" placeholder="{{ user.email }}"
+                                   value="{{ user.email }}" aria-describedby="sizing-addon2">
                         </div>
                     </li>
                     <li>
                         <div class="input-group">
                             <span class="input-group-addon">性别</span>
-                            <input type="text" class="form-control" placeholder="{{ user.u_sex }}" value="{{ user.u_sex }}"
-                                   aria-describedby="sizing-addon2">
+                            <input type="text" class="form-control" placeholder="{{ user.profile.sex }}"
+                                   value="{{ user.profile.sex }}" aria-describedby="sizing-addon2">
                         </div>
                     </li>
                     <li>
                         <div class="input-group">
                             <span class="input-group-addon">收货地址</span>
-                            <input type="text" class="form-control" placeholder="{{ email.ua_getaddress }}"
-                            value="{{ email.ua_getaddress }}" aria-describedby="sizing-addon2">
+                            <input type="text" class="form-control" placeholder="{{ user.profile.sendaddress }}"
+                                   value="{{ user.profile.sendaddress }}" aria-describedby="sizing-addon2">
                         </div>
                     </li>
                 </ul>
