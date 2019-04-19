@@ -278,11 +278,10 @@ $(function () {
            }
            console.log(sendmsg)
 
-           $.post("registerhandle", sendmsg, function (data) {
-               var code = data
-               window.alert(code)
-               window.location.href = "index"
-           }, 'text')
+           $.post("registerhandle", sendmsg, function (e) {
+               alert(e)
+               window.location.href = window.location.origin + "/index"
+           },'text')
        }
    })
 })

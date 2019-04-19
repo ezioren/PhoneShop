@@ -5,11 +5,13 @@
 import hashlib
 import json
 import re
+import settings
 
 from app.conts import *
 from app.models.user.users import UserInfo, UserAddressInfo
 
 from django.shortcuts import render, redirect, reverse
+from django.http.response import HttpResponse
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
@@ -21,10 +23,13 @@ class LoginView(APIView):
 
     def _save(self, result, request, pwd, remember):
         if pwd == result[0].u_password:
-            if request.session.get('username') == None:
+            if 'username' not in request.session:
                 request.session['username'] = result[0].u_name
                 request.session['is_login'] = True
-                request.session.set_expiry(30 * 86400 if remember else 0)
+                if remember:
+                    request.session.set_expiry(1296000) # 保存半个月
+                else:
+                    request.session.set_expiry(0) # 浏览器关闭失效
             return 0
         else:
             return 1
@@ -52,13 +57,14 @@ class LoginView(APIView):
 
         if u_phone or u_email or u_name:
             code = self._save(u_phone or u_email or u_name, request, _sha256_pwd, remember)
-            return Response(code)
+            return HttpResponse(code)
 
         else:
             return Response(2)
 
 class LogoutView(APIView):
     def get(self, request):
+        # 删除sess
         del request.session['username']
         request.session['is_login'] = False
 

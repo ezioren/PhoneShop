@@ -1,0 +1,17 @@
+{% extends 'account/base.html' %}
+
+{% block rightbody %}
+<div class="content" id="right-context">
+    <div class="container">
+        <div class="context" id="showinfo">
+            <h2>购物车</h2>
+            <ul class="list">
+                <li>
+                    用户名：<span>{{ user.u_name }}</span>
+                </li>
+            </ul>
+            <input id="changeinfo" type="button" value="编辑资料">
+        </div>
+    </div>
+</div>
+{% endblock %}

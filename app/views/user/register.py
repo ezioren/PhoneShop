@@ -76,7 +76,6 @@ class RegisterHandleView(APIView):
     def post(self, request, *args, **kwargs):
         source = request.data
         result = self.save_user(source, request)
-        print(result)
         if result:
             return Response('注册完成')
         else:
