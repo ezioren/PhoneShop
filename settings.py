@@ -47,15 +47,15 @@ REST_FRAMEWORK = {
         'rest_framework.renderers.JSONRenderer',  # json渲染器
         'rest_framework.renderers.BrowsableAPIRenderer',  # 浏览API渲染器
     ),
-    'DEFAULT_AUTHENTICATION_CLASSES': (
+    'DEFAULT_AUTHENTICATION_CLASSES': [
         'rest_framework_jwt.authentication.JSONWebTokenAuthentication',
         'rest_framework.authentication.SessionAuthentication',
         'rest_framework.authentication.BasicAuthentication',
-    ),
+        'rest_framework.authentication.TokenAuthentication',
+    ],
 }
 
-MIDDLEWARE = [
-    'corsheaders.middleware.CorsMiddleware', # drf跨域
+MIDDLEWARE_CLASSES = (
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -64,13 +64,17 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.locale.LocaleMiddleware',  # 语言设置
-]
+)
 
 SESSION_SERIALIZER = "django.contrib.sessions.serializers.PickleSerializer"
-SESSION_KEY = '_auth_user_id'
 
 # session只保存一次
 SESSION_SAVE_EVERY_REQUEST = True
+
+# 验证用户
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+]
 
 # CORS
 #跨域增加忽略

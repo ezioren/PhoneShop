@@ -285,7 +285,7 @@ $(function () {
                     alert(e);
                 },
             })
-            window.location.replace(location.origin + "/index")
+            window.location.replace(location.origin + "user/login")
         }
     })
 });

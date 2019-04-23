@@ -19,10 +19,12 @@
                     性别：<span>{{ user.profile.mobile }}</span>
                 </li>
                 <li>
-                    收货地址： <span>{{ user.profile.sendaddress }}</span>
+                    收货地址： {% if user.profile.sendaddress != None %}<span>{{ user.profile.sendaddress }}</span>
+                            {% else %}<span></span>
+                            {% endif %}
                 </li>
             </ul>
-            <input class="btn btn-primary btn-lg" data-toggle="modal" data-target="#msgconfig" id="changeinfo"
+            <input class="" data-toggle="modal" data-target="#msgconfig" id="changeinfo"
                    type="button" value="编辑资料">
         </div>
     </div>
@@ -70,8 +72,13 @@
                     <li>
                         <div class="input-group">
                             <span class="input-group-addon">收货地址</span>
+                            {% if user.profile.sendaddress != None %}
                             <input type="text" class="form-control" placeholder="{{ user.profile.sendaddress }}"
                                    value="{{ user.profile.sendaddress }}" aria-describedby="sizing-addon2">
+                            {% else %}
+                            <input type="text" class="form-control" placeholder=""
+                                   value="" aria-describedby="sizing-addon2">
+                            {% endif %}
                         </div>
                     </li>
                 </ul>

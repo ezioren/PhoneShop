@@ -18,19 +18,18 @@ class IndexView(BaseView):
     @check_login
     def get(self, request, *args, **kwargs):
         result = self.check_login(kwargs=kwargs)
-        print(request.session.get(settings.SESSION_KEY))
-        if result[0]:
-            name = result[1]
+        if result:
+            name = request.user.username
             context = {
                 'index': 'welcome',
                 'title': '优选商城～选你所选',
-                'is_login': result[0],
+                'is_login': result,
                 'name': name
             }
         else:
             context = {
                 'index': 'welcome',
                 'title': '优选商城～选你所选',
-                'is_login': result[0],
+                'is_login': result,
             }
-        return render(request, 'ps_goods/index.html', context=context)
+        return render(request, 'index.html', context=context)

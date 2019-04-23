@@ -39,9 +39,6 @@
 
 #left-nav .list li:hover {
     background-color: #ff6a0f;
-}
-
-#left-nav .list li:hover > a {
     color: #ffffff !important;
 }
 
@@ -114,8 +111,11 @@
 #changeinfo:hover {
     /*控制位移：　-webkit-transform:translate(-5px, -5px);*/
     animation: ani_goods-show 800ms 1 forwards;
+    border-color: #dddddd!important;
 }
-
+#changeinfo:active{
+    border-color: #dddddd!important;
+}
 
 /*个人信息修改*/
 #change {

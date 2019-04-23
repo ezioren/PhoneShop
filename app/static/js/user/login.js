@@ -46,19 +46,19 @@ $(function () {
                     window.location.href = window.location.origin + '/' +obj['next']
                 }
         } else if (e === 1){
-                alert('密码错误')
+                alert('用户未激活')
         } else if (e === 2) {
-                alert('用户名不存在')
+                alert('用户名不存在或密码错误')
         }else {
                 alert('登录失败')
         }
     }
 
-    $('form').submit(function () {
+    $('#login-submit').click(function () {
         var pwd = $('#password').val()
-        var target = $('#username').val()
+        var username = $('#username').val()
         var settime = $('input[type="checkbox"]').prop('checked')
-        $.post('login', {'target':target, 'password':pwd, 'settime': settime}, function (e) {
+        $.post('login', {'username':username, 'password':pwd, 'settime': settime}, function (e) {
             checkdata(e)
         },'json')
     })

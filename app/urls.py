@@ -18,6 +18,6 @@ view_urls = [
 
     # 个人中心
     url(r'^account/base.html$', AccountView.as_view(), name='account'),
-    url(r'^account/accountchange$', AccountChangeView.as_view(), name='Accountchange'),
+    url(r'^account/accountchange$', AccountChangeView.as_view(), name='accountchange'),
 
 ]

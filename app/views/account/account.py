@@ -15,17 +15,14 @@ class AccountView(BaseView):
     @check_login
     def get(self, request, *args, **kwargs):
         result = self.check_login(kwargs=kwargs)
-        if result[0]:
-            name = result[1]
-            user = UserInfo.objects.filter(u_name=name)
-            eamil = UserAddressInfo.objects.filter(user=user[0].id)
 
+        if result:
+            user = MyUser.objects.filter(username=request.user.username)
             context={
                 'title': '个人中心',
-                'is_login': result[0],
-                'name': name,
+                'is_login': result,
                 'user': user[0],
-                'email': eamil[0],
+                'name':request.user
             }
 
             return render(request, 'account/account_msg.html', context=context)
@@ -37,14 +34,12 @@ class AccountCartView(BaseView):
     @check_login
     def get(self, request, *args, **kwargs):
         result = self.check_login(kwargs=kwargs)
-        if result[0]:
-            name = result[1]
-            user = MyUser.objects.filter(username=name)
+        if result:
+            user = MyUser.objects.filter(username=request.user.username)
 
             context={
                 'title': '个人中心',
-                'is_login': result[0],
-                'name': name,
+                'is_login': result,
                 'user': user[0],
             }
 
@@ -56,9 +51,14 @@ class AccountChangeView(BaseView):
 
     def post(self, request, *args, **kwargs):
         data = request.data
-        print(data)
-        print(data.get('context'))
+        user = MyUser.objects.filter(username=request.user)[0]
 
-        user = UserInfo.objects
+        user.username = data['name']
+        user.profile.mobile = data['mobile']
+        user.email = data['email']
+        user.profile.sex = data['sex']
+        user.profile.sendaddress = data['sendaddress']
+        user.save()
+        user.profile.save()
 
         return Response('修改成功')

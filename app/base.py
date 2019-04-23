@@ -12,9 +12,8 @@ class BaseView(APIView):
     def check_login(self, *args, **kwargs):
         kwarg = kwargs['kwargs']
         is_login = kwarg['is_login']
-        username = kwarg['username']
-        if is_login and username:
-            return [is_login, username]
+        if is_login:
+            return True
         else:
-            return [is_login]
+            return False
 
