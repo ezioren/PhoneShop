@@ -32,8 +32,8 @@
     {% endblock %}
 </head>
 <body>
-    <!-- 导航栏 -->
-    <nav class="navbar navbar-inverse navbar-default navbar-static-top">
+<!-- 导航栏 -->
+<nav class="navbar navbar-inverse navbar-default navbar-static-top">
     <div class="container">
         <!-- nav-left -->
         <div class="nav-left">
@@ -63,16 +63,17 @@
         </div>
         <!-- nav-cart -->
         <div class="nav-cart" id="nav-cart">
-                <a href="" class="top-cart">
-                    <i class="iconfont icon-caigou"></i>
-                        购物车
-                 <span>（0）</span>
-                </a>
-                <div id="top-cart-menu">
-                    <!-- TODO 增加查询后显示购物中的商品 -->
-                    <div class="loading">购物车中还没有商品，快购购购！</div>
-                </div>
+            <a href="" class="top-cart">
+                <i class="iconfont icon-caigou"></i>
+                购物车
+                <span>（0）</span>
+            </a>
+            <div id="top-cart-menu">
+                <!-- TODO 增加查询后显示购物中的商品 -->
+                <div class="loading">购物车中还没有商品，快购购购！</div>
+            </div>
         </div>
+        {{ is_login }}
         <!-- nav-right-->
         {% if is_login == False %}
         <div class="nav-right">
@@ -87,96 +88,138 @@
         {% elif is_login == True %}
         <!-- 登录后 -->
         <div class="nav-right">
-            <a href="" class="navbar-brand">
+            <a href="{% url 'account' %}" class="navbar-brand">
                 <span>{{ name }}</span>
             </a>
             <span class="sep">|</span>
-            <a href="{% url 'Logout' %}" class="navbar-brand">
+            <a href="{% url 'logout' %}" class="navbar-brand">
                 <span>登出</span>
             </a>
         </div>
         {% endif %}
     </div>
 </nav>
-    {% block head %}
-    {% endblock %}
+{% block head %}
+{% endblock %}
 
-    {% block body %}
-    {% endblock %}
+{% block body %}
+{% endblock %}
 
-    {% block footer %}
-    {% endblock %}
-    <!-- footer -->
-    <div class="footer" id="footer">
-        <div class="container">
-            <div class="nav">
-                <ul>
-                    <li>
-                        <i class="iconfont icon-sevenday"></i>
-                        <label href="#" class="content">7天无理由退货</label>
-                    </li>
-                    <li>
-                        <i class="iconfont icon-icon-test"></i>
-                        <label href="#" class="content">15天免费换货</label>
-                    </li>
-                    <li>
-                        <i class="iconfont icon-nianbaoxiu"></i>
-                        <label href="#" class="content">3年质量保修</label>
-                    </li>
-                    <li>
-                        <i class="iconfont icon-baoyouquan"></i>
-                        <label href="#" class="content">满150元包邮</label>
-                    </li>
-                    <li>
-                        <i class="iconfont icon-kefu"></i>
-                        <a href="#" class="content">在线客服为您服务</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="body clearfix">
-                <dl class="footer-links">
-                    <dt>帮助中心</dt>
-                    <dd>账户管理</dd>
-                    <dd>购物指南</dd>
-                    <dd>订单操作</dd>
-                </dl>
-                <dl class="footer-links">
-                    <dt>服务支持</dt>
-                    <dd>售后政策</dd>
-                    <dd>自助服务</dd>
-                    <dd>相关下载</dd>
-                </dl>
-                <dl class="footer-links">
-                    <dt>线下门店</dt>
-                    <dd>优选之家</dd>
-                    <dd>服务网点</dd>
-                    <dd>授权体验</dd>
-                </dl>
-                <dl class="footer-links">
-                    <dt>关于我们</dt>
-                    <dd>了解优选</dd>
-                    <dd>加入优选</dd>
-                    <dd>合作投资</dd>
-                </dl>
-                <dl class="footer-links">
-                    <dt>关注我们</dt>
-                    <dd>微博</dd>
-                    <dd>微信</dd>
-                    <dd>联系我们</dd>
-                </dl>
-                <dl class="footer-links">
-                    <dt>特色服务</dt>
-                    <dd>礼物码</dd>
-                    <dd>抽奖活动</dd>
-                    <dd>防伪查询</dd>
-                </dl>
-                <div class="footer-logo">
-                    <img src="/static/images/PhoneShopLogo.jpg" alt="优选商城">
-                </div>
+{% block footer %}
+{% endblock %}
+<!-- footer -->
+{% block foot_source %}
+{% endblock %}
+<div class="footer" id="footer">
+    <div class="container">
+        <div class="nav">
+            <ul>
+                <li>
+                    <i class="iconfont icon-sevenday"></i>
+                    <label href="#" class="content">7天无理由退货</label>
+                </li>
+                <li>
+                    <i class="iconfont icon-icon-test"></i>
+                    <label href="#" class="content">15天免费换货</label>
+                </li>
+                <li>
+                    <i class="iconfont icon-nianbaoxiu"></i>
+                    <label href="#" class="content">3年质量保修</label>
+                </li>
+                <li>
+                    <i class="iconfont icon-baoyouquan"></i>
+                    <label href="#" class="content">满150元包邮</label>
+                </li>
+                <li>
+                    <i class="iconfont icon-kefu"></i>
+                    <a href="#" class="content">在线客服为您服务</a>
+                </li>
+            </ul>
+        </div>
+        <div class="body clearfix">
+            <dl class="footer-links">
+                <dt>帮助中心</dt>
+                <dd>账户管理</dd>
+                <dd>购物指南</dd>
+                <dd>订单操作</dd>
+            </dl>
+            <dl class="footer-links">
+                <dt>服务支持</dt>
+                <dd>售后政策</dd>
+                <dd>自助服务</dd>
+                <dd>相关下载</dd>
+            </dl>
+            <dl class="footer-links">
+                <dt>线下门店</dt>
+                <dd>优选之家</dd>
+                <dd>服务网点</dd>
+                <dd>授权体验</dd>
+            </dl>
+            <dl class="footer-links">
+                <dt>关于我们</dt>
+                <dd>了解优选</dd>
+                <dd>加入优选</dd>
+                <dd>合作投资</dd>
+            </dl>
+            <dl class="footer-links">
+                <dt>关注我们</dt>
+                <dd>微博</dd>
+                <dd>微信</dd>
+                <dd>联系我们</dd>
+            </dl>
+            <dl class="footer-links">
+                <dt>特色服务</dt>
+                <dd>礼物码</dd>
+                <dd>抽奖活动</dd>
+                <dd>防伪查询</dd>
+            </dl>
+            <div class="footer-logo">
+                <img src="/static/images/PhoneShopLogo.jpg" alt="优选商城">
             </div>
         </div>
     </div>
-    {% block foot_source %}
-    {% endblock %}
+
+</div>
+<!-- csrf报错检查 -->
+<script>
+    $(document).ajaxSend(function (event, xhr, settings) {
+        function getCookie(name) {
+            var cookieValue = null;
+            if (document.cookie && document.cookie != '') {
+                var cookies = document.cookie.split(';');
+                for (var i = 0; i < cookies.length; i++) {
+                    var cookie = jQuery.trim(cookies[i]);
+                    // Does this cookie string begin with the name we want?
+                    if (cookie.substring(0, name.length + 1) == (name + '=')) {
+                        cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                        break;
+                    }
+                }
+            }
+            return cookieValue;
+        }
+
+        function sameOrigin(url) {
+            // url could be relative or scheme relative or absolute
+            var host = document.location.host; // host + port
+            var protocol = document.location.protocol;
+            var sr_origin = '//' + host;
+            var origin = protocol + sr_origin;
+            // Allow absolute or scheme relative URLs to same origin
+            return (url == origin || url.slice(0, origin.length + 1) == origin + '/') ||
+                (url == sr_origin || url.slice(0, sr_origin.length + 1) == sr_origin + '/') ||
+                // or any other URL that isn't scheme relative or absolute i.e relative.
+                !(/^(\/\/|http:|https:).*/.test(url));
+        }
+
+        function safeMethod(method) {
+            return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
+        }
+
+        if (!safeMethod(settings.type) && sameOrigin(settings.url)) {
+            xhr.setRequestHeader("X-CSRFToken", getCookie('csrftoken'));
+        }
+    });
+</script>
 </body>
 </html>

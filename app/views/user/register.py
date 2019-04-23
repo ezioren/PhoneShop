@@ -2,85 +2,74 @@
 # author:reyn
 # datetime:19-1-25 上午9:38
 # software: PyCharm
-import datetime
-import uuid
-import hashlib
-
 from django.shortcuts import render
+from django.http.response import HttpResponse
+from django.contrib.auth import authenticate
 
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
-from app.models.user.users import UserAddressInfo, UserInfo
+from app.models.user.users import MyUser
+from app.models.user.profile import Profile
 
 class RegisterView(APIView):
     def get(self, request):
         return render(request, 'ps_user/register.html', context={'title':'注册'})
 
 class RegisterHandleView(APIView):
-
-    def save_user(self, data, request):
-        try:
-            # 密码加密
-            _sha256 = hashlib.sha256()
-            _sha256.update(data['password'].encode('utf-8'))
-            _sha256_pwd = _sha256.hexdigest()
-
-            # 保存用户信息
-            userinfo = UserInfo()
-            userinfo.u_name = data['username']
-            userinfo.u_password = _sha256_pwd
-            userinfo.u_phone = data['phonenum']
-            userinfo.u_sex = data['sex']
-            userinfo.u_uuid = uuid.uuid4()
-            userinfo.u_createtime = data['createtime']
-            userinfo.save()
-
-            # 保存用户地址信息
-            useradsinfo = UserAddressInfo()
-            useradsinfo.ua_email = data['email']
-            useradsinfo.user_id = UserInfo.objects.get(u_name=data['username']).id
-            useradsinfo.save()
-
-            # 自动登录
-            request.session['username'] = data['username']
-            request.session.set_expiry(30 * 86400)
-            request.session.save()
-            return True
-        except:
-            return False
-
     # 验证是否已存在
     # TODO 手机验证码
     def check_exitence(self, source, label):
-
+        pass
         if label == 'username':
-            u_name=UserInfo.objects.filter(u_name=source)
-            ua_email = UserAddressInfo.objects.filter(ua_email=source)
-            u_phone = UserInfo.objects.filter(u_phone=source)
-            if u_name or ua_email or u_phone:
+            username=MyUser.objects.filter(username=source)
+            email =MyUser.objects.filter(email=source)
+            mobile = Profile.objects.filter(mobile=source)
+            if username or email or mobile:
                 return True
 
         elif label == 'email':
-            ua_email = UserAddressInfo.objects.filter(ua_email=source)
-            if ua_email:
+            email = MyUser.objects.filter(email=source)
+            if email:
                 return True
 
         elif label == 'phone':
-            u_phone = UserInfo.objects.filter(u_phone=source)
-            if u_phone:
+            mobile = Profile.objects.filter(mobile=source)
+            if mobile:
                 return True
         else:
             return False
 
     def post(self, request, *args, **kwargs):
-        source = request.data
-        result = self.save_user(source, request)
-        print(result)
-        if result:
-            return Response('注册完成')
+        data = request.data
+        username = data['username']
+        email = data['email']
+        mobile = data['mobile']
+        password = data['password']
+        sex = data['sex']
+        createtime = data['createtime']
+
+        user = MyUser.get_or_create(
+            username=username,
+            password=password,
+            email=email,
+            first_name=mobile,
+            last_name=data.get('last_name','')
+        )
+        user.is_active=True
+        user.save()
+
+        profile = Profile()
+        profile.user = user
+        profile.mobile = mobile
+        profile.sex = sex
+        profile.save()
+
+        checkuser = authenticate(username=username, password=password)
+        if checkuser:
+            return HttpResponse('注册成功')
         else:
-            return Response('注册失败')
+            return HttpResponse('注册失败')
 
     def get(self, request, *args, **kwargs):
         source = request.GET

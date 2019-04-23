@@ -23,29 +23,5 @@ class Migration(migrations.Migration):
                 ('adv_content', models.CharField(max_length=100)),
             ],
         ),
-        migrations.CreateModel(
-            name='UserAddressInfo',
-            fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('ua_getaddress', models.CharField(default='', max_length=100)),
-                ('ua_email', models.CharField(max_length=100)),
-            ],
-        ),
-        migrations.CreateModel(
-            name='UserInfo',
-            fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('u_uuid', models.UUIDField(auto_created=True, default=uuid.uuid4, editable=False)),
-                ('u_name', models.CharField(default='', max_length=60)),
-                ('u_password', models.CharField(max_length=255)),
-                ('u_sex', models.CharField(choices=[('lady', '女'), ('man', '男')], default='女', max_length=10)),
-                ('u_phone', models.CharField(max_length=20)),
-                ('u_createtime', models.CharField(max_length=20)),
-            ],
-        ),
-        migrations.AddField(
-            model_name='useraddressinfo',
-            name='user',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='app.UserInfo'),
-        ),
+
     ]

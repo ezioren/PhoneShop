@@ -1,0 +1,93 @@
+{% extends 'account/base.html' %}
+
+{% block rightbody %}
+<!-- 右侧内容框 -->
+<div class="content" id="right-context">
+    <div class="container">
+        <div class="context" id="showinfo">
+            <ul class="list">
+                <li>
+                    用户名：<span>{{ user.username }}</span>
+                </li>
+                <li>
+                    手机：<span>{{ user.profile.mobile }}</span>
+                </li>
+                <li>
+                    邮箱：<span>{{ user.email }}</span>
+                </li>
+                <li>
+                    性别：<span>{{ user.profile.mobile }}</span>
+                </li>
+                <li>
+                    收货地址： {% if user.profile.sendaddress != None %}<span>{{ user.profile.sendaddress }}</span>
+                            {% else %}<span></span>
+                            {% endif %}
+                </li>
+            </ul>
+            <input class="" data-toggle="modal" data-target="#msgconfig" id="changeinfo"
+                   type="button" value="编辑资料">
+        </div>
+    </div>
+</div>
+
+<!-- 个人信息修改 -->
+<div class="modal fade" id="msgconfig" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content"  id="change">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel">个人信息修改</h4>
+            </div>
+            <div class="modal-body">
+                <ul class="list" id="changeshow">
+                    <li>
+                        <div class="input-group">
+                            <span class="input-group-addon">用户名</span>
+                            <input type="text" class="form-control" placeholder="{{ user.username }}"
+                                   value="{{ user.username }}" aria-describedby="sizing-addon2">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="input-group">
+                            <span class="input-group-addon">手机</span>
+                            <input type="text" class="form-control" placeholder="{{ user.profile.mobile }}"
+                                   value="{{ user.profile.mobile }}" aria-describedby="sizing-addon2">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="input-group">
+                            <span class="input-group-addon">邮箱</span>
+                            <input type="text" class="form-control" placeholder="{{ user.email }}"
+                                   value="{{ user.email }}" aria-describedby="sizing-addon2">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="input-group">
+                            <span class="input-group-addon">性别</span>
+                            <input type="text" class="form-control" placeholder="{{ user.profile.sex }}"
+                                   value="{{ user.profile.sex }}" aria-describedby="sizing-addon2">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="input-group">
+                            <span class="input-group-addon">收货地址</span>
+                            {% if user.profile.sendaddress != None %}
+                            <input type="text" class="form-control" placeholder="{{ user.profile.sendaddress }}"
+                                   value="{{ user.profile.sendaddress }}" aria-describedby="sizing-addon2">
+                            {% else %}
+                            <input type="text" class="form-control" placeholder=""
+                                   value="" aria-describedby="sizing-addon2">
+                            {% endif %}
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                <button type="button" class="btn btn-primary" id="save_change">保存</button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
