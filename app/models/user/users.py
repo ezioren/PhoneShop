@@ -1,9 +1,6 @@
 #-*- coding:utf-8 -*-
 # author:reyn
 # datetime:19-1-25 上午10:27
-import json
-
-from django.conf import settings
 from django.contrib.auth.models import User
 from django.db import transaction
 
@@ -27,6 +24,7 @@ class MyUser(User):
     def user_info(self):
         """ 返回用户基本信息, 屏蔽敏感信息 """
         obj = {
+            'id': self.id,
             'last_login': self.last_login,
             'is_superuser': self.is_superuser,
             'username': self.username,
@@ -44,9 +42,7 @@ class MyUser(User):
             'sendaddress': profile.sendaddress,
             'sex': profile.sex
         })
-        obj.pop('password', None)
-        obj.pop('user_permissions', None)
-        obj['id'] = self.id
         obj['profile_id'] = profile.id
+
         return obj
 

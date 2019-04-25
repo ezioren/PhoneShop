@@ -207,19 +207,17 @@ STATICFILES_DIRS =[
     ('font', os.path.join(STATIC_ROOT, 'font').replace('\\', '/')),
     ('icon', os.path.join(STATIC_ROOT, 'icon').replace('\\', '/')),
 ]
+MEDIA_URL='/media/'
 
 MEDIA_ROOT = os.path.join(PROJECT_PATH, 'static/media/')
 
 
 CFG = {
-    'USERINFO':{
-        'u_name': 'u_name',
-        'u_password': 'u_password',
-        'u_phone': 'u_phone',
-        'u_sex': 'u_sex',
-        'u_uuid': 'u_uuid',
-        'u_createtime': 'u_createtime',
-        'ua_email':'ua_email',
-    }
+    'GOODTYPE':{
+        'New': 'New', # 新品
+        'Cost': 'Cost',# 性价比
+        'Classic': 'Classic',# 经典
+        'Parts': 'Parts',# 配件
+    },
 }
 

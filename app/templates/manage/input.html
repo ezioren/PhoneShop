@@ -1,0 +1,101 @@
+{% extends 'base.html' %}
+{% block header_source %}
+<style>
+    span {
+        display: inline-block;
+        max-width: 100%;
+        margin-bottom: 5px;
+        font-weight: 700;
+    }
+
+    #goods-input {
+        width: 1226px;
+        height: auto;
+        position: relative;
+        margin: 0px auto;
+    }
+</style>
+{% endblock %}
+{% block body %}
+<form id="goods-up" action="{% url 'goodsinput' %}", method="post">
+    {% csrf_token %}
+    <div id="goods-input">
+        <div class="form-group">
+            <label for="name">商品名</label>
+            <input type="text" class="form-control" id="name" placeholder="Name" name="name">
+        </div>
+        <div class="form-group">
+            <label for="identifier">商品编号</label>
+            <input type="text" class="form-control" id="identifier" placeholder="Identifier" name="identifier">
+        </div>
+        <div class="form-group">
+            <label for="price">商品价格</label>
+            <input type="text" class="form-control" id="price" placeholder="Price" name="price">
+        </div>
+        <div class="form-group">
+            <label for="type">商品类型</label>
+            <input type="text" class="form-control" id="type" placeholder="New、Cost、Classic、Parts " name="type">
+        </div>
+        <div class="form-group" id="pic-box">
+            <span>商品图片</span>
+            <input type="file" class="pic" name="pic1">
+            <input type="file" class="pic" name="pic2">
+            <input type="file" class="pic" name="pic3">
+            <input type="file" class="pic" name="pic4">
+        </div>
+        <div class="form-group">
+            <label for="context">商品简介</label>
+            <input type="text" class="form-control" id="context" placeholder="Context" name="context">
+        </div>
+        <div class="form-group">
+            <label for="color">商品颜色</label>
+            <input type="text" class="form-control" id="color" placeholder="Color" name="color">
+        </div>
+        <div class="form-group">
+            <label for="version">商品规格</label>
+            <input type="text" class="form-control" id="version" placeholder="Version" name="version">
+        </div>
+        <div class="form-group">
+            <label for="stock">商品库存</label>
+            <input type="text" class="form-control" id="stock" placeholder="Stock" name="stock">
+        </div>
+        <button type="submit" class="btn btn-default" id="goods-submit">上传</button>
+    </div>
+</form>
+
+<script>
+    $(function () {
+        // $('#goods-submit').click(function () {
+        //     var arr = new Array(4);
+        //     var source = $('#pic-box').find('input');
+        //     arr.unshift(source.eq(0));
+        //     arr.unshift(source.eq(1));
+        //     arr.unshift(source.eq(2));
+        //     arr.unshift(source.eq(3));
+        //
+        //     var fd = new FormData();
+        //     fd.append('name', $('#name').val());
+        //     fd.append('identifier', $('#identifier').val());
+        //     fd.append('price', $('#price').val());
+        //     fd.append('type', $('#type').val());
+        //     fd.append('pics', arr);
+        //     fd.append('context', $('#context').val());
+        //     fd.append('color', $('#color').val());
+        //     fd.append('version', $('#version').val());
+        //     fd.append('stock', $('#stock').val());
+        //
+        //     $.ajax({
+        //         url: "goodsinput.html",
+        //         type: "POST",
+        //         data: fd,
+        //         processData: false,  // 告诉jQuery不要去处理发送的数据
+        //         contentType: false,   // 告诉jQuery不要去设置Content-Type请求头
+        //         success: function (e) {
+        //             alert(e)
+        //         }
+        //     });
+        // })
+    })
+</script>
+
+{% endblock %}

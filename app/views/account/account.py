@@ -22,7 +22,7 @@ class AccountView(BaseView):
                 'title': '个人中心',
                 'is_login': result,
                 'user': user[0],
-                'name':request.user
+                'name':request.user,
             }
 
             return render(request, 'account/account_msg.html', context=context)
@@ -36,7 +36,6 @@ class AccountCartView(BaseView):
         result = self.check_login(kwargs=kwargs)
         if result:
             user = MyUser.objects.filter(username=request.user.username)
-
             context={
                 'title': '个人中心',
                 'is_login': result,
@@ -60,5 +59,5 @@ class AccountChangeView(BaseView):
         user.profile.sendaddress = data['sendaddress']
         user.save()
         user.profile.save()
-
+        print(user.user_info)
         return Response('修改成功')
