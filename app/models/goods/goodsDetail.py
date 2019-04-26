@@ -8,10 +8,11 @@ class GoodsDetail(models.Model):
     good = models.OneToOneField('Goods', on_delete=models.CASCADE)
 
     context = models.CharField(max_length=200)  # 简介
-    color=models.CharField(max_length=10) # 颜色
-    version=models.CharField(max_length=30) # 版本
-    Stock=models.IntegerField(default=1000) # 库存
+    color=models.CharField(max_length=1000) # 颜色
+    version=models.CharField(max_length=1000) # 版本
+    stock=models.IntegerField(default=1000) # 库存
 
+# 评价
 class GoodsContent(models.Model):
     good = models.OneToOneField('Goods', on_delete=models.CASCADE)
 
@@ -19,8 +20,12 @@ class GoodsContent(models.Model):
     user_source = models.CharField(max_length=200) # 评价人
     grade = models.CharField(max_length=200) # 分数
 
+# 图片
 class GoodsPic(models.Model):
     good = models.OneToOneField('Goods')
 
-    name = good.name
-    src = models.ImageField(upload_to='images/')
+    pic0 = models.CharField(null=True, max_length=1000)
+    pic1 = models.CharField(null=True, max_length=1000)
+    pic2 = models.CharField(null=True, max_length=1000)
+    pic3 = models.CharField(null=True, max_length=1000)
+    pic4 = models.CharField(null=True, max_length=1000)

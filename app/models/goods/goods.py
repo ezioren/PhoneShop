@@ -3,18 +3,13 @@ from django.db import models, transaction
 
 class Goods(models.Model):
     name=models.CharField(max_length=30)
-    price=models.DecimalField(max_digits=5, decimal_places=2)
+    price=models.CharField(max_length=100, null=False)
     type=models.CharField(max_length=30) # 类型
-    click=models.IntegerField() # 点击量
-    isDelete=models.BooleanField(default=True) # 是否销售
+    click=models.IntegerField(default=0) # 点击量
+    isDelete=models.BooleanField(default=False) # 是否销售
     cp=models.ForeignKey('Company',on_delete=models.CASCADE, default=1)
 
-    identifier=models.CharField(max_length=20)
-
-    @classmethod
-    @transaction.atomic()
-    def save_new(self):
-        pass
+    identifier=models.CharField(max_length=100) #商品编号
 
     @property
     def good_info(self):
@@ -30,12 +25,18 @@ class Goods(models.Model):
         # 返回详情
         goodsdetail = self.goodsdetail
         obj.update({
-            'pic': goodsdetail.pic,
             'context': goodsdetail.context,
             'color': goodsdetail.color,
-            'colorType': goodsdetail.colorType,
             'version': goodsdetail.version,
-            'kucun': goodsdetail.kucun,
+            'kucun': goodsdetail.stock,
+        })
+        goodspic = self.goodspic
+        obj.update({
+            'pic0': goodspic.pic0,
+            'pic1': goodspic.pic1,
+            'pic2': goodspic.pic2,
+            'pic3': goodspic.pic3,
+            'pic4': goodspic.pic4,
         })
         # 放回评价
         goodscontent = self.goodscontent

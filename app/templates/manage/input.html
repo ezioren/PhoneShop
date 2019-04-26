@@ -12,18 +12,31 @@
         width: 1226px;
         height: auto;
         position: relative;
-        margin: 0px auto;
+        margin: 0 auto;
+    }
+
+    .version {
+        margin-top: 6px;
+    }
+
+    .add-list {
+        margin-top: 10px;
     }
 </style>
 {% endblock %}
 {% block body %}
-<form id="goods-up" action="{% url 'goodsinput' %}", method="post">
+<form id="goods-up">
     {% csrf_token %}
     <div id="goods-input">
         <div class="form-group">
             <label for="name">商品名</label>
             <input type="text" class="form-control" id="name" placeholder="Name" name="name">
         </div>
+        <div class="form-group">
+            <label for="name">公司</label>
+            <input type="text" class="form-control" id="company" placeholder="Name" name="name">
+        </div>
+
         <div class="form-group">
             <label for="identifier">商品编号</label>
             <input type="text" class="form-control" id="identifier" placeholder="Identifier" name="identifier">
@@ -34,67 +47,114 @@
         </div>
         <div class="form-group">
             <label for="type">商品类型</label>
-            <input type="text" class="form-control" id="type" placeholder="New、Cost、Classic、Parts " name="type">
+            <input type="text" class="form-control" id="type" placeholder="New、Cost、Classic、Parts" name="type">
         </div>
         <div class="form-group" id="pic-box">
             <span>商品图片</span>
-            <input type="file" class="pic" name="pic1">
-            <input type="file" class="pic" name="pic2">
-            <input type="file" class="pic" name="pic3">
-            <input type="file" class="pic" name="pic4">
+            <input type="text" class="form-control" name="pic0" placeholder="First pic location">
+            <input type="text" class="form-control" name="pic1" placeholder="Second pic location">
+            <input type="text" class="form-control" name="pic2" placeholder="Third pic location">
+            <input type="text" class="form-control" name="pic3" placeholder="Fourth Pic location">
         </div>
         <div class="form-group">
             <label for="context">商品简介</label>
             <input type="text" class="form-control" id="context" placeholder="Context" name="context">
         </div>
         <div class="form-group">
-            <label for="color">商品颜色</label>
-            <input type="text" class="form-control" id="color" placeholder="Color" name="color">
+            <label for="color-list">商品颜色</label>
+            <div id="color-list">
+                <input type="text" class="form-control" placeholder="Color">
+            </div>
+            <button type="button" class="btn btn-default add-list" id="add-color">添加</button>
         </div>
         <div class="form-group">
-            <label for="version">商品规格</label>
-            <input type="text" class="form-control" id="version" placeholder="Version" name="version">
+            <label for="version-list">商品规格</label>
+            <div id="version-list">
+                <input type="text" class="form-control version" placeholder="Version">
+            </div>
+            <button type="button" class="btn btn-default add-list" id="add-version">添加</button>
         </div>
         <div class="form-group">
             <label for="stock">商品库存</label>
             <input type="text" class="form-control" id="stock" placeholder="Stock" name="stock">
         </div>
-        <button type="submit" class="btn btn-default" id="goods-submit">上传</button>
+        <button type="button" class="btn btn-default" id="goods-submit">上传</button>
     </div>
 </form>
 
 <script>
     $(function () {
-        // $('#goods-submit').click(function () {
-        //     var arr = new Array(4);
-        //     var source = $('#pic-box').find('input');
-        //     arr.unshift(source.eq(0));
-        //     arr.unshift(source.eq(1));
-        //     arr.unshift(source.eq(2));
-        //     arr.unshift(source.eq(3));
-        //
-        //     var fd = new FormData();
-        //     fd.append('name', $('#name').val());
-        //     fd.append('identifier', $('#identifier').val());
-        //     fd.append('price', $('#price').val());
-        //     fd.append('type', $('#type').val());
-        //     fd.append('pics', arr);
-        //     fd.append('context', $('#context').val());
-        //     fd.append('color', $('#color').val());
-        //     fd.append('version', $('#version').val());
-        //     fd.append('stock', $('#stock').val());
-        //
-        //     $.ajax({
-        //         url: "goodsinput.html",
-        //         type: "POST",
-        //         data: fd,
-        //         processData: false,  // 告诉jQuery不要去处理发送的数据
-        //         contentType: false,   // 告诉jQuery不要去设置Content-Type请求头
-        //         success: function (e) {
-        //             alert(e)
-        //         }
-        //     });
-        // })
+        $('#price').keyup(function () {
+            $(this).val($(this).val().replace(/[^0-9][.]/g, ''));
+        }).bind("paste", function () {
+            $(this).val($(this).val().replace(/[^0-9][.]/g, ''));
+        });
+
+        $('#stock').keyup(function () {
+            $(this).val($(this).val().replace(/[^0-9]/g, ''));
+        }).bind("paste", function () {
+            $(this).val($(this).val().replace(/[^0-9]/g, ''));
+        });
+
+        $('#add-version').click(function () {
+            $('#version-list').append('<input type="text" class="form-control version" placeholder="Version">')
+        });
+        $('#add-color').click(function () {
+            $('#color-list').append('<input type="text" class="form-control" placeholder="Color">')
+        });
+
+        var result = {};
+        var result_color = {};
+
+        function save_version(tar) {
+            for (var i = 0; tar.eq(i).val() != null; i++) {
+                // result.splice(0,0,JSON.stringify({'verkey': tar.eq(i).val()}))
+                result[i] = "" + tar.eq(i).val()
+            }
+            console.log(result)
+            return result
+        }
+
+        function save_color(tar) {
+            for (var i = 0; tar.eq(i).val() != null; i++) {
+                // result_color.splice(0,0,JSON.stringify({'colorkey': tar.eq(i).val()}))
+                result_color[i] = "" + tar.eq(i).val()
+            }
+            console.log(result_color)
+            return result_color
+        }
+
+        $('#goods-submit').click(function () {
+            var tar_version = $('#version-list').find('input')
+            var tar_color = $('#color-list').find('input')
+            var source = $('#pic-box').find('input');
+
+            var sendmsg = {
+                'name': $('#name').val(),
+                'company': $('#company').val(),
+                'identifier': $('#identifier').val(),
+                'price': $('#price').val(),
+                'type': $('#type').val(),
+                'pic0': source.eq(0).val(),
+                'pic1': source.eq(1).val(),
+                'pic2': source.eq(2).val(),
+                'pic3': source.eq(3).val(),
+                'context': $('#context').val(),
+                'color': save_color(tar_color),
+                'versions': save_version(tar_version),
+                'stock': $('#stock').val(),
+            }
+
+            $.ajax({
+                url: "goodsinput.html",
+                type: "POST",
+                data: sendmsg,
+                success: function (e) {
+                    alert(e)
+                    location.reload()
+                }
+            });
+        })
     })
 </script>
 
