@@ -1,5 +1,4 @@
 {% extends 'base.html' %}
-{% load staticfiles %}
 {% block header_source %}
     <link href="{% static 'css/index.css' %}" rel="stylesheet" type="text/css">
     <link href="{% static 'css/swiper.min.css' %}" rel="stylesheet" type="text/css">
@@ -154,158 +153,179 @@
                     </div>
                     <div class="right">
                         <ul class="clearfix">
+                            {% for new in news %}
                             <li>
                                 <div class="right-img">
                                     <a href="">
-                                        <img src="/static/images/goods/xiaomi/xiaomi6/xiaomi6_jing_0.png" alt="小米-流沙金">
+                                        <img src="/static/{{ new.goodspic.pic0 }}" alt="小米-流沙金">
                                     </a>
                                 </div>
                                 <h3>
                                     <a href="">
-                                        小米6 流沙金 4GB+64GB
+                                        {{ new.name }} {{ new.goodsdetail.color | random}} {{ new.goodsdetail.version | random }}
                                     </a>
                                 </h3>
-                                <p class="content">小屏高性能的双摄手机,后置1200万,AI双摄,12nm八核处理器,AI,人脸解锁</p>
+                                <p class="content">{{ new.goodsdetail.context }}</p>
                                 <p>
-                                    <span class="num">798</span>
+                                    <span class="num">{{ new.price }}</span>
                                     元
-                                    <del><span class="num">998</span>
+                                    <del><span class="num">{{ new.price | add:100 }}</span>
                                         元</del>
                                 </p>
                             </li>
-                            <li>
-                                <div class="right-img">
-                                    <a href="">
-                                        <img src="/static/images/goods/xiaomi/xiaomi6/xiaomi6_jing_0.png" alt="小米-流沙金">
-                                    </a>
-                                </div>
-                                <h3>
-                                    <a href="">
-                                        小米6 流沙金 4GB+64GB
-                                    </a>
-                                </h3>
-                                <p class="content">小屏高性能的双摄手机,后置1200万,AI双摄,12nm八核处理器,AI,人脸解锁</p>
-                                <p>
-                                    <span class="num">798</span>
-                                    元
-                                    <del><span class="num">998</span>
-                                        元</del>
-                                </p>
-                            </li>
-                            <li>
-                                <div class="right-img">
-                                    <a href="">
-                                        <img src="/static/images/goods/xiaomi/xiaomi6/xiaomi6_jing_0.png" alt="小米-流沙金">
-                                    </a>
-                                </div>
-                                <h3>
-                                    <a href="">
-                                        小米6 流沙金 4GB+64GB
-                                    </a>
-                                </h3>
-                                <p class="content">小屏高性能的双摄手机,后置1200万,AI双摄,12nm八核处理器,AI,人脸解锁</p>
-                                <p>
-                                    <span class="num">798</span>
-                                    元
-                                    <del><span class="num">998</span>
-                                        元</del>
-                                </p>
-                            </li>
-                            <li>
-                                <div class="right-img">
-                                    <a href="">
-                                        <img src="/static/images/goods/xiaomi/xiaomi6/xiaomi6_jing_0.png" alt="小米-流沙金">
-                                    </a>
-                                </div>
-                                <h3>
-                                    <a href="">
-                                        小米6 流沙金 4GB+64GB
-                                    </a>
-                                </h3>
-                                <p class="content">小屏高性能的双摄手机,后置1200万,AI双摄,12nm八核处理器,AI,人脸解锁</p>
-                                <p>
-                                    <span class="num">798</span>
-                                    元
-                                    <del><span class="num">998</span>
-                                        元</del>
-                                </p>
-                            </li>
-                            <li>
-                                <div class="right-img">
-                                    <a href="">
-                                        <img src="/static/images/goods/xiaomi/xiaomi6/xiaomi6_jing_0.png" alt="小米-流沙金">
-                                    </a>
-                                </div>
-                                <h3>
-                                    <a href="">
-                                        小米6 流沙金 4GB+64GB
-                                    </a>
-                                </h3>
-                                <p class="content">小屏高性能的双摄手机,后置1200万,AI双摄,12nm八核处理器,AI,人脸解锁</p>
-                                <p>
-                                    <span class="num">798</span>
-                                    元
-                                    <del><span class="num">998</span>
-                                        元</del>
-                                </p>
-                            </li>
-                            <li>
-                                <div class="right-img">
-                                    <a href="">
-                                        <img src="/static/images/goods/xiaomi/xiaomi6/xiaomi6_jing_0.png" alt="小米-流沙金">
-                                    </a>
-                                </div>
-                                <h3>
-                                    <a href="">
-                                        小米6 流沙金 4GB+64GB
-                                    </a>
-                                </h3>
-                                <p class="content">小屏高性能的双摄手机,后置1200万,AI双摄,12nm八核处理器,AI,人脸解锁</p>
-                                <p>
-                                    <span class="num">798</span>
-                                    元
-                                    <del><span class="num">998</span>
-                                        元</del>
-                                </p>
-                            </li>
-                            <li>
-                                <div class="right-img">
-                                    <a href="">
-                                        <img src="/static/images/goods/xiaomi/xiaomi6/xiaomi6_jing_0.png" alt="小米-流沙金">
-                                    </a>
-                                </div>
-                                <h3>
-                                    <a href="">
-                                        小米6 流沙金 4GB+64GB
-                                    </a>
-                                </h3>
-                                <p class="content">小屏高性能的双摄手机,后置1200万,AI双摄,12nm八核处理器,AI,人脸解锁</p>
-                                <p>
-                                    <span class="num">798</span>
-                                    元
-                                    <del><span class="num">998</span>
-                                        元</del>
-                                </p>
-                            </li>
-                            <li>
-                                <div class="right-img">
-                                    <a href="">
-                                        <img src="/static/images/goods/xiaomi/xiaomi6/xiaomi6_jing_0.png" alt="小米-流沙金">
-                                    </a>
-                                </div>
-                                <h3>
-                                    <a href="">
-                                        小米6 流沙金 4GB+64GB
-                                    </a>
-                                </h3>
-                                <p class="content">小屏高性能的双摄手机,后置1200万,AI双摄,12nm八核处理器,AI,人脸解锁</p>
-                                <p>
-                                    <span class="num">798</span>
-                                    元
-                                    <del><span class="num">998</span>
-                                        元</del>
-                                </p>
-                            </li>
+                            {% endfor %}
+<!--                            <li>-->
+<!--                                <div class="right-img">-->
+<!--                                    <a href="">-->
+<!--                                        <img src="/static/images/goods/xiaomi/xiaomi6/xiaomi6_jing_0.png" alt="小米-流沙金">-->
+<!--                                    </a>-->
+<!--                                </div>-->
+<!--                                <h3>-->
+<!--                                    <a href="">-->
+<!--                                        小米6 流沙金 4GB+64GB-->
+<!--                                    </a>-->
+<!--                                </h3>-->
+<!--                                <p class="content">小屏高性能的双摄手机,后置1200万,AI双摄,12nm八核处理器,AI,人脸解锁</p>-->
+<!--                                <p>-->
+<!--                                    <span class="num">798</span>-->
+<!--                                    元-->
+<!--                                    <del><span class="num">998</span>-->
+<!--                                        元</del>-->
+<!--                                </p>-->
+<!--                            </li>-->
+<!--                            <li>-->
+<!--                                <div class="right-img">-->
+<!--                                    <a href="">-->
+<!--                                        <img src="/static/images/goods/xiaomi/xiaomi6/xiaomi6_jing_0.png" alt="小米-流沙金">-->
+<!--                                    </a>-->
+<!--                                </div>-->
+<!--                                <h3>-->
+<!--                                    <a href="">-->
+<!--                                        小米6 流沙金 4GB+64GB-->
+<!--                                    </a>-->
+<!--                                </h3>-->
+<!--                                <p class="content">小屏高性能的双摄手机,后置1200万,AI双摄,12nm八核处理器,AI,人脸解锁</p>-->
+<!--                                <p>-->
+<!--                                    <span class="num">798</span>-->
+<!--                                    元-->
+<!--                                    <del><span class="num">998</span>-->
+<!--                                        元</del>-->
+<!--                                </p>-->
+<!--                            </li>-->
+<!--                            <li>-->
+<!--                                <div class="right-img">-->
+<!--                                    <a href="">-->
+<!--                                        <img src="/static/images/goods/xiaomi/xiaomi6/xiaomi6_jing_0.png" alt="小米-流沙金">-->
+<!--                                    </a>-->
+<!--                                </div>-->
+<!--                                <h3>-->
+<!--                                    <a href="">-->
+<!--                                        小米6 流沙金 4GB+64GB-->
+<!--                                    </a>-->
+<!--                                </h3>-->
+<!--                                <p class="content">小屏高性能的双摄手机,后置1200万,AI双摄,12nm八核处理器,AI,人脸解锁</p>-->
+<!--                                <p>-->
+<!--                                    <span class="num">798</span>-->
+<!--                                    元-->
+<!--                                    <del><span class="num">998</span>-->
+<!--                                        元</del>-->
+<!--                                </p>-->
+<!--                            </li>-->
+<!--                            <li>-->
+<!--                                <div class="right-img">-->
+<!--                                    <a href="">-->
+<!--                                        <img src="/static/images/goods/xiaomi/xiaomi6/xiaomi6_jing_0.png" alt="小米-流沙金">-->
+<!--                                    </a>-->
+<!--                                </div>-->
+<!--                                <h3>-->
+<!--                                    <a href="">-->
+<!--                                        小米6 流沙金 4GB+64GB-->
+<!--                                    </a>-->
+<!--                                </h3>-->
+<!--                                <p class="content">小屏高性能的双摄手机,后置1200万,AI双摄,12nm八核处理器,AI,人脸解锁</p>-->
+<!--                                <p>-->
+<!--                                    <span class="num">798</span>-->
+<!--                                    元-->
+<!--                                    <del><span class="num">998</span>-->
+<!--                                        元</del>-->
+<!--                                </p>-->
+<!--                            </li>-->
+<!--                            <li>-->
+<!--                                <div class="right-img">-->
+<!--                                    <a href="">-->
+<!--                                        <img src="/static/images/goods/xiaomi/xiaomi6/xiaomi6_jing_0.png" alt="小米-流沙金">-->
+<!--                                    </a>-->
+<!--                                </div>-->
+<!--                                <h3>-->
+<!--                                    <a href="">-->
+<!--                                        小米6 流沙金 4GB+64GB-->
+<!--                                    </a>-->
+<!--                                </h3>-->
+<!--                                <p class="content">小屏高性能的双摄手机,后置1200万,AI双摄,12nm八核处理器,AI,人脸解锁</p>-->
+<!--                                <p>-->
+<!--                                    <span class="num">798</span>-->
+<!--                                    元-->
+<!--                                    <del><span class="num">998</span>-->
+<!--                                        元</del>-->
+<!--                                </p>-->
+<!--                            </li>-->
+<!--                            <li>-->
+<!--                                <div class="right-img">-->
+<!--                                    <a href="">-->
+<!--                                        <img src="/static/images/goods/xiaomi/xiaomi6/xiaomi6_jing_0.png" alt="小米-流沙金">-->
+<!--                                    </a>-->
+<!--                                </div>-->
+<!--                                <h3>-->
+<!--                                    <a href="">-->
+<!--                                        小米6 流沙金 4GB+64GB-->
+<!--                                    </a>-->
+<!--                                </h3>-->
+<!--                                <p class="content">小屏高性能的双摄手机,后置1200万,AI双摄,12nm八核处理器,AI,人脸解锁</p>-->
+<!--                                <p>-->
+<!--                                    <span class="num">798</span>-->
+<!--                                    元-->
+<!--                                    <del><span class="num">998</span>-->
+<!--                                        元</del>-->
+<!--                                </p>-->
+<!--                            </li>-->
+<!--                            <li>-->
+<!--                                <div class="right-img">-->
+<!--                                    <a href="">-->
+<!--                                        <img src="/static/images/goods/xiaomi/xiaomi6/xiaomi6_jing_0.png" alt="小米-流沙金">-->
+<!--                                    </a>-->
+<!--                                </div>-->
+<!--                                <h3>-->
+<!--                                    <a href="">-->
+<!--                                        小米6 流沙金 4GB+64GB-->
+<!--                                    </a>-->
+<!--                                </h3>-->
+<!--                                <p class="content">小屏高性能的双摄手机,后置1200万,AI双摄,12nm八核处理器,AI,人脸解锁</p>-->
+<!--                                <p>-->
+<!--                                    <span class="num">798</span>-->
+<!--                                    元-->
+<!--                                    <del><span class="num">998</span>-->
+<!--                                        元</del>-->
+<!--                                </p>-->
+<!--                            </li>-->
+<!--                            <li>-->
+<!--                                <div class="right-img">-->
+<!--                                    <a href="">-->
+<!--                                        <img src="/static/images/goods/xiaomi/xiaomi6/xiaomi6_jing_0.png" alt="小米-流沙金">-->
+<!--                                    </a>-->
+<!--                                </div>-->
+<!--                                <h3>-->
+<!--                                    <a href="">-->
+<!--                                        小米6 流沙金 4GB+64GB-->
+<!--                                    </a>-->
+<!--                                </h3>-->
+<!--                                <p class="content">小屏高性能的双摄手机,后置1200万,AI双摄,12nm八核处理器,AI,人脸解锁</p>-->
+<!--                                <p>-->
+<!--                                    <span class="num">798</span>-->
+<!--                                    元-->
+<!--                                    <del><span class="num">998</span>-->
+<!--                                        元</del>-->
+<!--                                </p>-->
+<!--                            </li>-->
                         </ul>
                     </div>
                 </div>

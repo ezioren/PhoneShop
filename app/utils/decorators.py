@@ -2,7 +2,6 @@
 # author:reyn
 # datetime:19-3-12 下午4:05
 # software: PyCharm
-import settings
 
 def check_login(func):
     def wrapper(*args, **kwargs):

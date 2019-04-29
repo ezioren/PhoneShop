@@ -10,6 +10,7 @@ class GoodsDetail(models.Model):
     context = models.CharField(max_length=200)  # 简介
     color=models.CharField(max_length=1000) # 颜色
     version=models.CharField(max_length=1000) # 版本
+    parttype=models.CharField(max_length=100, default=None, null=True) # 版本
     stock=models.IntegerField(default=1000) # 库存
 
 # 评价

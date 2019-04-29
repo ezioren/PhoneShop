@@ -53,7 +53,10 @@ class GoodsInputView(APIView):
 
         goods.identifier = data['identifier']
         goods.price = data['price']
-        goods.type = data['type']
+        if 'parttype' in data:
+            goods.type = 'Parts'
+        else:
+            goods.type=data['type']
         goods.save()
 
         goodsdetail = GoodsDetail()
@@ -62,6 +65,8 @@ class GoodsInputView(APIView):
         goodsdetail.color = self.save_list([], 0, data, 'color')
         goodsdetail.version = self.save_list([], 0, data, 'versions')
         goodsdetail.stock = data['stock']
+        if 'parttype' in data:
+            goodsdetail.parttype = data['parttype']
         goodsdetail.save()
 
         goodspic = GoodsPic()
@@ -73,3 +78,10 @@ class GoodsInputView(APIView):
         goodspic.save()
 
         return Response('ok')
+
+class PartsInputView(APIView):
+    def get(self, request, *args, **kwargs):
+        context={
+            'title': '商品录入',
+        }
+        return render(request, 'manage/partinput.html', context=context)

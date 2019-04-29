@@ -4,7 +4,7 @@ from .views.index import HomeView, IndexView
 from .views.user.login import LoginView, LogoutView
 from .views.user.register import RegisterView, RegisterHandleView
 from .views.account.account import AccountView, AccountChangeView
-from .views.manage.input import GoodsInputView
+from .views.manage.input import GoodsInputView, PartsInputView
 
 view_urls = [
     url(r'^$', HomeView.as_view(), name='base'),
@@ -23,4 +23,5 @@ view_urls = [
 
     # 信息录入
     url(r'^manage/goodsinput.html$', GoodsInputView.as_view(), name='goodsinput'),
+    url(r'^manage/partsinput.html$', PartsInputView.as_view(), name='partsinput'),
 ]
