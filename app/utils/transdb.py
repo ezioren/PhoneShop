@@ -3,13 +3,18 @@
 # datetime:2019/4/29 下午1:50
 # software: PyCharm
 import re
-import json
-
-from app.models.goods.goodsDetail import GoodsDetail
-
 
 class TransDbData():
-
     def trans(self, targets):
+        result = {}
+        for target in targets:
+            result['color{}'.format(target.id)] = re.findall('\'(.*?)\'', target.goodsdetail.color)
+            result['version{}'.format(target.id)] = re.findall('\'(.*?)\'', target.goodsdetail.version)
+        return result
 
-        return True
+    def trans_for_one(self, targets):
+        result = {}
+        for target in targets:
+            result['color'] = re.findall('\'(.*?)\'', target.goodsdetail.color)
+            result['version'] = re.findall('\'(.*?)\'', target.goodsdetail.version)
+        return result

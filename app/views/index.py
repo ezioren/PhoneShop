@@ -25,13 +25,11 @@ class IndexView(BaseView):
         result = self.check_login(kwargs=kwargs)
 
         news = Goods.objects.filter(type='New').order_by('id')[::2]
-        costs = Goods.objects.filter(type='Cost').order_by('id')[:7]
-        classics = Goods.objects.filter(type='Classic').order_by('id')[:7]
+        costs = Goods.objects.filter(type='Cost').order_by('id')[:8]
+        classics = Goods.objects.filter(type='Classic').order_by('id')[:8]
         parts = Goods.objects.filter(type='Parts').order_by('id')[:8]
+        part2s = Goods.objects.filter(type='Parts').order_by('id')
 
-        transdata = TransDbData()
-        transdata.trans(news)
-        print(news.goodsdetail.color)
         if result:
             name = request.user.username
         else:
@@ -45,5 +43,6 @@ class IndexView(BaseView):
             'costs': costs,
             'classics': classics,
             'parts': parts,
+            'part2s': part2s,
         }
         return render(request, 'index.html', context=context)
