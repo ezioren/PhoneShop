@@ -1,0 +1,106 @@
+#goods-list {
+    position: relative;
+    width: 1226px;
+    height: auto;
+    margin: 0 auto;
+}
+
+.table > tbody > tr > td {
+    padding: 10px 14px;
+}
+
+.title {
+    width: 100px;
+    font-size: 16px;
+    font-weight: 700;
+    color: #2c22d3;
+    background-color: #d0d2ce;
+}
+
+.context {
+    font-size: 16px;
+    text-align: center;
+    font-weight: 900;
+    background-color: #ffffff;
+}
+
+.context div {
+    float: left
+}
+
+.context a {
+    color: #2aabd2;
+}
+
+.context span {
+    margin-left: 2px;
+    margin-right: 2px;
+}
+
+.context input {
+    width: 40px;
+    border: #0f0f0f solid 1px;
+}
+
+#search-price {
+    color: #ff225b;
+}
+
+.table-text {
+    text-align: left;
+    padding: 6px 12px;
+}
+
+#goods-list-left{
+    width: 150px;
+    height: 1200px;
+    min-height: 700px;
+    position: relative;
+    background-color: #ffffff;
+}
+
+#goods-list-hot {
+    position: relative;
+    width: 226px;
+    height: auto;
+    background-color: #ffffff;
+}
+
+#goods-list-hot ul {
+    height: auto;
+    width: 226px;
+}
+
+#goods-list-hot ul li {
+    position: relative;
+    height: 200px;
+    width: 150px;
+    float: left;
+    margin: 8px 10px;
+}
+
+#goods-list-hot ul li:first-child:before {
+    display: none;
+}
+
+#goods-list-hot ul li img {
+    height: 134px;
+    width: 122px;
+    margin-top: 8px;
+    margin-left: 6px;
+}
+
+#goods-list-hot ul li .title {
+    text-align: center;
+    font-size: 12px;
+    padding-top: 5px;
+    padding-left: 26px;
+    background-color: #ffffff;
+}
+
+#goods-list-hot ul li p {
+    text-align: center;
+    font-size: 14px;
+    color: #ff6700;
+    padding-top: 5px;
+}

@@ -27,5 +27,5 @@ view_urls = [
     url(r'^manage/partsinput.html$', PartsInputView.as_view(), name='partsinput'),
 
     # 商品
-    url(r'goods/(?P<type>\S)/', Goodslist.as_view(), name='goodslist')
+    url(r'^goods/(?P<type>\S+)/', Goodslist.as_view(), name='goodslist')
 ]

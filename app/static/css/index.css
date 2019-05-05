@@ -1,3 +1,9 @@
+hr{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 0;
+    border-top: 10px solid #6cb2ee!important;
+}
 h3 {
     height: 26px;
     width: 200px;
