@@ -47,7 +47,7 @@ $(function () {
                 marginLeft:num2+'px',
         },1000)
         $('#button-box-prev').removeClass('button-active')
-        if (num1 >= 2 ){
+        if (num1 >= 0 ){
             $(this).addClass('button-active')
         }
         num1+=1
