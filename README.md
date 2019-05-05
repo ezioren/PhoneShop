@@ -24,8 +24,18 @@ git merge <branch>
 创建分支,创建一个叫做 1.0.0 的标签：
 git tag 1.0.0 1b2e1d63ff
 
+#### 未提交前忽略
 忽略权限提交合并请求
 git config core.filrMode = false
+
+#### 提交后忽略
+比如忽略项目下.idea文件夹下所有xml文件,idea下都是xml文件（我用的webstorm）：
+
+git update-index --assume-unchanged   .idea/*.xml
+
+如果要重新恢复提交，使用如下命令：
+
+git update-index --no-assume-unchanged   .idea/*.xml
 
 使用阿里图标库记得要将网络项目中的资源拉下来放入本地，防止无网络无法使用
 
