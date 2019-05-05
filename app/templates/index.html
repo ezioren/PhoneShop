@@ -61,28 +61,72 @@
             </form>
         </div>
     </div>
-    <!-- 下拉产品展示 -->
-    <!-- TODO 增加ul并与菜单栏关联显示不同内容-->
-    <div class="header-nav-goods-show updown" id="header-nav-goods-show">
-        <div class="container">
-            <ul id="new-goods-show-menu">
-                <li>
-                    <img src="/static/images/goods/xiaomi/xiaomi6/xiaomi6_jing_0.png" alt="小米6-流沙金">
-                    <div class="title">
-                        <a href="">小米6-流沙金</a>
-                    </div>
-                    <p class="price">799元起</p>
-                </li>
-                <li>
-                    <img src="/static/images/goods/xiaomi/xiaomi6/xiaomi6_pink_0.png" alt="小米6-樱花粉">
-                    <div class="title">
-                        <a href="">小米6-樱花粉</a>
-                    </div>
-                    <p class="price">799元起</p>
-                </li>
-            </ul>
-        </div>
-    </div>
+<!--     下拉产品展示-->
+<!--     TODO 增加ul并与菜单栏关联显示不同内容-->
+        <div class="header-nav-goods-show updown" id="header-nav-goods-show">
+            <div class="container">
+                <ul id="news-goods" class="goods-nav">
+                    {% for new in news %}
+                    <li>
+                        <img src="/static/{{ new.goodspic.pic0 }}" alt="{{ new.name }}">
+                        <div class="title">
+                            <a href="">{{ new.name }}</a>
+                        </div>
+                        <p class="price">{{ new.price }}</p>
+                        <br/>
+                        <del><span class="num">{% pricefilter new.price %}</span>
+                                元
+                        </del>
+                    </li>
+                    {% endfor %}
+                </ul>
+                <ul id="costs-goods" class="goods-nav">
+                    {% for cost in costs %}
+                    <li>
+                        <img src="/static/{{ cost.goodspic.pic0 }}" alt="{{ cost.name }}">
+                        <div class="title">
+                            <a href="">{{ cost.name }}</a>
+                        </div>
+                        <p class="price">{{ cost.price }}</p>
+                        <br/>
+                        <del><span class="num">{% pricefilter cost.price %}</span>
+                                元
+                        </del>
+                    </li>
+                    {% endfor %}
+                </ul>
+                <ul id="classics-goods" class="goods-nav">
+                    {% for classic in classics %}
+                    <li>
+                        <img src="/static/{{ classic.goodspic.pic0 }}" alt="{{ classic.name }}">
+                        <div class="title">
+                            <a href="">{{ classic.name }}</a>
+                        </div>
+                        <p class="price">{{ classic.price }}</p>
+                        <br/>
+                        <del><span class="num">{% pricefilter classic.price %}</span>
+                                元
+                        </del>
+                    </li>
+                    {% endfor %}
+                </ul>
+                <ul id="parts-goods" class="goods-nav">
+                    {% for part in parts %}
+                    <li>
+                        <img src="/static/{{ part.goodspic.pic0 }}" alt="{{ part.name }}">
+                        <div class="title">
+                            <a href="">{{ part.name }}</a>
+                        </div>
+                        <p class="price">{{ part.price }}</p>
+                        <br/>
+                        <del><span class="num">{% pricefilter part.price %}</span>
+                            元
+                        </del>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+</div>
 </div>
 {% endblock %}
 
@@ -148,7 +192,7 @@
         </div>
         <div class="body">
             <div class="left">
-                <a href="">
+                <a href="javascript:;">
                     <img src="/static/images/goods/xiaomi/xiaomi_mix3_gugong.jpg" alt="小米MIX3-故宫特别版">
                 </a>
             </div>
@@ -163,7 +207,7 @@
                         </div>
                         <h3>
                             <a href="">
-                                {{ new.name }} {% colorfilter new %} {% versionfilter new %}
+                                {{ new.name }} {% colorfilter new %} {% versionfilter new %}{{ forloop.counter }}
                             </a>
                         </h3>
                         <p class="content">{{ new.goodsdetail.context }}</p>
@@ -204,7 +248,7 @@
         </div>
         <div class="body">
             <div class="left">
-                <a href="">
+                <a href="javascript:;">
                     <img src="/static/images/goods/xiaomi/xiaomi_mix3_gugong.jpg" alt="小米MIX3-故宫特别版">
                 </a>
             </div>
@@ -260,7 +304,7 @@
         </div>
         <div class="body">
             <div class="left">
-                <a href="">
+                <a href="javascript:;">
                     <img src="/static/images/goods/xiaomi/xiaomi_mix3_gugong.jpg" alt="小米MIX3-故宫特别版">
                 </a>
             </div>
@@ -316,7 +360,7 @@
         </div>
         <div class="body">
             <div class="left">
-                <a href="">
+                <a href="javascript:;">
                     <img src="/static/images/goods/xiaomi/xiaomi_mix3_gugong.jpg" alt="小米MIX3-故宫特别版">
                 </a>
             </div>
