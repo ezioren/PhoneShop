@@ -1,5 +1,9 @@
 #### 生成 requirements
+linux:
 pip freeze | grep -v "pkg-resources" > requirements.txt
+
+window:
+pip freeze > requirements.txt
 
 #### git相关操作
 创建一个叫做"feature_x"的分支，并切换过去：
