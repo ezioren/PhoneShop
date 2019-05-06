@@ -46,15 +46,29 @@
     color: #ff225b;
 }
 
+#goods-list-navigation-bar {
+    font-size: 16px;
+    margin-top: -10px;
+    margin-bottom: 10px;
+}
+
 .table-text {
     text-align: left;
     padding: 6px 12px;
 }
 
-#goods-list-left{
+.left-title {
+    color: #ff0058;
+    font-size: 16px;
+    font-weight: 700;
+    text-align: center;
+    background-color: #43dcdd;
+}
+
+#goods-list-left {
     width: 150px;
-    height: 1200px;
-    min-height: 700px;
+    height: auto;
+    min-height: 890px;
     position: relative;
     background-color: #ffffff;
 }
@@ -74,9 +88,9 @@
 #goods-list-hot ul li {
     position: relative;
     height: 200px;
-    width: 150px;
+    width: 130px;
     float: left;
-    margin: 8px 10px;
+    margin: 18px 10px;
 }
 
 #goods-list-hot ul li:first-child:before {
@@ -92,7 +106,7 @@
 
 #goods-list-hot ul li .title {
     text-align: center;
-    font-size: 12px;
+    font-size: 14px;
     padding-top: 5px;
     padding-left: 26px;
     background-color: #ffffff;
@@ -103,4 +117,82 @@
     font-size: 14px;
     color: #ff6700;
     padding-top: 5px;
+}
+
+.click-num {
+    color: #344edd !important;
+    font-size: 14px !important;
+    font-weight: bold;
+}
+
+#goods-list-right {
+    float: left;
+    position: absolute;
+    top: 172px;
+    left: 152px;
+    width: 1076px;
+    height: auto;
+}
+
+#goods-list-right ul {
+    height: auto;
+    width: auto;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+#goods-list-right ul li {
+    position: relative;
+    height: 250px;
+    width: 220px;
+    padding-left: 22px;
+    padding-top: 10px;
+    float: left;
+    margin: 0 26px;
+    margin-bottom: 18px;
+    background-color: #ffffff;
+}
+
+#goods-list-right ul li:hover {
+    animation: ani_goods-show 800ms 1 forwards;
+}
+
+.goods-show-img {
+    height: 150px;
+    width: 160px;
+    margin-top: 10px;
+    margin-left: 6px;
+}
+
+.goods-show-title {
+    text-align: center;
+    width: 170px;
+    font-size: 16px;
+    padding-top: 4px;
+}
+
+.goods-show-price {
+    text-align: center;
+    font-size: 15px;
+    color: #ff6700;
+    padding-top: 5px;
+    width: 170px;
+}
+
+del {
+    width: 170px;
+    padding-left: 56px;
+}
+
+#goods-list-button {
+    width: auto;
+    min-width: 100px;
+    position: relative;
+    margin-top: 10px;
+}
+
+#goods-list-button ul {
+    position: relative;
+    left: 50%;
+    margin-left: -10%;
 }

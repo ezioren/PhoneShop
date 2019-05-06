@@ -5,7 +5,7 @@ from .views.user.login import LoginView, LogoutView
 from .views.user.register import RegisterView, RegisterHandleView
 from .views.account.account import AccountView, AccountChangeView
 from .views.manage.input import GoodsInputView, PartsInputView
-from .views.goods.goods import Goodslist
+from .views.goods.goods import GoodslistView, GoodsDetailView
 
 view_urls = [
     url(r'^$', HomeView.as_view(), name='base'),
@@ -27,5 +27,6 @@ view_urls = [
     url(r'^manage/partsinput.html$', PartsInputView.as_view(), name='partsinput'),
 
     # 商品
-    url(r'^goods/(?P<type>\S+)/', Goodslist.as_view(), name='goodslist')
+    url(r'^goods/(?P<type>\w+)/', GoodslistView.as_view(), name='goodslist'),
+    url(r'^goodsdetail/(?P<goodsid>\d+)\.html', GoodsDetailView.as_view(), name='goodsdetail-search')
 ]

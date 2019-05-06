@@ -321,3 +321,9 @@ nav .nav-right {
 .error-msg {
     display: none;
 }
+.num {
+    font-size: 16px;
+}
+del {
+    color: #b0b0b0;
+}

@@ -61,72 +61,72 @@
             </form>
         </div>
     </div>
-<!--     下拉产品展示-->
-<!--     TODO 增加ul并与菜单栏关联显示不同内容-->
-        <div class="header-nav-goods-show updown" id="header-nav-goods-show">
-            <div class="container">
-                <ul id="news-goods" class="goods-nav">
-                    {% for new in news %}
-                    <li>
-                        <img src="/static/{{ new.goodspic.pic0 }}" alt="{{ new.name }}">
-                        <div class="title">
-                            <a href="">{{ new.name }}</a>
-                        </div>
-                        <p class="price">{{ new.price }}</p>
-                        <br/>
-                        <del><span class="num">{% pricefilter new.price %}</span>
-                                元
-                        </del>
-                    </li>
-                    {% endfor %}
-                </ul>
-                <ul id="costs-goods" class="goods-nav">
-                    {% for cost in costs %}
-                    <li>
-                        <img src="/static/{{ cost.goodspic.pic0 }}" alt="{{ cost.name }}">
-                        <div class="title">
-                            <a href="">{{ cost.name }}</a>
-                        </div>
-                        <p class="price">{{ cost.price }}</p>
-                        <br/>
-                        <del><span class="num">{% pricefilter cost.price %}</span>
-                                元
-                        </del>
-                    </li>
-                    {% endfor %}
-                </ul>
-                <ul id="classics-goods" class="goods-nav">
-                    {% for classic in classics %}
-                    <li>
-                        <img src="/static/{{ classic.goodspic.pic0 }}" alt="{{ classic.name }}">
-                        <div class="title">
-                            <a href="">{{ classic.name }}</a>
-                        </div>
-                        <p class="price">{{ classic.price }}</p>
-                        <br/>
-                        <del><span class="num">{% pricefilter classic.price %}</span>
-                                元
-                        </del>
-                    </li>
-                    {% endfor %}
-                </ul>
-                <ul id="parts-goods" class="goods-nav">
-                    {% for part in parts %}
-                    <li>
-                        <img src="/static/{{ part.goodspic.pic0 }}" alt="{{ part.name }}">
-                        <div class="title">
-                            <a href="">{{ part.name }}</a>
-                        </div>
-                        <p class="price">{{ part.price }}</p>
-                        <br/>
-                        <del><span class="num">{% pricefilter part.price %}</span>
-                            元
-                        </del>
-                    </li>
-                    {% endfor %}
-                </ul>
-            </div>
-</div>
+    <!--     下拉产品展示-->
+    <!--     TODO 增加ul并与菜单栏关联显示不同内容-->
+    <div class="header-nav-goods-show updown" id="header-nav-goods-show">
+        <div class="container">
+            <ul id="news-goods" class="goods-nav">
+                {% for new in news %}
+                <li>
+                    <img src="/static/{{ new.goodspic.pic0 }}" alt="{{ new.name }}">
+                    <div class="title">
+                        <a href="">{{ new.name }}</a>
+                    </div>
+                    <p class="price">{{ new.price }}</p>
+                    <br/>
+                    <del><span class="num">{% pricefilter new.price %}</span>
+                        元
+                    </del>
+                </li>
+                {% endfor %}
+            </ul>
+            <ul id="costs-goods" class="goods-nav">
+                {% for cost in costs %}
+                <li>
+                    <img src="/static/{{ cost.goodspic.pic0 }}" alt="{{ cost.name }}">
+                    <div class="title">
+                        <a href="">{{ cost.name }}</a>
+                    </div>
+                    <p class="price">{{ cost.price }}</p>
+                    <br/>
+                    <del><span class="num">{% pricefilter cost.price %}</span>
+                        元
+                    </del>
+                </li>
+                {% endfor %}
+            </ul>
+            <ul id="classics-goods" class="goods-nav">
+                {% for classic in classics %}
+                <li>
+                    <img src="/static/{{ classic.goodspic.pic0 }}" alt="{{ classic.name }}">
+                    <div class="title">
+                        <a href="">{{ classic.name }}</a>
+                    </div>
+                    <p class="price">{{ classic.price }}</p>
+                    <br/>
+                    <del><span class="num">{% pricefilter classic.price %}</span>
+                        元
+                    </del>
+                </li>
+                {% endfor %}
+            </ul>
+            <ul id="parts-goods" class="goods-nav">
+                {% for part in parts %}
+                <li>
+                    <img src="/static/{{ part.goodspic.pic0 }}" alt="{{ part.name }}">
+                    <div class="title">
+                        <a href="">{{ part.name }}</a>
+                    </div>
+                    <p class="price">{{ part.price }}</p>
+                    <br/>
+                    <del><span class="num">{% pricefilter part.price %}</span>
+                        元
+                    </del>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
 </div>
 {% endblock %}
 
@@ -184,7 +184,7 @@
                 <i class="iconfont icon-xinpin"></i>
             </div>
             <div class="goods-address">
-                <a href="">
+                <a href="{% url 'goodslist' type='news' %}">
                     查看全部
                     <i class="iconfont icon-jiantouarrowheads3"></i>
                 </a>
@@ -199,27 +199,25 @@
             <div class="right">
                 <ul class="clearfix">
                     {% for new in news %}
-                    <li>
-                        <div class="right-img">
-                            <a href="">
+                    <a href="">
+                        <li>
+                            <div class="right-img">
                                 <img src="/static/{{ new.goodspic.pic0 }}" alt="{{ new.name }}">
-                            </a>
-                        </div>
-                        <h3>
-                            <a href="">
+                            </div>
+                            <h3>
                                 {{ new.name }} {% colorfilter new %} {% versionfilter new %}{{ forloop.counter }}
-                            </a>
-                        </h3>
-                        <p class="content">{{ new.goodsdetail.context }}</p>
-                        <p>
-                            <span class="num">{{ new.price }}</span>
-                            元
-                            <br/>
-                            <del><span class="num">{% pricefilter new.price %}</span>
+                            </h3>
+                            <p class="content">{{ new.goodsdetail.context }}</p>
+                            <p>
+                                <span class="num">{{ new.price }}</span>
                                 元
-                            </del>
-                        </p>
-                    </li>
+                                <br/>
+                                <del><span class="num">{% pricefilter new.price %}</span>
+                                    元
+                                </del>
+                            </p>
+                        </li>
+                    </a>
                     {% endfor %}
                 </ul>
             </div>
@@ -240,7 +238,7 @@
                 <i class="iconfont icon-gaoxingjiabi"></i>
             </div>
             <div class="goods-address">
-                <a href="">
+                <a href="{% url 'goodslist' type='cost' %}">
                     查看全部
                     <i class="iconfont icon-jiantouarrowheads3"></i>
                 </a>
@@ -255,27 +253,25 @@
             <div class="right">
                 <ul class="clearfix">
                     {% for cost in costs %}
-                    <li>
-                        <div class="right-img">
-                            <a href="">
+                    <a href="">
+                        <li>
+                            <div class="right-img">
                                 <img src="/static/{{ cost.goodspic.pic0 }}" alt="{{ cost.name }}">
-                            </a>
-                        </div>
-                        <h3>
-                            <a href="">
+                            </div>
+                            <h3>
                                 {{ cost.name }} {% colorfilter cost %} {% versionfilter cost %}
-                            </a>
-                        </h3>
-                        <p class="content">{{ cost.goodsdetail.context }}</p>
-                        <p>
-                            <span class="num">{{ cost.price }}</span>
-                            元
-                            <br/>
-                            <del><span class="num">{% pricefilter cost.price %}</span>
+                            </h3>
+                            <p class="content">{{ cost.goodsdetail.context }}</p>
+                            <p>
+                                <span class="num">{{ cost.price }}</span>
                                 元
-                            </del>
-                        </p>
-                    </li>
+                                <br/>
+                                <del><span class="num">{% pricefilter cost.price %}</span>
+                                    元
+                                </del>
+                            </p>
+                        </li>
+                    </a>
                     {% endfor %}
                 </ul>
             </div>
@@ -296,7 +292,7 @@
                 <i class="iconfont icon-jiushouji"></i>
             </div>
             <div class="goods-address">
-                <a href="">
+                <a href="{% url 'goodslist' type='classic' %}">
                     查看全部
                     <i class="iconfont icon-jiantouarrowheads3"></i>
                 </a>
@@ -311,27 +307,26 @@
             <div class="right">
                 <ul class="clearfix">
                     {% for classic in classics %}
-                    <li>
-                        <div class="right-img">
-                            <a href="">
+                    <a href="">
+
+                        <li>
+                            <div class="right-img">
                                 <img src="/static/{{ classic.goodspic.pic0 }}" alt="{{ classic.name }}">
-                            </a>
-                        </div>
-                        <h3>
-                            <a href="">
+                            </div>
+                            <h3>
                                 {{ classic.name }} {% colorfilter classic %} {% versionfilter classic %}
-                            </a>
-                        </h3>
-                        <p class="content">{{ classic.goodsdetail.context }}</p>
-                        <p>
-                            <span class="num">{{ classic.price }}</span>
-                            元
-                            <br/>
-                            <del><span class="num">{% pricefilter classic.price %}</span>
+                            </h3>
+                            <p class="content">{{ classic.goodsdetail.context }}</p>
+                            <p>
+                                <span class="num">{{ classic.price }}</span>
                                 元
-                            </del>
-                        </p>
-                    </li>
+                                <br/>
+                                <del><span class="num">{% pricefilter classic.price %}</span>
+                                    元
+                                </del>
+                            </p>
+                        </li>
+                    </a>
                     {% endfor %}
                 </ul>
             </div>
@@ -352,7 +347,7 @@
                 <i class="iconfont icon-peijian"></i>
             </div>
             <div class="goods-address">
-                <a href="">
+                <a href="{% url 'goodslist' type='parts' %}">
                     查看全部
                     <i class="iconfont icon-jiantouarrowheads3"></i>
                 </a>
@@ -366,28 +361,27 @@
             </div>
             <div class="right">
                 <ul class="clearfix" id="pj-erji">
-                    {% for part in parts %}
-                    <li>
-                        <div class="right-img">
-                            <a href="">
+                    <a href="">
+
+                        {% for part in parts %}
+                        <li>
+                            <div class="right-img">
                                 <img src="/static/{{ part.goodspic.pic0 }}" alt="{{ part.name }}">
-                            </a>
-                        </div>
-                        <h3>
-                            <a href="">
+                            </div>
+                            <h3>
                                 {{ part.name }} {% colorfilter part %} {% versionfilter part %}
-                            </a>
-                        </h3>
-                        <p class="content">{{ part.goodsdetail.context }}</p>
-                        <p>
-                            <span class="num">{{ part.price }}</span>
-                            元
-                            <br/>
-                            <del><span class="num">{% pricefilter part.price %}</span>
+                            </h3>
+                            <p class="content">{{ part.goodsdetail.context }}</p>
+                            <p>
+                                <span class="num">{{ part.price }}</span>
                                 元
-                            </del>
-                        </p>
-                    </li>
+                                <br/>
+                                <del><span class="num">{% pricefilter part.price %}</span>
+                                    元
+                                </del>
+                            </p>
+                        </li>
+                    </a>
                     {% endfor %}
                 </ul>
             </div>
@@ -421,26 +415,25 @@
         <div class="body">
             <ul id="wntj-goods-box">
                 {% for part2 in part2s %}
-                <li>
-                    <div class="body-img">
-                        <a href="">
+                <a href="">
+
+                    <li>
+                        <div class="body-img">
                             <img src="/static/{{ part2.goodspic.pic0 }}" alt="{{ part2.name }}">
-                        </a>
-                    </div>
-                    <h3>
-                        <a href="">
+                        </div>
+                        <h3>
                             {{ part2.name }}
-                        </a>
-                    </h3>
-                    <p>
-                        <span class="num">{{ part2.price }}</span>
-                        元
-                        <br/>
-                        <del><span class="num">{% pricefilter part2.price %}</span>
+                        </h3>
+                        <p>
+                            <span class="num">{{ part2.price }}</span>
                             元
-                        </del>
-                    </p>
-                </li>
+                            <br/>
+                            <del><span class="num">{% pricefilter part2.price %}</span>
+                                元
+                            </del>
+                        </p>
+                    </li>
+                </a>
                 {% endfor %}
             </ul>
         </div>
