@@ -2,16 +2,21 @@
 # author:reyn
 # datetime:2019/5/5 上午10:43
 # software: PyCharm
+import re
+import json
+
 from app.utils.decorators import check_login
 from app.base import BaseView
-from app.tips import types_db, types_title
+from app.tips import types_db, types_title, db_types
 
 from app.models.goods.goods import Goods
+from app.models.goods.goodsDetail import GoodsContent
 from app.models.goods.company import Company
 
 from django.shortcuts import render
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from rest_framework.views import APIView
+from rest_framework.response import Response
 
 
 class GoodslistView(BaseView):
@@ -82,17 +87,46 @@ class GoodslistView(BaseView):
 
 class GoodsDetailView(BaseView):
     @check_login
-    def get(self, request, *args, **kwargs):
+    def get(self, request, identifier, *args, **kwargs):
         rs = self.check_login(kwargs=kwargs)
-
         if rs:
             name = request.user.username
         else:
             name = None
 
+        goods = Goods.objects.filter(identifier=identifier).first()
+        contents = GoodsContent.objects.filter(good=goods.id)
+
         context = {
-            'is_login':rs,
-            'name':name,
+            'is_login': rs,
+            'name': name,
+            'title': types_title[goods.type],
+            'type': db_types[goods.type],
+            'goods': goods,
+            'jsgoods': json.dumps(goods.id),
+            'colors': re.findall('\'(.*?)\'', goods.goodsdetail.color),
+            'versions': re.findall('\'(.*?)\'', goods.goodsdetail.version),
+            'buymax': 3 if goods.type == 'New' else 10,
+            'contents': contents,
         }
 
         return render(request, 'goods/goodsdetail.html', context=context)
+
+class GoodsContentAddView(APIView):
+    def post(self, request, *args, **kwargs):
+        grade = request.data.get('grade', None)
+        content = request.data.get('content', None)
+        goodsid = request.data.get('goodsid', None)
+
+        goodscontent = GoodsContent()
+        goodscontent.content = content
+        goodscontent.grade = grade
+        goodscontent.good = goodsid
+        goodscontent.user_source = request.user.username if request.user.username != '' else '匿名'
+        goodscontent.save()
+
+        return Response('添加成功')
+
+
+
+

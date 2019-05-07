@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% load dbfilter %}
 {% block header_source %}
-<link href="{% static 'css/goods/goodslist.css' %}" rel="stylesheet" type="text/css">
+<link href="{% static 'css/goods/goods.css' %}" rel="stylesheet" type="text/css">
 {% endblock %}
 {% block body %}
 <div class="goods-list" id="goods-list">
@@ -44,7 +44,7 @@
             </table>
         </div>
         <!-- 导航条 -->
-        <div id="goods-list-navigation-bar">
+        <div id="goods-list-navigation-bar" class="goods-navigation-bar">
             <a href="{% url 'index' %}">首页</a>
             >
             {% if title %}
@@ -53,12 +53,12 @@
 
             {% if company %}
             >
-            <a href="javascript:;" id="goods-list-nav-company">{{ company }}</a>
+            <a href="javascript:;">{{ company }}</a>
             {% endif %}
 
             {% if price %}
             >
-            <a href="javascript:;" id="goods-list-nav-price">{{ price }}</a>
+            <a href="javascript:;">{{ price }}</a>
             {% endif %}
         </div>
         <!-- 热度表 -->

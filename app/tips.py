@@ -9,6 +9,12 @@ types_db={
     'classic':'Classic',
     'parts':'Parts',
 }
+db_types={
+    'New':'news',
+    'Cost':'cost',
+    'Classic':'classic',
+    'Parts':'parts',
+}
 types_title={
     'New':'新品爆款',
     'Cost':'高性价比',

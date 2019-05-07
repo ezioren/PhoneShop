@@ -15,8 +15,7 @@ class GoodsDetail(models.Model):
 
 # 评价
 class GoodsContent(models.Model):
-    good = models.OneToOneField('Goods', on_delete=models.CASCADE)
-
+    good = models.CharField(max_length=20)
     content = models.CharField(max_length=200) # 商品评价
     user_source = models.CharField(max_length=200) # 评价人
     grade = models.CharField(max_length=200) # 分数
