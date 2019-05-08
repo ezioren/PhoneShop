@@ -25,20 +25,23 @@ $(function () {
         }
     });
 
-    function isSelet(target) {
-        if (target.prop("checked")) {
-            target.siblings().prop("disabled", "true");
-        } else {
-            target.siblings().prop("disabled", "");
-        }
-    }
-
     $('.select-color').click(function () {
-        isSelet($(this))
+        if ($(this).prop("checked")) {
+            $(this).attr('data-select','1').siblings().attr('data-select','0')
+            $(this).siblings().prop("disabled", "true");
+        } else {
+            $(this).siblings().prop("disabled", "");
+            $(this).attr('data-select','0')
+        }
     })
-
     $('.select-version').click(function () {
-        isSelet($(this))
+        if ($(this).prop("checked")) {
+            $(this).attr('data-select','1').siblings().attr('data-select','0')
+            $(this).siblings().prop("disabled", "true");
+        } else {
+            $(this).siblings().prop("disabled", "");
+            $(this).attr('data-select','0')
+        }
     })
 
     /*数字验证*/
@@ -71,9 +74,9 @@ $(function () {
     $('#input-content-grade').blur(function () {
         if (isNaN($(this).val())) {
             $(this).val(5);
-        }else if ($(this).val()>5){
+        } else if ($(this).val() > 5) {
             $(this).val(5);
-        }else if ($(this).val()<0){
+        } else if ($(this).val() < 0) {
             $(this).val(1);
         }
     })

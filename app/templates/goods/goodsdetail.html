@@ -22,21 +22,33 @@
                 <div id="goods-detail-left">
                     <div class="swiper-container gallery-top">
                         <div class="swiper-wrapper" style="background-size: 500px 400px;background-color: #ffffff">
-                            {% if goods.goodspic.pic0 != None %}
+                            {% if goods.goodspic.pic0 != '' %}
                             <div class="swiper-slide"
                                  style="background-image:url(/static/{{ goods.goodspic.pic0 }});background-size: 350px 400px;background-repeat: no-repeat;background-color: #ffffff"></div>
                             {% endif %}
-                            {% if goods.goodspic.pic1 != None %}
+
+                            {% if goods.goodspic.pic1 != '' %}
                             <div class="swiper-slide"
                                  style="background-image:url(/static/{{ goods.goodspic.pic1 }});background-size: 350px 400px;background-repeat: no-repeat;background-color: #ffffff"></div>
+                            {% else %}
+                            <div class="swiper-slide"
+                                 style="background-image:url(/static/{{ goods.goodspic.pic0 }});background-size: 350px 400px;background-repeat: no-repeat;background-color: #ffffff"></div>
                             {% endif %}
-                            {% if goods.goodspic.pic2 != None %}
+
+                            {% if goods.goodspic.pic2 != '' %}
                             <div class="swiper-slide"
                                  style="background-image:url(/static/{{ goods.goodspic.pic2 }});background-size: 350px 400px;background-repeat: no-repeat;background-color: #ffffff"></div>
+                             {% else %}
+                            <div class="swiper-slide"
+                                 style="background-image:url(/static/{{ goods.goodspic.pic0 }});background-size: 350px 400px;background-repeat: no-repeat;background-color: #ffffff"></div>
                             {% endif %}
-                            {% if goods.goodspic.pic3 != None %}
+
+                            {% if goods.goodspic.pic3 != '' %}
                             <div class="swiper-slide"
                                  style="background-image:url(/static/{{ goods.goodspic.pic3 }});background-size: 350px 400px;background-repeat: no-repeat;background-color: #ffffff"></div>
+                             {% else %}
+                            <div class="swiper-slide"
+                                 style="background-image:url(/static/{{ goods.goodspic.pic0 }});background-size: 350px 400px;background-repeat: no-repeat;background-color: #ffffff"></div>
                             {% endif %}
                         </div>
                         <!-- Add Arrows -->
@@ -45,21 +57,31 @@
                     </div>
                     <div class="swiper-container gallery-thumbs">
                         <div class="swiper-wrapper">
-                            {% if goods.goodspic.pic0 != None %}
+                            {% if goods.goodspic.pic0 != '' %}
                             <div class="swiper-slide"
                                  style="background-image:url(/static/{{ goods.goodspic.pic0 }});background-color:#ffffff;background-repeat: no-repeat;background-size: 92.5px 80px"></div>
                             {% endif %}
-                            {% if goods.goodspic.pic1 != None %}
+                            {% if goods.goodspic.pic1 != '' %}
                             <div class="swiper-slide"
                                  style="background-image:url(/static/{{ goods.goodspic.pic1 }});background-color:#ffffff;background-repeat: no-repeat;background-size: 92.5px 80px"></div>
+                            {% else %}
+                            <div class="swiper-slide"
+                                 style="background-image:url(/static/{{ goods.goodspic.pic0 }});background-color:#ffffff;background-repeat: no-repeat;background-size: 92.5px 80px"></div>
                             {% endif %}
-                            {% if goods.goodspic.pic2 != None %}
+                            {% if goods.goodspic.pic2 != '' %}
                             <div class="swiper-slide"
                                  style="background-image:url(/static/{{ goods.goodspic.pic2 }});background-color:#ffffff;background-repeat: no-repeat;background-size: 92.5px 80px"></div>
+                            {% else %}
+                            <div class="swiper-slide"
+                                 style="background-image:url(/static/{{ goods.goodspic.pic0 }});background-color:#ffffff;background-repeat: no-repeat;background-size: 92.5px 80px"></div>
                             {% endif %}
-                            {% if goods.goodspic.pic3 != None %}
+
+                            {% if goods.goodspic.pic3 != '' %}
                             <div class="swiper-slide"
                                  style="background-image:url(/static/{{ goods.goodspic.pic3 }});background-color:#ffffff;background-repeat: no-repeat;background-size: 92.5px 80px"></div>
+                            {% else %}
+                            <div class="swiper-slide"
+                                 style="background-image:url(/static/{{ goods.goodspic.pic0 }});background-color:#ffffff;background-repeat: no-repeat;background-size: 92.5px 80px"></div>
                             {% endif %}
                         </div>
                     </div>
@@ -148,6 +170,56 @@
     </div>
 </div>
 <script>
+    function findcolor(tars) {
+        var result = ''
+        $.each(tars, function (i) {
+            if (tars.eq(i).attr('data-select') === "1") {
+                result = tars.eq(i).val()
+                return false
+            } else {
+                result = "2"
+            }
+        })
+        return result
+    }
+
+    function findversion(tars) {
+        var result = ''
+        $.each(tars, function (i) {
+            if (tars.eq(i).attr('data-select') === "1") {
+                result = tars.eq(i).val()
+                return false
+            } else {
+                result = "2"
+            }
+        })
+        return result
+    }
+
+    $('#add-cart').click(function () {
+        var resultcolor = findcolor($('.select-color'))
+        var resultversion = findversion($('.select-version'))
+
+        if (resultcolor ==="2"){
+            alert('未选择颜色')
+            location.reload()
+        }
+        if (resultversion ==="2"){
+            alert('未选择规格')
+            location.reload()
+        }
+
+        context = {
+            'num': parseInt($('.goods-num-area').val()),
+            'color': resultcolor,
+            'version': resultversion,
+            'goodsid': {{ goods.id }}
+    }
+        $.post('goodsaddcart', context, function (e) {
+            alert(e)
+            location.reload()
+        })
+    })
     var galleryThumbs = new Swiper('.gallery-thumbs', {
         spaceBetween: 10,
         slidesPerView: 4,
@@ -168,21 +240,19 @@
 
 
     $('#submit-add').click(function () {
-        var grade= $('#input-content-grade').val()
-        var content= $('#input-content').val()
-        var goodsid = {{ jsgoods|safe }};
+        var grade = $('#input-content-grade').val()
+        var content = $('#input-content').val()
+        var goodsid = {{ jsgoods | safe }}
 
         var context = {
-            'grade':grade,
-            'content':content,
-            'goodsid':goodsid,
+            'grade': grade,
+            'content': content,
+            'goodsid': goodsid,
         }
         $.post('goodscontentadd', context, function (e) {
             alert(e)
-
             location.reload()
         })
-
     })
 </script>
 {% endblock %}

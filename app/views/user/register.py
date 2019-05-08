@@ -14,7 +14,13 @@ from app.models.user.profile import Profile
 
 class RegisterView(APIView):
     def get(self, request):
-        return render(request, 'ps_user/register.html', context={'title':'注册'})
+        return render(request, 'ps_user/register.html', context={
+            'title':'注册',
+            'is_login':False,
+            'name':None,
+            'carts': 0,
+            'cartscount': 0,}
+        )
 
 class RegisterHandleView(APIView):
     # 验证是否已存在

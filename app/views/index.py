@@ -7,6 +7,7 @@ from app.utils.decorators import check_login
 from app.utils.transdb import TransDbData
 from app.models.goods.goods import Goods
 from app.models.goods.goodsDetail import GoodsDetail
+from app.models.cart.cart import Cart
 
 from django.shortcuts import render, redirect, reverse
 from rest_framework.views import APIView
@@ -29,6 +30,8 @@ class IndexView(BaseView):
         classics = Goods.objects.filter(type='Classic').order_by('id')[:8]
         parts = Goods.objects.filter(type='Parts').order_by('id')[:8]
         part2s = Goods.objects.filter(type='Parts').order_by('id')
+        carts = Cart.objects.filter(user=request.user.id)
+        cartscount = Cart.objects.filter(user=request.user.id).count()
 
         if result:
             name = request.user.username
@@ -44,5 +47,7 @@ class IndexView(BaseView):
             'classics': classics,
             'parts': parts,
             'part2s': part2s,
+            'carts': carts if carts else 0,
+            'cartscount': cartscount,
         }
         return render(request, 'index.html', context=context)

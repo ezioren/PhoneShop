@@ -7,3 +7,4 @@ from app.models.goods.company import Company
 from app.models.goods.guanggao import AdvertisementInfo
 from app.models.user.users import MyUser
 from app.models.user.profile import Profile
+from app.models.cart.cart import Cart
