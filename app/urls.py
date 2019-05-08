@@ -6,6 +6,7 @@ from .views.user.register import RegisterView, RegisterHandleView
 from .views.account.account import AccountView, AccountChangeView
 from .views.manage.input import GoodsInputView, PartsInputView
 from .views.goods.goods import GoodslistView, GoodsDetailView, GoodsContentAddView
+from .views.cart.cart import CartView
 
 view_urls = [
     url(r'^$', HomeView.as_view(), name='base'),
@@ -30,4 +31,7 @@ view_urls = [
     url(r'^goods/(?P<type>\w+)/', GoodslistView.as_view(), name='goodslist'),
     url(r'^goodsdetail/(?P<identifier>\S+)\.html', GoodsDetailView.as_view(), name='goodsdetail-search'),
     url(r'^goodsdetail/goodscontentadd', GoodsContentAddView.as_view(), name='goodscontentadd'),
+
+    # 商品
+    url(r'^cart\.html', CartView.as_view(), name='cart'),
 ]
