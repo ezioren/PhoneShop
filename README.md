@@ -17,7 +17,18 @@ git branch -d feature_x
 
 除非你将分支推送到远端仓库，不然该分支就是 不为他人所见的：
 git push origin <branch>
-  
+
+GIT忽略提交
+对于未入库的文件：
+命令：touch .gitignore             
+创建.gitignore文件
+
+在文件中写入需要忽略的文件（如：*.diff  ……具体见链接），
+或者不遵循忽略原则的特例（文件前加“！”）
+
+对于已入库的文件：
+命令：git update-index --assume-unchanged FILENAME       路径+文件名 
+
 合并分支
 git merge <branch>
   

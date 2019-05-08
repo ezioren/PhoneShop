@@ -4,6 +4,8 @@ from .views.index import HomeView, IndexView
 from .views.user.login import LoginView, LogoutView
 from .views.user.register import RegisterView, RegisterHandleView
 from .views.account.account import AccountView, AccountChangeView
+from .views.manage.input import GoodsInputView, PartsInputView
+from .views.goods.goods import GoodslistView, GoodsDetailView, GoodsContentAddView
 
 view_urls = [
     url(r'^$', HomeView.as_view(), name='base'),
@@ -20,4 +22,12 @@ view_urls = [
     url(r'^account/base.html$', AccountView.as_view(), name='account'),
     url(r'^account/accountchange$', AccountChangeView.as_view(), name='accountchange'),
 
+    # 信息录入
+    url(r'^manage/goodsinput.html$', GoodsInputView.as_view(), name='goodsinput'),
+    url(r'^manage/partsinput.html$', PartsInputView.as_view(), name='partsinput'),
+
+    # 商品
+    url(r'^goods/(?P<type>\w+)/', GoodslistView.as_view(), name='goodslist'),
+    url(r'^goodsdetail/(?P<identifier>\S+)\.html', GoodsDetailView.as_view(), name='goodsdetail-search'),
+    url(r'^goodsdetail/goodscontentadd', GoodsContentAddView.as_view(), name='goodscontentadd'),
 ]

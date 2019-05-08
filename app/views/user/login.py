@@ -2,15 +2,6 @@
 # author:reyn
 # datetime:19-1-25 上午9:38
 # software: PyCharm
-import hashlib
-import json
-import re
-import settings
-
-from app.conts import *
-from app.models.user.users import MyUser
-from app.exceptions import AppException
-
 from django.shortcuts import render, redirect, reverse
 from django.contrib.auth import login, logout, authenticate
 from django.http.response import HttpResponse

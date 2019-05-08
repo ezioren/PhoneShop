@@ -27,7 +27,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -77,7 +76,7 @@ AUTHENTICATION_BACKENDS = [
 ]
 
 # CORS
-#跨域增加忽略
+# 跨域增加忽略
 CORS_ALLOW_CREDENTIALS = True
 CORS_ORIGIN_ALLOW_ALL = True
 CORS_ORIGIN_WHITELIST = ('*')
@@ -122,12 +121,12 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
                 'django.template.context_processors.i18n',
             ],
+            'builtins': ['django.templatetags.static'],
         },
     },
 ]
 
 WSGI_APPLICATION = 'wsgi.application'
-
 
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
@@ -146,7 +145,6 @@ DATABASES = {
     }
 }
 
-
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
 
@@ -164,7 +162,6 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
-
 
 TIME_ZONE = 'UTC'
 LANGUAGES = (
@@ -188,7 +185,6 @@ USE_L10N = True
 # 在models.py中调用models.DateTimeField(auto_now_add=True)方法时关闭该设置可获得正常时间
 USE_TZ = False
 
-
 # 翻译文件所在目录，需要手工创建
 LOCALE_PATHS = (
     os.path.join(PROJECT_PATH, 'locale'),
@@ -199,7 +195,7 @@ LOCALE_PATHS = (
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(PROJECT_PATH, 'static').replace('\\', '/')
-STATICFILES_DIRS =[
+STATICFILES_DIRS = [
     ('bootstrap', os.path.join(STATIC_ROOT, 'bootstrap').replace('\\', '/')),
     ('css', os.path.join(STATIC_ROOT, 'css').replace('\\', '/')),
     ('js', os.path.join(STATIC_ROOT, 'js').replace('\\', '/')),
@@ -207,19 +203,15 @@ STATICFILES_DIRS =[
     ('font', os.path.join(STATIC_ROOT, 'font').replace('\\', '/')),
     ('icon', os.path.join(STATIC_ROOT, 'icon').replace('\\', '/')),
 ]
+MEDIA_URL = '/media/'
 
 MEDIA_ROOT = os.path.join(PROJECT_PATH, 'static/media/')
 
-
 CFG = {
-    'USERINFO':{
-        'u_name': 'u_name',
-        'u_password': 'u_password',
-        'u_phone': 'u_phone',
-        'u_sex': 'u_sex',
-        'u_uuid': 'u_uuid',
-        'u_createtime': 'u_createtime',
-        'ua_email':'ua_email',
-    }
+    'GOODTYPE': {
+        'New': 'New',  # 新品
+        'Cost': 'Cost',  # 性价比
+        'Classic': 'Classic',  # 经典
+        'Parts': 'Parts',  # 配件
+    },
 }
-
