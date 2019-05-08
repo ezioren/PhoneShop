@@ -32,7 +32,6 @@ class CartView(BaseView):
 
 class DeleteCartView(APIView):
     def get(self, request, cartid, *args, **kwargs):
-        print(cartid)
         cart = Cart.objects.filter(id=cartid)
         cart.delete()
 

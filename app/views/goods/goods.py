@@ -104,6 +104,8 @@ class GoodsDetailView(BaseView):
             name = None
 
         goods = Goods.objects.filter(identifier=identifier).first()
+        goods.click += 1
+        goods.save()
         contents = GoodsContent.objects.filter(good=goods.id)
 
         context = {

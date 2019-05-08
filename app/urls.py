@@ -7,6 +7,8 @@ from .views.account.account import AccountView, AccountChangeView
 from .views.manage.input import GoodsInputView, PartsInputView
 from .views.goods.goods import GoodslistView, GoodsDetailView, GoodsContentAddView, GoodsAddCartView
 from .views.cart.cart import CartView, DeleteCartView
+from .views.order.order import OrderView, CreateOrderView
+
 
 view_urls = [
     url(r'^$', HomeView.as_view(), name='base'),
@@ -36,4 +38,8 @@ view_urls = [
     # 商品
     url(r'^cart\.html', CartView.as_view(), name='cart'),
     url(r'^cart/(?P<cartid>\d+)', DeleteCartView.as_view(), name='cartdel'),
+
+    # 订单
+    url(r'^order\.html', OrderView.as_view(), name='order'),
+    url(r'^order/createorder', CreateOrderView.as_view(), name='createorder'),
 ]
