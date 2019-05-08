@@ -199,7 +199,7 @@
             <div class="right">
                 <ul class="clearfix">
                     {% for new in news %}
-                    <a href="">
+                    <a href="{% url 'goodsdetail-search' identifier=new.identifier %}">
                         <li>
                             <div class="right-img">
                                 <img src="/static/{{ new.goodspic.pic0 }}" alt="{{ new.name }}">
@@ -253,7 +253,7 @@
             <div class="right">
                 <ul class="clearfix">
                     {% for cost in costs %}
-                    <a href="">
+                    <a href="{% url 'goodsdetail-search' identifier=cost.identifier %}">
                         <li>
                             <div class="right-img">
                                 <img src="/static/{{ cost.goodspic.pic0 }}" alt="{{ cost.name }}">
@@ -307,7 +307,7 @@
             <div class="right">
                 <ul class="clearfix">
                     {% for classic in classics %}
-                    <a href="">
+                    <a href="{% url 'goodsdetail-search' identifier=classic.identifier %}">
 
                         <li>
                             <div class="right-img">
@@ -361,9 +361,9 @@
             </div>
             <div class="right">
                 <ul class="clearfix" id="pj-erji">
-                    <a href="">
 
-                        {% for part in parts %}
+                    {% for part in parts %}
+                    <a href="{% url 'goodsdetail-search' identifier=part.identifier %}">
                         <li>
                             <div class="right-img">
                                 <img src="/static/{{ part.goodspic.pic0 }}" alt="{{ part.name }}">
@@ -415,7 +415,7 @@
         <div class="body">
             <ul id="wntj-goods-box">
                 {% for part2 in part2s %}
-                <a href="">
+                <a href="{% url 'goodsdetail-search' identifier=part2.identifier %}">
 
                     <li>
                         <div class="body-img">
