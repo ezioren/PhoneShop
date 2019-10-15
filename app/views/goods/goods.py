@@ -12,8 +12,9 @@ from app.tips import types_db, types_title, db_types
 from app.models.goods.goods import Goods
 from app.models.goods.goodsDetail import GoodsContent
 from app.models.goods.company import Company
+from app.models.cart.cart import Cart
 
-from django.shortcuts import render
+from django.shortcuts import render, redirect, reverse
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from rest_framework.views import APIView
 from rest_framework.response import Response
@@ -24,6 +25,8 @@ class GoodslistView(BaseView):
     @check_login
     def get(self, request, type, format=None, *args, **kwargs):
         rs = self.check_login(kwargs=kwargs)
+        carts = Cart.objects.filter(user=request.user.id)
+        cartscount = Cart.objects.filter(user=request.user.id).count()
 
         if rs:
             name = request.user.username
@@ -34,7 +37,6 @@ class GoodslistView(BaseView):
         page = request.query_params.get('page', 1)
         company = request.query_params.get('company', None)
         price = request.query_params.get('price', None)
-
 
         # 找公司名
         companys = Company.objects.filter()
@@ -82,19 +84,28 @@ class GoodslistView(BaseView):
             'company': company if company else None,
             'price': price if price else None,
             'paginator': paginator,
+            'carts': carts if carts else 0,
+            'cartscount': cartscount,
+
         }
         return render(request, 'goods/goodlist.html', context=context)
+
 
 class GoodsDetailView(BaseView):
     @check_login
     def get(self, request, identifier, *args, **kwargs):
         rs = self.check_login(kwargs=kwargs)
+        carts = Cart.objects.filter(user=request.user.id)
+        cartscount = Cart.objects.filter(user=request.user.id).count()
+
         if rs:
             name = request.user.username
         else:
             name = None
 
         goods = Goods.objects.filter(identifier=identifier).first()
+        goods.click += 1
+        goods.save()
         contents = GoodsContent.objects.filter(good=goods.id)
 
         context = {
@@ -108,9 +119,12 @@ class GoodsDetailView(BaseView):
             'versions': re.findall('\'(.*?)\'', goods.goodsdetail.version),
             'buymax': 3 if goods.type == 'New' else 10,
             'contents': contents,
+            'carts': carts if carts else 0,
+            'cartscount': cartscount,
         }
 
         return render(request, 'goods/goodsdetail.html', context=context)
+
 
 class GoodsContentAddView(APIView):
     def post(self, request, *args, **kwargs):
@@ -127,6 +141,19 @@ class GoodsContentAddView(APIView):
 
         return Response('添加成功')
 
+class GoodsAddCartView(BaseView):
+    @check_login
+    def post(self, request, *args, **kwargs):
+        rs = self.check_login(kwargs=kwargs)
+        if rs:
+            cart = Cart()
+            cart.number = request.data.get('num', None)
+            cart.user_id = request.user.id
+            cart.goods_id = request.data.get('goodsid', None)
+            cart.color = request.data.get('color', None)
+            cart.version = request.data.get('version', None)
+            cart.save()
 
-
-
+            return Response('添加成功')
+        else:
+            return redirect(reverse('login'))

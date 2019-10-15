@@ -90,7 +90,7 @@
             <div class="container">
                 <ul>
                     {% for result in results %}
-                    <a href="">
+                    <a href="{% url 'goodsdetail-search' identifier=result.identifier %}">
                         <li>
                             <img src="/static/{{ result.goodspic.pic0 }}" alt="{{ result.name }}"
                                  class="goods-show-img">

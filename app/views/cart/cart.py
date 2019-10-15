@@ -4,8 +4,9 @@
 # software: PyCharm
 from app.utils.decorators import check_login
 from app.base import BaseView
+from app.models.cart.cart import Cart
 
-from django.shortcuts import render
+from django.shortcuts import render, redirect, reverse
 from rest_framework.views import APIView
 from rest_framework.response import Response
 
@@ -15,13 +16,23 @@ class CartView(BaseView):
         rs = self.check_login(kwargs=kwargs)
         if rs:
             name = request.user.username
+            carts = Cart.objects.filter(user=request.user.id)
+            cartscount = Cart.objects.filter(user=request.user.id).count()
+            context = {
+                'is_login': rs,
+                'name': name,
+                'title': '购物车',
+                'carts':carts,
+                'cartscount': cartscount,
+            }
+
+            return render(request, 'cart/cart.html', context=context)
         else:
-            name = None
+            return redirect(reverse('login'))
 
-        context = {
-            'is_login': rs,
-            'name': name,
-            'title': '购物车',
-        }
+class DeleteCartView(APIView):
+    def get(self, request, cartid, *args, **kwargs):
+        cart = Cart.objects.filter(id=cartid)
+        cart.delete()
 
-        return render(request, 'cart/cart.html', context=context)
+        return redirect(reverse('cart'))

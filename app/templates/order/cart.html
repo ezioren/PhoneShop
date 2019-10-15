@@ -52,15 +52,5 @@
     })
     $('.settlements').find('.col03').find('em').eq(0).html(total+'.00')
 
-    $('.settlements .col04').click(function () {
-        context = {
-            'total': $('.settlements').find('.col03').find('em').eq(0).html()
-        }
-        $.post('order/createorder', context, function (e) {
-            alert(e)
-            window.location.replace(location.origin + "/order.html")
-        })
-    })
-
 </script>
 {% endblock %}

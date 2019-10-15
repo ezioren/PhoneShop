@@ -205,13 +205,26 @@ nav .top-cart span {
 }
 
 #top-cart-menu {
-    width: 320px;
-    height: 140px;
+    width: 300px;
+    height: auto;
+    min-height: 140px;
     background-color: #ffffff;
     position: absolute;
     top: 40px;
     right: 0;
+    overflow: hidden;
     display: none;
+}
+
+#top-cart-menu ul{
+    width: 245px;
+    height: auto;
+}
+
+#top-cart-li{
+width: 320px;
+height: 50px;
+margin: 10px!important;
 }
 
 nav .loading {
