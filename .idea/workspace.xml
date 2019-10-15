@@ -264,9 +264,9 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Django server.PhoneShop" />
       <item itemvalue="Python.settings" />
       <item itemvalue="Python.translist" />
+      <item itemvalue="Django server.PhoneShop" />
     </list>
     <recent_temporary>
       <list>
