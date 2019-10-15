@@ -12,7 +12,7 @@ from django.shortcuts import render
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
-
+# 商品录入
 class GoodsInputView(APIView):
     def get(self, request, *args, **kwargs):
         companys=Company.objects.values('companyname')
@@ -22,9 +22,11 @@ class GoodsInputView(APIView):
         }
         return render(request, 'manage/input.html', context=context)
 
+    # TODO 保存图片路径
     def save_pic(self, pics):
         pass
 
+    # 以列表形式保存
     def save_list(self, result, i, data, key):
         if key + '[{number}]'.format(number=i) in data:
             result.append(data[key + '[{number}]'.format(number=i)])
@@ -33,6 +35,7 @@ class GoodsInputView(APIView):
         else:
             return result
 
+    # 检查公司是否存在数据库
     def check_company(self, company):
         result = Company.objects.filter(companyname=company).first()
         if result != None:
